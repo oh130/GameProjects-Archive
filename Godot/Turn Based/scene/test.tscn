@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn28kms58uu4p"]
+
+[ext_resource type="Texture2D" uid="uid://pkba0pbm1bn5" path="res://icon.svg" id="1_257li"]
+
+[sub_resource type="GDScript" id="GDScript_d40ln"]
+script/source = "extends HBoxContainer
+
+@onready var test2 = $Test2
+
+func _ready():
+	print(1)
+	await asd()
+	print(3)
+	
+func asd():
+	await get_tree().create_timer(1).timeout
+	print(2)
+"
+
+[sub_resource type="GDScript" id="GDScript_qd7xb"]
+script/source = "extends Control
+
+func testing():
+	for i in 100000000:
+		pass
+	
+	print(2)
+"
+
+[node name="Test" type="HBoxContainer"]
+offset_left = 241.0
+offset_top = 184.0
+offset_right = 881.0
+offset_bottom = 312.0
+theme_override_constants/separation = 0
+script = SubResource("GDScript_d40ln")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_257li")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_257li")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_257li")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_257li")
+expand_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("1_257li")
+expand_mode = 1
+
+[node name="Test2" type="Control" parent="."]
+layout_mode = 2
+script = SubResource("GDScript_qd7xb")

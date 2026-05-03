@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ds4eowf2gb2gy"
+path="res://.godot/imported/Z3-V1-Attacking-Free-1.ogg-f71fec28f34fb663b1aeac51472db8c2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Zombie/attack/Z3-V1-Attacking-Free-1.ogg"
+dest_files=["res://.godot/imported/Z3-V1-Attacking-Free-1.ogg-f71fec28f34fb663b1aeac51472db8c2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

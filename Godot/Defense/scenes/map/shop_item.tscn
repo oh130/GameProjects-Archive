@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkrw0rf1rthc6"]
+
+[ext_resource type="Script" uid="uid://b6xwnf37y8blp" path="res://scripts/map/shop_item.gd" id="1_d7oby"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_7rkyc"]
+
+[node name="ShopItem" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_d7oby")
+
+[node name="Cost" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_7rkyc")
+horizontal_alignment = 1
+vertical_alignment = 2

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsn3n1igh721b"]
+
+[ext_resource type="Script" path="res://script/component_script/map_scene/tile_area.gd" id="1_5grkd"]
+
+[node name="TileArea" type="Area2D"]
+script = ExtResource("1_5grkd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -49)
+polygon = PackedVector2Array(30, 33, 30, 63, 0, 78, -31, 64, -31, 33, 0, 17)
+
+[node name="Events" type="Node2D" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

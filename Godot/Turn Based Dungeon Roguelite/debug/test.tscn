@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://otosti5y8jpj"]
+
+[ext_resource type="Shader" uid="uid://ct0bg3kchga68" path="res://resources/shader/border_shadow.gdshader" id="1_bdhpj"]
+[ext_resource type="Texture2D" uid="uid://b0dlsngt4jjvq" path="res://resources/enemies/enemy_datas/forest/enemy/skeleton/skeleton.png" id="1_nftpe"]
+[ext_resource type="Texture2D" uid="uid://dey5nngu3kt0w" path="res://resources/player_datas/1_astrologist/sprites/astrologist.png" id="3_08xoe"]
+[ext_resource type="Texture2D" uid="uid://bt26mioatfsab" path="res://resources/player_datas/1_astrologist/sprites/astrologist2.png" id="4_xow25"]
+
+[sub_resource type="GDScript" id="GDScript_bdhpj"]
+script/source = "extends Node
+
+@onready var sprite_2d: Sprite2D = %Sprite2D
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"left_mouse\"):
+		GameManager.shake_vertical(sprite_2d, sprite_2d.position, 20)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3hy8g"]
+shader = ExtResource("1_bdhpj")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.45
+shader_parameter/softness = 0.163
+
+[node name="Node" type="Node"]
+script = SubResource("GDScript_bdhpj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_3hy8g")
+position = Vector2(639, 300)
+scale = Vector2(0.30957, 0.291016)
+texture = ExtResource("1_nftpe")
+
+[node name="Astrologist" type="Sprite2D" parent="."]
+position = Vector2(394, 344)
+texture = ExtResource("3_08xoe")
+
+[node name="Astrologist2" type="Sprite2D" parent="."]
+position = Vector2(1005, 349)
+texture = ExtResource("4_xow25")

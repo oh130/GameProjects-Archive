@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj1kum3sd4ekj"
+path="res://.godot/imported/level_up_0.wav-64c549ed8be2802db45125f470b0cf8b.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Plant/level/level_up_0.wav"
+dest_files=["res://.godot/imported/level_up_0.wav-64c549ed8be2802db45125f470b0cf8b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

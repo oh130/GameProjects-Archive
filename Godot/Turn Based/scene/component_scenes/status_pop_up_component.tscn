@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4jxkdw3vevea"]
+
+[ext_resource type="Texture2D" uid="uid://pkba0pbm1bn5" path="res://icon.svg" id="1_bfsuv"]
+
+[node name="Player0" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 644.0
+offset_top = 28.0
+offset_right = 1240.0
+offset_bottom = 345.0
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 22.0
+offset_right = 125.0
+offset_bottom = 122.0
+texture = ExtResource("1_bfsuv")
+expand_mode = 1

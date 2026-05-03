@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cic1ilviokkeq"]
+
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_cstps"]
+[ext_resource type="Script" uid="uid://bq8oniw5dnxyo" path="res://scripts/play_scene/component/halo.gd" id="1_htacf"]
+[ext_resource type="Shader" uid="uid://dtplrxc2nigqm" path="res://resources/shader/outline_shader.gdshader" id="1_mhk4o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrw5u"]
+shader = ExtResource("1_mhk4o")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mk22"]
+size = Vector2(126, 126)
+
+[node name="Halo" type="Sprite2D"]
+modulate = Color(1, 0, 1, 1)
+material = SubResource("ShaderMaterial_hrw5u")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_cstps")
+script = ExtResource("1_htacf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3mk22")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

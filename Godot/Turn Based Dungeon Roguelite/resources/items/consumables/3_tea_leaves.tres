@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://dhwo4hxrfmeys"]
+
+[ext_resource type="Texture2D" uid="uid://ceciu751r1c5e" path="res://resources/items/sprites/consumables/herb.tres" id="1_vfwom"]
+[ext_resource type="Script" uid="uid://c65kvtad4o6j7" path="res://scripts/run/items/item.gd" id="2_wqjns"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="3_pbvdf"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_wqjns"]
+
+[resource]
+resource_name = "TEA_LEAVES"
+script = ExtResource("3_pbvdf")
+area = 0
+passives = Array[ExtResource("3_wqjns")]([])
+icon = ExtResource("1_vfwom")
+metadata/_custom_type_script = ExtResource("2_wqjns")

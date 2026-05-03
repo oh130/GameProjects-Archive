@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://daxyv14f33nl1"]
+
+[ext_resource type="Script" uid="uid://ban766nm1gi8c" path="res://scripts/run/profile/profile_skill_ui.gd" id="3_jejly"]
+[ext_resource type="Texture2D" uid="uid://cinl6udo1ovg8" path="res://resources/player_datas/1_astrologist/icons/skill0.tres" id="5_6dgpf"]
+
+[node name="ProfileSkillUI" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("3_jejly")
+
+[node name="SkillIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_6dgpf")
+expand_mode = 1
+
+[node name="SelectedTexture" type="ColorRect" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(1, 0, 0, 1)
+
+[node name="EnhancedTexture" type="ColorRect" parent="."]
+unique_name_in_owner = true
+use_parent_material = true
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+color = Color(0, 0, 1, 1)

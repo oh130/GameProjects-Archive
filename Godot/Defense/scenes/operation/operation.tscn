@@ -1,0 +1,145 @@
+[gd_scene load_steps=4 format=3 uid="uid://cophqiifj53rc"]
+
+[ext_resource type="Script" uid="uid://gerlhd62qn07" path="res://scripts/operation/operation.gd" id="1_q4cha"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="2_0q3u6"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_clsgf"]
+
+[node name="Operation" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_q4cha")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 180.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="ItemList" type="FlowContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 180.0
+offset_right = 980.0
+offset_bottom = 620.0
+
+[node name="ItemEntry" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = 620.0
+offset_bottom = 620.0
+
+[node name="PageButtons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 115.0
+offset_right = 252.0
+offset_bottom = 175.0
+
+[node name="Page0" type="Button" parent="PageButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("2_clsgf")
+text = "0"
+
+[node name="Page1" type="Button" parent="PageButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("2_clsgf")
+text = "1"
+
+[node name="Page2" type="Button" parent="PageButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("2_clsgf")
+text = "2"
+
+[node name="Page3" type="Button" parent="PageButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme = ExtResource("2_clsgf")
+text = "3"
+
+[node name="SelectInfo" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = 180.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Margin" type="Control" parent="SelectInfo"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="SelectIcon" type="TextureRect" parent="SelectInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_0q3u6")
+expand_mode = 1
+
+[node name="Margin2" type="Control" parent="SelectInfo"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="SelectID" type="Label" parent="SelectInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme = ExtResource("2_clsgf")
+text = "ID"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectDescription" type="Label" parent="SelectInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_clsgf")
+text = "Info"
+autowrap_mode = 3
+
+[node name="StageEnemyInfo" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 647.0
+offset_top = 55.0
+offset_right = 707.0
+offset_bottom = 115.0
+
+[node name="Next" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 100.0
+grow_horizontal = 0
+theme = ExtResource("2_clsgf")
+text = "Next"
+
+[node name="Before" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 100.0
+theme = ExtResource("2_clsgf")
+text = "Before"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Before" to="." method="_on_before_pressed"]

@@ -1,0 +1,131 @@
+[gd_scene load_steps=4 format=3 uid="uid://udvaeupea4yh"]
+
+[ext_resource type="Script" uid="uid://ccroa7ysejw6k" path="res://scripts/run/shop/shop.gd" id="1_iy7xl"]
+[ext_resource type="Texture2D" uid="uid://ke5ypt6c0cr1" path="res://resources/sprites/icons/routes/shop.tres" id="2_c10so"]
+[ext_resource type="PackedScene" uid="uid://c7y1pkioh3jbt" path="res://scenes/run/shop/shop_item.tscn" id="3_c10so"]
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_iy7xl")
+
+[node name="ShopStructure" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_c10so")
+stretch_mode = 0
+
+[node name="ShopInside" type="Panel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 360)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -180.0
+offset_right = 220.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EquipmentContainer" type="GridContainer" parent="ShopInside"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 160)
+layout_mode = 2
+offset_left = 62.0
+offset_top = 18.0
+offset_right = 378.0
+offset_bottom = 266.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="ShopItem0" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem1" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem2" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem3" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem4" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem5" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem6" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem7" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem8" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem9" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem10" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem11" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem12" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem13" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem14" parent="ShopInside/EquipmentContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ConsumableContainer" type="GridContainer" parent="ShopInside"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 62.0
+offset_top = 266.0
+offset_right = 378.0
+offset_bottom = 346.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+
+[node name="ShopItem0" parent="ShopInside/ConsumableContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem1" parent="ShopInside/ConsumableContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem2" parent="ShopInside/ConsumableContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem3" parent="ShopInside/ConsumableContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ShopItem4" parent="ShopInside/ConsumableContainer" instance=ExtResource("3_c10so")]
+layout_mode = 2
+
+[node name="ExitButton" type="Button" parent="ShopInside"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+text = "나가기"

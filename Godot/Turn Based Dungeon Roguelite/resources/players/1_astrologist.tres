@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=11 format=3 uid="uid://fe1rpgb5h43a"]
+
+[ext_resource type="Script" uid="uid://cnqkt2p0pahhb" path="res://scripts/run/enhancement/enhancement.gd" id="1_x6r44"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="2_5wn8m"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="2_7g30e"]
+[ext_resource type="Texture2D" uid="uid://coldujyli8ldu" path="res://resources/player_datas/1_astrologist/sprites/portrait.tres" id="3_lqpg2"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_pg6i6"]
+[ext_resource type="Texture2D" uid="uid://dey5nngu3kt0w" path="res://resources/player_datas/1_astrologist/sprites/astrologist.png" id="4_pg6i6"]
+[ext_resource type="Script" uid="uid://dr63122wear36" path="res://scripts/run/unit/player/player_data.gd" id="5_mgrnu"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="6_lqpg2"]
+[ext_resource type="Script" uid="uid://hhwr35qwo1jw" path="res://scripts/run/unit/skill.gd" id="6_r8ob5"]
+[ext_resource type="Texture2D" uid="uid://dm1yi16fcqfvg" path="res://resources/player_datas/1_astrologist/sprites/astrologist_torso.tres" id="8_x6r44"]
+
+[resource]
+resource_name = "ASTROLOGIST"
+script = ExtResource("5_mgrnu")
+preview = ExtResource("4_pg6i6")
+portrait = ExtResource("3_lqpg2")
+counter_attribute = 3
+assist_attribute = 4
+enhancements = Array[ExtResource("1_x6r44")]([])
+special_stats = Dictionary[int, int]({})
+selected_skills = Array[ExtResource("6_lqpg2")]([])
+equipments = Dictionary[ExtResource("2_5wn8m"), int]({})
+cur_exp = 0
+cur_exp_for_up = 50
+enhancement_reroll_chance = 2
+sprite = ExtResource("8_x6r44")
+stats = Dictionary[int, ExtResource("2_7g30e")]({})
+stat_up_per_level = Dictionary[int, float]({
+0: 1.0
+})
+skills = Array[ExtResource("6_r8ob5")]([])
+passives = Array[ExtResource("3_pg6i6")]([])
+applied_stats = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0,
+6: 0,
+7: 0,
+8: 0,
+9: 0,
+10: 0,
+11: 0,
+12: 0
+})
+health = 0
+energy = 0
+shield = 0
+metadata/_custom_type_script = "uid://dr63122wear36"

@@ -1,0 +1,140 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=21 format=3 uid="uid://ddyg2rtirnotp"]
+
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="2_7aq1g"]
+[ext_resource type="Resource" uid="uid://dgoqpm24w2wq1" path="res://resources/enemies/enemy_datas/common/enemy/remnant/skills/descending_memory.tres" id="5_lsp21"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="6_4bj3f"]
+[ext_resource type="Texture2D" uid="uid://brehendptkall" path="res://resources/enemies/enemy_datas/common/enemy/remnant/remnant.png" id="6_lsp21"]
+[ext_resource type="Script" uid="uid://jd10342strmo" path="res://scripts/run/unit/enemy/enemy_data.gd" id="7_irv1e"]
+[ext_resource type="Script" uid="uid://hhwr35qwo1jw" path="res://scripts/run/unit/skill.gd" id="8_ne67s"]
+[ext_resource type="Resource" uid="uid://ypxobtmekoti" path="res://resources/enemies/enemy_datas/common/enemy/remnant/skills/gnaw.tres" id="9_fg2pn"]
+
+[sub_resource type="Resource" id="Resource_lsp21"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_uvpic"]
+script = ExtResource("6_4bj3f")
+amount = 50.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_kk7wb"]
+script = ExtResource("6_4bj3f")
+amount = 20.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_7smey"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_f5582"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_4bj3f"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_ouo60"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_26qgp"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_rrqwy"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_fc8ow"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_e4qmw"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_llc86"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_0vi4i"]
+script = ExtResource("6_4bj3f")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+script = ExtResource("7_irv1e")
+sprite_width = 150.0
+att_mods = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0
+})
+weaknesses = Array[int]([])
+sprite = ExtResource("6_lsp21")
+stats = Dictionary[int, ExtResource("6_4bj3f")]({
+0: SubResource("Resource_lsp21"),
+1: SubResource("Resource_uvpic"),
+2: SubResource("Resource_kk7wb"),
+3: SubResource("Resource_7smey"),
+4: SubResource("Resource_f5582"),
+5: SubResource("Resource_4bj3f"),
+6: SubResource("Resource_ouo60"),
+7: SubResource("Resource_26qgp"),
+8: SubResource("Resource_rrqwy"),
+9: SubResource("Resource_fc8ow"),
+10: SubResource("Resource_e4qmw"),
+11: SubResource("Resource_llc86"),
+12: SubResource("Resource_0vi4i")
+})
+stat_up_per_level = Dictionary[int, float]({
+0: 1.0
+})
+skills = Array[ExtResource("8_ne67s")]([ExtResource("5_lsp21"), ExtResource("9_fg2pn")])
+passives = Array[ExtResource("2_7aq1g")]([])
+applied_stats = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0,
+6: 0,
+7: 0,
+8: 0,
+9: 0,
+10: 0,
+11: 0,
+12: 0
+})
+health = 0
+energy = 0
+shield = 0
+metadata/_custom_type_script = "uid://jd10342strmo"

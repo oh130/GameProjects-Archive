@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfmwxfu7mue0s"]
+
+[ext_resource type="Script" uid="uid://bk4ib1bk2dh0d" path="res://scripts/autoloads/audio.gd" id="1_16qo4"]
+[ext_resource type="AudioStream" uid="uid://c26s1rny6sth2" path="res://resources/fxs/audio/sfx/combat/encounter.wav" id="5_h2awc"]
+[ext_resource type="AudioStream" uid="uid://bsp0fssfmcaba" path="res://resources/fxs/audio/sfx/combat/turn_sound.wav" id="6_6w81q"]
+[ext_resource type="AudioStream" uid="uid://b5lev5lowbl05" path="res://resources/fxs/audio/sfx/ui/click.wav" id="7_6w81q"]
+[ext_resource type="AudioStream" uid="uid://bxml7ufmuc6bf" path="res://resources/fxs/audio/sfx/ui/079_Buy_sell_01.wav" id="7_b08ar"]
+[ext_resource type="AudioStream" uid="uid://ju6pwa7qeycn" path="res://resources/fxs/audio/sfx/ui/098_Unpause_04.wav" id="8_rwfga"]
+[ext_resource type="AudioStream" uid="uid://df0bmoit7s0fd" path="res://resources/fxs/audio/sfx/combat/16_Atk_buff_04.wav" id="9_rwfga"]
+[ext_resource type="AudioStream" uid="uid://cwcfgjbl1agac" path="res://resources/fxs/audio/sfx/ui/070_Equip_10.wav" id="10_nx1b1"]
+
+[node name="Audio" type="Node"]
+process_mode = 3
+script = ExtResource("1_16qo4")
+combat_encounter = ExtResource("5_h2awc")
+player_turn = ExtResource("7_6w81q")
+enemy_turn = ExtResource("8_rwfga")
+turn_pass = ExtResource("6_6w81q")
+win = ExtResource("9_rwfga")
+defeat = ExtResource("5_h2awc")
+unit_focusing = ExtResource("7_6w81q")
+buy_sell = ExtResource("7_b08ar")
+equip = ExtResource("10_nx1b1")
+consume = ExtResource("8_rwfga")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = 10.0
+bus = &"BGM"
+
+[node name="SFXs" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX0" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX1" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX2" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX3" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX4" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"

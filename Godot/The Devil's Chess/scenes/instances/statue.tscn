@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnp1xpqlggofa"]
+
+[ext_resource type="Script" uid="uid://1xx81oetaeo1" path="res://scripts/play_scene/component/statue.gd" id="1_endvk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2bxm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ptm0u"]
+load_path = "res://.godot/imported/1.png-9b63e673f1f7e8a88106303db0998eb9.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a1eg"]
+size = Vector2(21, 21)
+
+[node name="Statue" type="Sprite2D"]
+modulate = Color(1, 1, 0, 1)
+material = SubResource("ShaderMaterial_h2bxm")
+scale = Vector2(3, 3)
+texture = SubResource("CompressedTexture2D_ptm0u")
+script = ExtResource("1_endvk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5a1eg")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk5koyoew80la"]
+
+[ext_resource type="Script" uid="uid://bbjawbw07m7ek" path="res://scripts/ui/paused.gd" id="1_ggrd4"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_ydmkv"]
+
+[node name="Paused" type="CanvasLayer"]
+process_mode = 3
+layer = 3
+script = ExtResource("1_ggrd4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PausedLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ydmkv")
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -20.0
+offset_right = 123.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ydmkv")
+text = "Resume
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ydmkv")
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

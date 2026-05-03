@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=5 format=3 uid="uid://btwa70sh10aqr"]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy_action.gd" id="1_8t8dg"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_data.gd" id="2_bxi3o"]
+[ext_resource type="Resource" uid="uid://ypxobtmekoti" path="res://resources/enemies/enemy_actions/attack.tres" id="2_eoums"]
+[ext_resource type="PackedScene" uid="uid://cv6nm68dfutnd" path="res://scenes/run/enemy.tscn" id="3_3kmag"]
+
+[resource]
+script = ExtResource("2_bxi3o")
+id = "Goblin"
+max_health = 30
+actions = Array[ExtResource("1_8t8dg")]([ExtResource("2_eoums")])
+enemy_scene = ExtResource("3_3kmag")
+metadata/_custom_type_script = ExtResource("2_bxi3o")

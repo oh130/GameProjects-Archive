@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjwljf0ifwck0"]
+
+[ext_resource type="Texture2D" uid="uid://be5e5gge802a8" path="res://resources/items/sprites/equipments/ring.tres" id="1_wj2nk"]
+[ext_resource type="Script" uid="uid://bt0348b7nr4wy" path="res://scripts/run/items/item_ui.gd" id="2_lp6lu"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_kwyug"]
+[ext_resource type="FontFile" uid="uid://beh62hptpojyp" path="res://resources/ui/text/MaruBuri-Bold.ttf" id="4_8mojc"]
+
+[node name="ItemUI" type="TextureRect"]
+custom_minimum_size = Vector2(40, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 0
+texture = ExtResource("1_wj2nk")
+expand_mode = 1
+script = ExtResource("2_lp6lu")
+
+[node name="CountLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_kwyug")
+theme_override_fonts/font = ExtResource("4_8mojc")
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

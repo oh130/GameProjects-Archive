@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbavkx8meqfid"
+path="res://.godot/imported/Z2-V2-Damaged-Free-1.ogg-5c7384d5359cde2852cb4ec2be1df8bf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Zombie/hurt/Z2-V2-Damaged-Free-1.ogg"
+dest_files=["res://.godot/imported/Z2-V2-Damaged-Free-1.ogg-5c7384d5359cde2852cb4ec2be1df8bf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

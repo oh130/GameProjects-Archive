@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://7g2vndhbgxu3"
+path="res://.godot/imported/water_put.ogg-60138efd7f6f82f22169cde44f8c521f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Player/water_put.ogg"
+dest_files=["res://.godot/imported/water_put.ogg-60138efd7f6f82f22169cde44f8c521f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

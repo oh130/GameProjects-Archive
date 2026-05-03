@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Property" load_steps=2 format=3 uid="uid://ba3jvohtuvc2w"]
+
+[ext_resource type="Script" path="res://scripts/elements/property.gd" id="1_kqyax"]
+
+[resource]
+script = ExtResource("1_kqyax")
+id = ""
+description = ""
+property_id = 0
+stackable = true
+extinction = false
+has_grade_limit = false
+metadata/_custom_type_script = ExtResource("1_kqyax")

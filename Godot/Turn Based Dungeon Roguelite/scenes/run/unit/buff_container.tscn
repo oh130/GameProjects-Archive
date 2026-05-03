@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dexxpolw65vw5"]
+
+[ext_resource type="PackedScene" uid="uid://bxi5y3p7aeoe5" path="res://scenes/run/unit/status_ui.tscn" id="1_42oju"]
+[ext_resource type="Script" uid="uid://dtngb2r7fsmbk" path="res://scripts/run/unit/buff_container.gd" id="1_ktugw"]
+[ext_resource type="Texture2D" uid="uid://bfendi1nwhgia" path="res://resources/sprites/icons/statuses/debuff.tres" id="2_ktugw"]
+
+[node name="BuffContainer" type="FlowContainer"]
+custom_minimum_size = Vector2(160, 0)
+offset_left = -80.0
+offset_top = -30.0
+offset_right = 80.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = -4
+theme_override_constants/v_separation = -5
+script = ExtResource("1_ktugw")
+
+[node name="BuffUI" parent="." instance=ExtResource("1_42oju")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="DebuffUI" parent="." instance=ExtResource("1_42oju")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Icon" parent="DebuffUI" index="0"]
+texture = ExtResource("2_ktugw")
+
+[node name="TempBuffUI" parent="." instance=ExtResource("1_42oju")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="TempDebuffUI" parent="." instance=ExtResource("1_42oju")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="Icon" parent="TempDebuffUI" index="0"]
+texture = ExtResource("2_ktugw")
+
+[editable path="BuffUI"]
+[editable path="DebuffUI"]
+[editable path="TempBuffUI"]
+[editable path="TempDebuffUI"]

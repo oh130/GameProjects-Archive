@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ldlhet4vfbfk"]
+
+[ext_resource type="FontFile" uid="uid://csk12p2ry5nv4" path="res://resources/ui/monogram-extended.ttf" id="1_xhgut"]
+
+[resource]
+default_font = ExtResource("1_xhgut")
+default_font_size = 25

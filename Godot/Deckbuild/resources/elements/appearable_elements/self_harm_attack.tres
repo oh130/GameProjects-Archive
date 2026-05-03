@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ElementData" load_steps=5 format=3 uid="uid://dr70mqnfl3dxb"]
+
+[ext_resource type="Script" path="res://scripts/elements/element_data.gd" id="1_hqo7l"]
+[ext_resource type="Script" path="res://scripts/elements/property.gd" id="2_igcwo"]
+[ext_resource type="Resource" uid="uid://cttasnq73rduf" path="res://resources/elements/element_properties/attack.tres" id="3_dtn0s"]
+[ext_resource type="Resource" uid="uid://ba3jvohtuvc2w" path="res://resources/elements/element_properties/self_harm.tres" id="4_kq65l"]
+
+[resource]
+script = ExtResource("1_hqo7l")
+grade = 1
+properties = Dictionary[ExtResource("2_igcwo"), int]({
+ExtResource("3_dtn0s"): 2,
+ExtResource("4_kq65l"): 1
+})
+is_instant = false
+metadata/_custom_type_script = ExtResource("1_hqo7l")

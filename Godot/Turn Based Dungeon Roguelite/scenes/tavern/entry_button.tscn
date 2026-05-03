@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bbc2a78wnmv67"]
+
+[node name="EntryButton" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+icon_alignment = 1
+expand_icon = true

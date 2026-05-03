@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Property" load_steps=3 format=3 uid="uid://ctepcx5ix3o7s"]
+
+[ext_resource type="Texture2D" uid="uid://phqx43lgt5ie" path="res://resources/sprites/property_icons/self_heal.tres" id="1_kox6q"]
+[ext_resource type="Script" path="res://scripts/elements/property.gd" id="2_b0q87"]
+
+[resource]
+script = ExtResource("2_b0q87")
+id = "Self Heal"
+icon = ExtResource("1_kox6q")
+description = ""
+property_id = 3
+stackable = true
+extinction = false
+has_grade_limit = false
+metadata/_custom_type_script = ExtResource("2_b0q87")

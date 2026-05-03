@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ls6lwqcmyrw"]
+
+[ext_resource type="Script" uid="uid://donawat73atdm" path="res://scripts/run/chapter_button.gd" id="1_yh71g"]
+
+[node name="ChapterButton" type="Button"]
+offset_left = 278.0
+offset_top = 152.0
+offset_right = 503.0
+offset_bottom = 346.0
+theme_override_font_sizes/font_size = 24
+text = "Chapter"
+script = ExtResource("1_yh71g")

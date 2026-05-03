@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=8 format=3 uid="uid://bdbsfgcd0755s"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_j5apf"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_x8cyx"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_x2t2l"]
+[ext_resource type="AudioStream" uid="uid://cs22ykummshbm" path="res://resources/fxs/audio/sfx/combat/18_Thunder_02.wav" id="4_pg0h1"]
+[ext_resource type="Resource" uid="uid://c2mnqu3jbxhev" path="res://resources/fxs/visual/vfx/explosion2.tres" id="5_16jax"]
+
+[sub_resource type="Resource" id="Resource_36abn"]
+script = ExtResource("1_j5apf")
+amount = 0.0
+ratios = Dictionary[int, float]({
+1: 0.2,
+3: 0.1,
+9: 0.4
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_7vdj2"]
+script = ExtResource("1_j5apf")
+amount = 0.0
+ratios = Dictionary[int, float]({
+1: 0.1,
+9: 0.1
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "SHIELD_BASH"
+script = ExtResource("3_x2t2l")
+attack_attribute = 0
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 0
+})
+icon = ExtResource("2_x8cyx")
+vfx = ExtResource("5_16jax")
+sfx = ExtResource("4_pg0h1")
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_j5apf")]({})
+effects = Dictionary[int, ExtResource("1_j5apf")]({
+0: SubResource("Resource_36abn"),
+4: SubResource("Resource_7vdj2")
+})
+amount_effects = Dictionary[int, ExtResource("1_j5apf")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_j5apf")]({})
+target_effects = Dictionary[int, ExtResource("1_j5apf")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_j5apf")]({})
+target_special_effects = Array[int]([2])
+metadata/_custom_type_script = "uid://bqauayub3315l"

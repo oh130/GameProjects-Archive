@@ -1,0 +1,184 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3tfpyparxsfi"]
+
+[ext_resource type="Script" uid="uid://cf1s1dl7f2x43" path="res://scripts/run/profile/profile_window.gd" id="1_uavc7"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_7baxv"]
+[ext_resource type="Texture2D" uid="uid://ce680q8l0nw3q" path="res://resources/player_datas/0_hero/sprites/hero.png" id="2_e6yed"]
+
+[sub_resource type="Animation" id="Animation_ro1yl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnitPreview:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UnitPreview:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0vncf"]
+resource_name = "appear"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UnitPreview:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(115, 478), Vector2(240, 415)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UnitPreview:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7upot"]
+_data = {
+&"RESET": SubResource("Animation_ro1yl"),
+&"appear": SubResource("Animation_0vncf")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck5a6"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ProfileWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_uavc7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.215902, 0.215902, 0.215902, 1)
+
+[node name="UnitPreview" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 960)
+layout_mode = 0
+offset_left = 107.0
+offset_top = 147.0
+offset_right = 747.0
+offset_bottom = 1107.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_e6yed")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7upot")
+}
+
+[node name="UnitID" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 110.0
+offset_top = 76.0
+offset_right = 204.0
+offset_bottom = 124.0
+size_flags_horizontal = 3
+theme = ExtResource("2_7baxv")
+theme_override_font_sizes/font_size = 35
+text = "HERO"
+vertical_alignment = 2
+
+[node name="ExpBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 15)
+layout_mode = 2
+offset_left = 110.0
+offset_top = 125.0
+offset_right = 240.0
+offset_bottom = 140.0
+size_flags_vertical = 4
+tooltip_text = "a"
+theme = ExtResource("2_7baxv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ck5a6")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="ExpBar"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_7baxv")
+text = "Lv.40"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="StatBlocks" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 400.0
+offset_top = 125.0
+offset_right = 530.0
+offset_bottom = 245.0
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 76.0
+offset_right = 1221.0
+offset_bottom = 386.0
+theme_override_constants/separation = 30
+
+[node name="SkillContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="EquipmentContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 0
+columns = 10

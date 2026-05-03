@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://k01kjihaie86"]
+
+[ext_resource type="Script" uid="uid://msjhrx1gk23g" path="res://scripts/elements/elem_sample.gd" id="2_uf0s8"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_crhu1"]
+
+[node name="ElemSample" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 152.0
+offset_bottom = 159.0
+script = ExtResource("2_uf0s8")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GradeLabel" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_crhu1")
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PropertyUI" type="GridContainer" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="gui_input" from="TextureRect" to="." method="_on_gui_input"]

@@ -1,0 +1,109 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbouxxqxtrclj"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_y3i6e"]
+[ext_resource type="Script" uid="uid://cogv52xhwbbl1" path="res://scripts/ui/main_menu.gd" id="2_llw5s"]
+[ext_resource type="PackedScene" uid="uid://dtn2nsy6llp1i" path="res://scenes/settings.tscn" id="4_rblhu"]
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y3i6e")
+script = ExtResource("2_llw5s")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y3i6e")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -295.0
+offset_right = 285.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y3i6e")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Defense"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 8.5
+offset_right = 125.0
+offset_bottom = 253.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y3i6e")
+theme_override_constants/separation = 15
+
+[node name="ContinueButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("1_y3i6e")
+theme_override_font_sizes/font_size = 43
+text = "CONTINUE"
+
+[node name="NewGameButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("1_y3i6e")
+theme_override_font_sizes/font_size = 43
+text = "NEWGAME"
+
+[node name="SettingsButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("1_y3i6e")
+theme_override_font_sizes/font_size = 43
+text = "SETTINGS"
+
+[node name="CreditButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("1_y3i6e")
+theme_override_font_sizes/font_size = 43
+text = "CREDIT"
+
+[node name="ExitButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("1_y3i6e")
+theme_override_font_sizes/font_size = 43
+text = "EXIT"
+
+[node name="Settings" parent="." instance=ExtResource("4_rblhu")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="Menu/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Menu/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Menu/SettingsButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="Menu/CreditButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]

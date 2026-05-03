@@ -1,0 +1,238 @@
+[gd_scene load_steps=12 format=3 uid="uid://byywpiwenohtp"]
+
+[ext_resource type="Script" uid="uid://bkqtt1js7isv2" path="res://scripts/run/run.gd" id="1_75u41"]
+[ext_resource type="Script" uid="uid://cn1txs1lk3lcv" path="res://scripts/run/data_manager.gd" id="2_cnaov"]
+[ext_resource type="Script" uid="uid://bgegg024bccjg" path="res://scripts/elements/element_data.gd" id="3_npdul"]
+[ext_resource type="Resource" uid="uid://ct51to7n2ejde" path="res://resources/elements/starting/attack.tres" id="4_g42ja"]
+[ext_resource type="PackedScene" uid="uid://ijmsrt6fmfap" path="res://scenes/run/player.tscn" id="4_opte0"]
+[ext_resource type="Script" uid="uid://gme1251kl1h0" path="res://scripts/run/deck_view.gd" id="4_w68lx"]
+[ext_resource type="Resource" uid="uid://cf8qiaiibybuo" path="res://resources/elements/starting/defense.tres" id="5_cnkn7"]
+[ext_resource type="PackedScene" uid="uid://dk5koyoew80la" path="res://scenes/ui/paused.tscn" id="5_he47j"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="5_iulmx"]
+[ext_resource type="PackedScene" uid="uid://ds5e2usyv6nmr" path="res://scenes/run/board.tscn" id="8_g42ja"]
+[ext_resource type="PackedScene" uid="uid://ctrjn07ngf5vq" path="res://scenes/run/rewards.tscn" id="10_3sjjv"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_75u41")
+
+[node name="DataManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_cnaov")
+max_health = 60
+deck = Array[ExtResource("3_npdul")]([ExtResource("4_g42ja"), ExtResource("5_cnkn7")])
+
+[node name="Player" parent="." instance=ExtResource("4_opte0")]
+unique_name_in_owner = true
+position = Vector2(180, 450)
+
+[node name="EnemyPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1100, 450)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="BoardPanel" type="Panel" parent="GUI"]
+custom_minimum_size = Vector2(550, 550)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -260.0
+offset_right = 275.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Inventory" type="VBoxContainer" parent="GUI/BoardPanel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+theme = ExtResource("5_iulmx")
+
+[node name="Board" parent="GUI/BoardPanel" instance=ExtResource("8_g42ja")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="GameProgressLabel" type="Label" parent="GUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+offset_right = 200.0
+offset_bottom = 40.0
+size_flags_vertical = 1
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 35
+text = "Floor 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameTimeLabel" type="Label" parent="GUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 1
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 35
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="GUI/GameTimeLabel"]
+process_callback = 0
+autostart = true
+
+[node name="Rewards" parent="GUI" instance=ExtResource("10_3sjjv")]
+unique_name_in_owner = true
+visible = false
+
+[node name="DeckView" type="Control" parent="GUI"]
+unique_name_in_owner = true
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_w68lx")
+
+[node name="Background" type="ColorRect" parent="GUI/DeckView"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 0.552941)
+
+[node name="Elements" type="GridContainer" parent="GUI/DeckView"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 90.0
+offset_top = 129.0
+offset_right = 1190.0
+offset_bottom = 669.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="Label" type="Label" parent="GUI/DeckView"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 122.0
+grow_horizontal = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 100
+text = "Deck"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeckButton" type="Button" parent="GUI"]
+unique_name_in_owner = true
+z_index = 3
+custom_minimum_size = Vector2(80, 80)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+offset_right = 80.0
+grow_vertical = 0
+mouse_force_pass_scroll_events = false
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 35
+text = "D"
+
+[node name="GameOverUI" type="Control" parent="GUI"]
+unique_name_in_owner = true
+visible = false
+z_index = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="GUI/GameOverUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_force_pass_scroll_events = false
+color = Color(0, 0, 0, 0.552941)
+
+[node name="Label" type="Label" parent="GUI/GameOverUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -409.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitToMainMenu" type="Button" parent="GUI/GameOverUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.5
+offset_top = 191.5
+offset_right = 134.5
+offset_bottom = 246.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[node name="PauseButton" type="Button" parent="GUI"]
+unique_name_in_owner = true
+z_index = 4
+custom_minimum_size = Vector2(60, 60)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_bottom = 60.0
+grow_horizontal = 0
+mouse_force_pass_scroll_events = false
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 35
+text = "P
+"
+
+[node name="Paused" parent="." instance=ExtResource("5_he47j")]
+visible = false
+
+[connection signal="create_next" from="DataManager" to="." method="create_enemy"]
+[connection signal="timeout" from="GUI/GameTimeLabel/Timer" to="DataManager" method="_on_timer_timeout"]
+[connection signal="pressed" from="GUI/DeckButton" to="GUI/DeckView" method="deck_button_pressed"]
+[connection signal="pressed" from="GUI/GameOverUI/ExitToMainMenu" to="Paused" method="exit_to_main_menu"]
+[connection signal="pressed" from="GUI/PauseButton" to="Paused" method="pause"]

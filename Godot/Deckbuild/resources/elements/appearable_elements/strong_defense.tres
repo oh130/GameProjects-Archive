@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ElementData" load_steps=4 format=3 uid="uid://dlc31puucpmw2"]
+
+[ext_resource type="Script" path="res://scripts/elements/element_data.gd" id="1_1t4q1"]
+[ext_resource type="Script" path="res://scripts/elements/property.gd" id="2_upncg"]
+[ext_resource type="Resource" uid="uid://dnr66ykwpq4vn" path="res://resources/elements/element_properties/defense.tres" id="3_id24y"]
+
+[resource]
+script = ExtResource("1_1t4q1")
+grade = 3
+properties = Dictionary[ExtResource("2_upncg"), int]({
+ExtResource("3_id24y"): 10
+})
+is_instant = true
+metadata/_custom_type_script = ExtResource("1_1t4q1")

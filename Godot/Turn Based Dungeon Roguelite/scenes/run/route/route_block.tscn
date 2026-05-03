@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://y68e8daxycr1"]
+
+[ext_resource type="Script" uid="uid://dvlhmuej6ebaa" path="res://scripts/run/route/route_block.gd" id="1_nwaht"]
+[ext_resource type="Texture2D" uid="uid://qg1lwbyhguxo" path="res://resources/sprites/icons/routes/enemy.tres" id="2_sevrr"]
+[ext_resource type="Texture2D" uid="uid://ll3qfy2qppt3" path="res://resources/sprites/icons/routes/exp_enemy.tres" id="3_eo7ah"]
+[ext_resource type="Texture2D" uid="uid://4rh84m73jbvk" path="res://resources/sprites/icons/routes/gold_enemy.tres" id="4_4ck4w"]
+[ext_resource type="Texture2D" uid="uid://b1sno8vx7aqs2" path="res://resources/sprites/icons/routes/equipment_enemy.tres" id="5_fc40r"]
+[ext_resource type="Texture2D" uid="uid://c3r6tpckr6lcs" path="res://resources/sprites/icons/routes/boss.tres" id="6_vmjpm"]
+[ext_resource type="Texture2D" uid="uid://cbou5wh3l6g47" path="res://resources/sprites/icons/routes/encounter.tres" id="7_duk1f"]
+[ext_resource type="Texture2D" uid="uid://ke5ypt6c0cr1" path="res://resources/sprites/icons/routes/shop.tres" id="8_tuyqe"]
+[ext_resource type="Texture2D" uid="uid://je8qq3n0nstq" path="res://resources/sprites/icons/routes/exit.tres" id="10_0f6q8"]
+
+[node name="RouteBlock" type="Button"]
+custom_minimum_size = Vector2(120, 120)
+script = ExtResource("1_nwaht")
+route_icon_textures = Dictionary[int, Texture2D]({
+0: ExtResource("3_eo7ah"),
+1: ExtResource("4_4ck4w"),
+2: ExtResource("5_fc40r"),
+3: ExtResource("2_sevrr"),
+4: ExtResource("6_vmjpm"),
+5: ExtResource("7_duk1f"),
+6: ExtResource("8_tuyqe"),
+8: ExtResource("10_0f6q8")
+})
+
+[node name="RouteBackground" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="RouteIcon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_sevrr")
+expand_mode = 1

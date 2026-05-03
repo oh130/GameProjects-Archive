@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://coldujyli8ldu"]
+
+[ext_resource type="Texture2D" uid="uid://dey5nngu3kt0w" path="res://resources/player_datas/1_astrologist/sprites/astrologist.png" id="1_6s67v"]
+
+[resource]
+atlas = ExtResource("1_6s67v")
+region = Rect2(319, 135, 224, 224)

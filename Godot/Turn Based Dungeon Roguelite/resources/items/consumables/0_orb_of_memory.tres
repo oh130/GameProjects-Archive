@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://cdw086ctldo32"]
+
+[ext_resource type="Texture2D" uid="uid://ceciu751r1c5e" path="res://resources/items/sprites/consumables/herb.tres" id="1_f77tv"]
+[ext_resource type="Script" uid="uid://c65kvtad4o6j7" path="res://scripts/run/items/item.gd" id="2_0xnpe"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_b17vn"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="3_nk1r2"]
+
+[resource]
+resource_name = "ORB_OF_MEMORY"
+script = ExtResource("3_nk1r2")
+area = 0
+passives = Array[ExtResource("3_b17vn")]([])
+icon = ExtResource("1_f77tv")
+metadata/_custom_type_script = ExtResource("2_0xnpe")

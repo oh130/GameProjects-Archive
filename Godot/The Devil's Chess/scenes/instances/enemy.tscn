@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvr2bbiaaqxga"]
+
+[ext_resource type="Texture2D" uid="uid://cmf1dnj1d55yr" path="res://resources/sprites/enemies/1.png" id="1_hfh4x"]
+[ext_resource type="Script" uid="uid://dp7cfya6a24ae" path="res://scripts/play_scene/component/enemy.gd" id="2_is554"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2bxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24jo3"]
+size = Vector2(21, 21)
+
+[node name="Enemy" type="Sprite2D"]
+material = SubResource("ShaderMaterial_h2bxm")
+scale = Vector2(3, 3)
+texture = ExtResource("1_hfh4x")
+script = ExtResource("2_is554")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_24jo3")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

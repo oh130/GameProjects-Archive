@@ -1,0 +1,16 @@
+res://scenes/run/board.tscn
+res://resources/ui/theme.tres
+res://resources/elements/element_properties/attack.tres
+res://resources/elements/starting/attack.tres
+res://resources/elements/element_properties/defense.tres
+res://resources/elements/starting/defense.tres
+res://scenes/ui/main_menu.tscn
+res://scenes/run/run.tscn
+res://scenes/run/player.tscn
+res://scenes/run/enemy.tscn
+res://scenes/autoloads/audio.tscn
+res://scenes/run/item.tscn
+res://scenes/run/element.tscn
+res://scenes/run/elem_sample.tscn
+res://scenes/run/property_ui.tscn
+res://scenes/run/rewards.tscn

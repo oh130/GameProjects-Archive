@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=5 format=3 uid="uid://dylycpwif4fm2"]
+
+[ext_resource type="Texture2D" uid="uid://be5e5gge802a8" path="res://resources/items/sprites/equipments/ring.tres" id="1_6dj8m"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="2_efjtj"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="2_m8rp5"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="3_c0vsk"]
+
+[resource]
+resource_name = "HEARTSEEKER"
+script = ExtResource("3_c0vsk")
+is_unique = false
+stats = Dictionary[int, ExtResource("2_m8rp5")]({})
+party_stats = Dictionary[int, int]({})
+passives = Array[ExtResource("2_efjtj")]([])
+icon = ExtResource("1_6dj8m")
+metadata/_custom_type_script = "uid://cqlrpju4ijw7l"

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcwpmnh585w1e"]
+
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_tm2wl"]
+
+[node name="RemainIcon" type="TextureRect"]
+custom_minimum_size = Vector2(11, 11)
+texture = ExtResource("1_tm2wl")
+expand_mode = 1

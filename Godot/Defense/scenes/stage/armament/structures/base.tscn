@@ -1,0 +1,98 @@
+[gd_scene load_steps=11 format=3 uid="uid://qyr4l0fcuve5"]
+
+[ext_resource type="Script" uid="uid://b0a6fj87jin6k" path="res://scripts/stage/actors/structures/structure.gd" id="1_38k8h"]
+[ext_resource type="Resource" uid="uid://cnjag3iwkgka3" path="res://resources/datas/base.tres" id="2_4ddec"]
+[ext_resource type="Shader" uid="uid://dvf61p8ag7tni" path="res://resources/shader/outline.gdshader" id="2_35asl"]
+[ext_resource type="Texture2D" uid="uid://dje22raaa56xi" path="res://resources/sprites/DinoSprites - doux.png" id="3_rpymr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nhage"]
+resource_local_to_scene = true
+shader = ExtResource("2_35asl")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[sub_resource type="Animation" id="Animation_dusgd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_ne34s"]
+resource_name = "appear"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_6lb1s"]
+resource_name = "demolish"
+length = 0.5
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"after_death"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_v205y"]
+resource_name = "idle"
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6ghj"]
+_data = {
+&"RESET": SubResource("Animation_dusgd"),
+&"appear": SubResource("Animation_ne34s"),
+&"death": SubResource("Animation_6lb1s"),
+&"idle": SubResource("Animation_v205y")
+}
+
+[node name="Base" type="Node2D"]
+modulate = Color(1, 1, 1, 0.117647)
+script = ExtResource("1_38k8h")
+data = ExtResource("2_4ddec")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_nhage")
+scale = Vector2(2, 2)
+texture = ExtResource("3_rpymr")
+offset = Vector2(0, -9)
+hframes = 24
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_r6ghj")
+}
+autoplay = "appear"

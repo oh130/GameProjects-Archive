@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ElementData" load_steps=4 format=3 uid="uid://ct51to7n2ejde"]
+
+[ext_resource type="Script" uid="uid://bgegg024bccjg" path="res://scripts/elements/element_data.gd" id="1_3nd7u"]
+[ext_resource type="Script" uid="uid://clif8g3e1jjqw" path="res://scripts/elements/property.gd" id="1_6ptv3"]
+[ext_resource type="Resource" uid="uid://cttasnq73rduf" path="res://resources/elements/element_properties/attack.tres" id="2_h50f1"]
+
+[resource]
+script = ExtResource("1_3nd7u")
+grade = 1
+properties = Dictionary[ExtResource("1_6ptv3"), int]({
+ExtResource("2_h50f1"): 1
+})
+is_instant = false

@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://cv8lkfak2lwct"]
+
+[ext_resource type="Script" uid="uid://brwbo40xvdg21" path="res://scripts/level_editor/level_editor.gd" id="1_kl20w"]
+[ext_resource type="Texture2D" uid="uid://0s5j504vwte4" path="res://resources/sprites/board.png" id="2_himg3"]
+[ext_resource type="Script" uid="uid://dxu48wio3jsae" path="res://scripts/play_scene/primary/cell_container.gd" id="2_ioxr4"]
+[ext_resource type="PackedScene" uid="uid://clhall1jrecq8" path="res://scenes/component_scenes/devil.tscn" id="3_dqgo5"]
+[ext_resource type="Texture2D" uid="uid://baqcapj8t33h1" path="res://resources/sprites/text.png" id="3_fohj8"]
+[ext_resource type="Texture2D" uid="uid://b5e4sob2k5rwo" path="res://resources/sprites/numbers.png" id="4_lyn7p"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="5_bwhg7"]
+[ext_resource type="Script" uid="uid://dodfu5dcww8md" path="res://scripts/level_editor/sg_container.gd" id="7_i65o1"]
+[ext_resource type="Script" uid="uid://jlfppejxjy0f" path="res://scripts/level_editor/pos_button_container.gd" id="8_4mls1"]
+[ext_resource type="Script" uid="uid://cw2ghd4vkb7mv" path="res://scripts/level_editor/sacrifice_container_edit.gd" id="9_n1d7k"]
+[ext_resource type="Script" uid="uid://wp1yi45scxqx" path="res://scripts/level_editor/ag_container.gd" id="12_qbqnj"]
+
+[node name="LevelEditor" type="Node2D"]
+script = ExtResource("1_kl20w")
+cell_obj_checker = null
+
+[node name="ChessBoard" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(576, 340)
+
+[node name="Board" type="Sprite2D" parent="ChessBoard"]
+scale = Vector2(3, 3)
+texture = ExtResource("2_himg3")
+
+[node name="Text" type="Sprite2D" parent="ChessBoard"]
+position = Vector2(0, -300)
+scale = Vector2(3, 3)
+texture = ExtResource("3_fohj8")
+
+[node name="Numbers" type="Sprite2D" parent="ChessBoard"]
+position = Vector2(300, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("4_lyn7p")
+
+[node name="CellContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(528, 528)
+offset_left = 312.0
+offset_top = 76.0
+offset_right = 840.0
+offset_bottom = 604.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+script = ExtResource("2_ioxr4")
+
+[node name="PosButtonContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(528, 528)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 312.0
+offset_top = 76.0
+offset_right = 840.0
+offset_bottom = 604.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+script = ExtResource("8_4mls1")
+
+[node name="Devil" parent="." instance=ExtResource("3_dqgo5")]
+
+[node name="SacrificeContainer" type="GridContainer" parent="."]
+offset_left = 923.0
+offset_top = 154.0
+offset_right = 1121.0
+offset_bottom = 418.0
+theme = ExtResource("5_bwhg7")
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+script = ExtResource("9_n1d7k")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="RefreshButton" type="Button" parent="UI"]
+custom_minimum_size = Vector2(198, 80)
+offset_left = 924.0
+offset_top = 46.0
+offset_right = 1122.0
+offset_bottom = 126.0
+theme = ExtResource("5_bwhg7")
+theme_override_font_sizes/font_size = 50
+text = "Refresh"
+
+[node name="ExportButton" type="Button" parent="UI"]
+custom_minimum_size = Vector2(198, 80)
+offset_left = 924.0
+offset_top = 529.0
+offset_right = 1122.0
+offset_bottom = 609.0
+theme = ExtResource("5_bwhg7")
+theme_override_font_sizes/font_size = 50
+text = "Export"
+
+[node name="SGContainer" type="GridContainer" parent="UI"]
+custom_minimum_size = Vector2(198, 264)
+offset_left = 48.0
+offset_top = 308.0
+offset_right = 246.0
+offset_bottom = 572.0
+columns = 3
+script = ExtResource("7_i65o1")
+
+[node name="AGContainer" type="GridContainer" parent="UI"]
+custom_minimum_size = Vector2(198, 264)
+offset_left = 48.0
+offset_top = 44.0
+offset_right = 246.0
+offset_bottom = 308.0
+columns = 3
+script = ExtResource("12_qbqnj")
+
+[node name="ChapterText" type="LineEdit" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 932.0
+offset_top = 447.0
+offset_right = -136.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_bwhg7")
+theme_override_font_sizes/font_size = 50
+text = "1"
+alignment = 1
+
+[node name="LevelText" type="LineEdit" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1029.0
+offset_top = 447.0
+offset_right = -39.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_bwhg7")
+theme_override_font_sizes/font_size = 50
+text = "1"
+alignment = 1
+
+[connection signal="move_end" from="Devil" to="SacrificeContainer" method="select_consumed"]
+[connection signal="select_canceled_signal" from="SacrificeContainer" to="CellContainer" method="board_cell_hide_all"]
+[connection signal="show_movable_cell" from="SacrificeContainer" to="CellContainer" method="board_cell_show"]
+[connection signal="pressed" from="UI/RefreshButton" to="." method="refresh_custom_level"]
+[connection signal="pressed" from="UI/ExportButton" to="." method="export_custom_level_as"]

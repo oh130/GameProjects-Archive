@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu3v1drnoxcob"]
+
+[ext_resource type="Texture2D" uid="uid://chdccr1bp2kp6" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Grass_base.png" id="2_fuomw"]
+[ext_resource type="Script" path="res://script/component_script/map_scene/tile_map.gd" id="3_vij4s"]
+[ext_resource type="PackedScene" uid="uid://bsn3n1igh721b" path="res://scene/instances/tile_area.tscn" id="4_y561y"]
+[ext_resource type="Texture2D" uid="uid://pkba0pbm1bn5" path="res://icon.svg" id="5_cjm6f"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3pbj"]
+texture = ExtResource("2_fuomw")
+margins = Vector2i(0, 16)
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/next_alternative_id = 4
+0:0/0 = 0
+0:0/1 = 1
+0:0/1/modulate = Color(1, 0.529412, 1, 1)
+0:0/2 = 2
+0:0/2/modulate = Color(1, 0, 1, 1)
+
+[sub_resource type="TileSet" id="TileSet_pccmo"]
+tile_shape = 3
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_t3pbj")
+
+[node name="MapScene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+show_behind_parent = true
+y_sort_enabled = true
+position = Vector2(521, 104)
+scale = Vector2(2, 2)
+tile_set = SubResource("TileSet_pccmo")
+format = 2
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 65537, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65539, 0, 0, 65538, 0, 0, 65540, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 196609, 0, 0, 196608, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0)
+script = ExtResource("3_vij4s")
+tile_area = ExtResource("4_y561y")
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="PlayerParty" type="Sprite2D" parent="."]
+position = Vector2(254, 191)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_cjm6f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PartyInfo" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 888.0
+offset_top = 439.0
+offset_right = 1221.0
+offset_bottom = 667.0
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PartyInfo"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = -417.0
+offset_right = 331.0
+offset_bottom = -162.0
+theme_override_font_sizes/font_size = 40
+text = "12332112431"

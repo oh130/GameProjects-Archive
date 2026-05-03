@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - PlayerAttack
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Player
+  - Water
+  - UI
+  - MapOuterWall
+  - Enemy
+  - Magnet
+  - PlayerAttack
+  - EnemyAttack
+  - Background
+  - AirEnemyParent
+  - Collectable
+  - UnorderedButtonUI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Ground
+    uniqueID: 1630258821
+    locked: 0
+  - name: UnderObject
+    uniqueID: 2271542325
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: OverObject
+    uniqueID: 929549197
+    locked: 0

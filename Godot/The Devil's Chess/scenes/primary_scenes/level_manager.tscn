@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://vq85tk3nji08"]
+
+[ext_resource type="Script" uid="uid://bpgvmva5loufj" path="res://scripts/level_manager/level_manager.gd" id="1_ilo0f"]
+[ext_resource type="Script" uid="uid://cmou3gru65gw" path="res://scripts/level_manager/level_container.gd" id="1_yfxd5"]
+[ext_resource type="Script" uid="uid://btxdafii6ps8" path="res://scripts/level_manager/chapter_container.gd" id="2_8ph5a"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_b1jwe"]
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_ilo0f")
+
+[node name="ChapterContainer" type="HBoxContainer" parent="."]
+offset_left = 57.0
+offset_top = 29.0
+offset_right = 57.0
+offset_bottom = 29.0
+script = ExtResource("2_8ph5a")
+
+[node name="LevelContainer" type="GridContainer" parent="."]
+offset_left = 576.0
+offset_top = 102.0
+offset_right = 1076.0
+offset_bottom = 602.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 5
+script = ExtResource("1_yfxd5")
+
+[node name="Back" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 31.0
+offset_top = 525.0
+offset_right = 131.0
+offset_bottom = 625.0
+theme = ExtResource("3_b1jwe")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="back_to_main_menu"]

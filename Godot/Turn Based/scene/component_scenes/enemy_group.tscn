@@ -1,0 +1,214 @@
+[gd_scene load_steps=16 format=3 uid="uid://5cudsngq5ol"]
+
+[ext_resource type="Script" path="res://script/component_script/place/enemy_group.gd" id="1_4uq5h"]
+[ext_resource type="Texture2D" uid="uid://doprrpsam1c8s" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Snow_base.png" id="3_a6jhs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gfutw"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aufv3"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mh8os"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_73n8q"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_clr1u"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4yfe3"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7uy3b"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r2kgf"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_deptk"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qkwpr"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3qv4h"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m43er"]
+load_path = "res://.godot/imported/Hex-Point-Snow_base.png-59d088bb72fe72be9095fd35868f79a6.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utwpb"]
+size = Vector2(95, 97)
+
+[node name="EnemyGroup" type="Node2D"]
+script = ExtResource("1_4uq5h")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Pos0" type="Sprite2D" parent="Positions"]
+self_modulate = Color(0, 0, 0, 0.392157)
+z_index = -1
+scale = Vector2(3, 2)
+texture = ExtResource("3_a6jhs")
+offset = Vector2(0, -7)
+
+[node name="Pos1" type="Sprite2D" parent="Positions"]
+self_modulate = Color(0, 0, 0, 0.392157)
+z_index = -1
+position = Vector2(-110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_gfutw")
+offset = Vector2(0, -7)
+
+[node name="Pos2" type="Sprite2D" parent="Positions"]
+self_modulate = Color(0, 0, 0, 0.392157)
+z_index = -1
+position = Vector2(220, 0)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_aufv3")
+offset = Vector2(0, -7)
+
+[node name="Pos3" type="Sprite2D" parent="Positions"]
+self_modulate = Color(0, 0, 0, 0.392157)
+z_index = -1
+position = Vector2(110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_mh8os")
+offset = Vector2(0, -7)
+
+[node name="TurnMarks" type="Node2D" parent="."]
+
+[node name="Mark0" type="Sprite2D" parent="TurnMarks"]
+visible = false
+z_index = -1
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_73n8q")
+offset = Vector2(0, -7)
+
+[node name="Mark1" type="Sprite2D" parent="TurnMarks"]
+visible = false
+z_index = -1
+position = Vector2(-110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_clr1u")
+offset = Vector2(0, -7)
+
+[node name="Mark2" type="Sprite2D" parent="TurnMarks"]
+visible = false
+z_index = -1
+position = Vector2(220, 0)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_4yfe3")
+offset = Vector2(0, -7)
+
+[node name="Mark3" type="Sprite2D" parent="TurnMarks"]
+visible = false
+z_index = -1
+position = Vector2(110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_7uy3b")
+offset = Vector2(0, -7)
+
+[node name="Highlights" type="Node2D" parent="."]
+
+[node name="Highlight0" type="Sprite2D" parent="Highlights"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+z_index = -1
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_r2kgf")
+offset = Vector2(0, -7)
+
+[node name="Highlight1" type="Sprite2D" parent="Highlights"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+z_index = -1
+position = Vector2(-110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_deptk")
+offset = Vector2(0, -7)
+
+[node name="Highlight2" type="Sprite2D" parent="Highlights"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+z_index = -1
+position = Vector2(220, 0)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_qkwpr")
+offset = Vector2(0, -7)
+
+[node name="Highlight3" type="Sprite2D" parent="Highlights"]
+visible = false
+self_modulate = Color(1, 0, 0, 1)
+z_index = -1
+position = Vector2(110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_3qv4h")
+offset = Vector2(0, -7)
+
+[node name="Targeted" type="Node2D" parent="."]
+
+[node name="Targeted0" type="Sprite2D" parent="Targeted"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+z_index = -1
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_m43er")
+offset = Vector2(0, -7)
+
+[node name="Targeted1" type="Sprite2D" parent="Targeted"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+z_index = -1
+position = Vector2(-110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_m43er")
+offset = Vector2(0, -7)
+
+[node name="Targeted2" type="Sprite2D" parent="Targeted"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+z_index = -1
+position = Vector2(220, 0)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_m43er")
+offset = Vector2(0, -7)
+
+[node name="Targeted3" type="Sprite2D" parent="Targeted"]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+z_index = -1
+position = Vector2(110, 120)
+scale = Vector2(3, 2)
+texture = SubResource("CompressedTexture2D_m43er")
+offset = Vector2(0, -7)
+
+[node name="ClickAreas" type="Node2D" parent="."]
+
+[node name="Area0" type="Area2D" parent="ClickAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickAreas/Area0"]
+position = Vector2(0, -31.5)
+shape = SubResource("RectangleShape2D_utwpb")
+
+[node name="Area1" type="Area2D" parent="ClickAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickAreas/Area1"]
+position = Vector2(-110, 88.5)
+shape = SubResource("RectangleShape2D_utwpb")
+
+[node name="Area2" type="Area2D" parent="ClickAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickAreas/Area2"]
+position = Vector2(220, -31.5)
+shape = SubResource("RectangleShape2D_utwpb")
+
+[node name="Area3" type="Area2D" parent="ClickAreas"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickAreas/Area3"]
+position = Vector2(110, 88.5)
+shape = SubResource("RectangleShape2D_utwpb")

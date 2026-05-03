@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitData" load_steps=4 format=3 uid="uid://dumnt5q6lgss"]
+
+[ext_resource type="Script" uid="uid://deu5vc5rn7k3c" path="res://scripts/datas/armaments/unit_data.gd" id="1_lpjjb"]
+[ext_resource type="PackedScene" uid="uid://7ekxr4p23smn" path="res://scenes/stage/armament/units/unit.tscn" id="1_uxjle"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="3_wvp7l"]
+
+[resource]
+script = ExtResource("1_lpjjb")
+tile_cost = 3
+mobility = 3
+ink_cost = 10
+tier = 0
+armament = ExtResource("1_uxjle")
+reach = 3
+damage = 1
+armor_penetration = false
+id = "Soldier"
+sprite = ExtResource("3_wvp7l")
+unlock_stage = 0
+shop_cost = 0

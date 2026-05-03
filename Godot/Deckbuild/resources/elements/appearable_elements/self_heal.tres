@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ElementData" load_steps=4 format=3 uid="uid://bitcevbn5impd"]
+
+[ext_resource type="Script" path="res://scripts/elements/element_data.gd" id="1_xitsw"]
+[ext_resource type="Script" path="res://scripts/elements/property.gd" id="2_wjl3d"]
+[ext_resource type="Resource" uid="uid://ctepcx5ix3o7s" path="res://resources/elements/element_properties/self_heal.tres" id="3_32vpt"]
+
+[resource]
+script = ExtResource("1_xitsw")
+grade = 1
+properties = Dictionary[ExtResource("2_wjl3d"), int]({
+ExtResource("3_32vpt"): 1
+})
+is_instant = false
+metadata/_custom_type_script = ExtResource("1_xitsw")

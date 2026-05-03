@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Strategy" load_steps=2 format=3 uid="uid://dy1vorsvf1dlc"]
+
+[ext_resource type="Script" uid="uid://bthjxwhaf7dkr" path="res://scripts/datas/armaments/strategy.gd" id="1_xhhff"]
+
+[resource]
+script = ExtResource("1_xhhff")
+effect = 1
+id = "2"
+unlock_stage = 0
+shop_cost = 100

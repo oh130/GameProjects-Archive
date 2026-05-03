@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://6lymm8q3cap8"]
+
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_t44lj"]
+[ext_resource type="Script" uid="uid://dnviog8xfy0rl" path="res://scripts/elements/property_ui.gd" id="2_jexoh"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_h7rgx"]
+
+[node name="PropertyUI" type="TextureRect"]
+custom_minimum_size = Vector2(30, 30)
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("1_t44lj")
+expand_mode = 1
+script = ExtResource("2_jexoh")
+
+[node name="AmountLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_h7rgx")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 2

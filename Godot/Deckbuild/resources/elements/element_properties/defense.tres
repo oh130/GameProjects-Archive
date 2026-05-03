@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Property" load_steps=3 format=3 uid="uid://dnr66ykwpq4vn"]
+
+[ext_resource type="Script" uid="uid://clif8g3e1jjqw" path="res://scripts/elements/property.gd" id="1_lr0x4"]
+[ext_resource type="Texture2D" uid="uid://djhquj807w2f" path="res://resources/sprites/property_icons/defense.tres" id="1_ybuk0"]
+
+[resource]
+script = ExtResource("1_lr0x4")
+id = "Defense"
+icon = ExtResource("1_ybuk0")
+description = null
+property_id = 1
+stackable = true
+extinction = false
+has_grade_limit = false
+metadata/_custom_type_script = ExtResource("1_lr0x4")

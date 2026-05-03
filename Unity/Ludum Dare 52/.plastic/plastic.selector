@@ -1,0 +1,4 @@
+repository "Ludum Dare 52@EldenRing@cloud"
+  path "/"
+    br "/main"
+    co "/main"

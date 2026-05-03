@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://nqreui2emj33"]
+
+[ext_resource type="Script" uid="uid://jtnl85pj8i0k" path="res://scripts/stage/actors/weapons/weapon.gd" id="1_edhjv"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="2_0htsh"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_edhjv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0htsh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+callback_mode_process = 0
+autoplay = "RESET"
+
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-35, -35, 70, 70)

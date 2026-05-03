@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Property" load_steps=3 format=3 uid="uid://cttasnq73rduf"]
+
+[ext_resource type="Texture2D" uid="uid://dt37r2qu48udm" path="res://resources/sprites/property_icons/attack.tres" id="1_dedip"]
+[ext_resource type="Script" uid="uid://clif8g3e1jjqw" path="res://scripts/elements/property.gd" id="1_hup37"]
+
+[resource]
+script = ExtResource("1_hup37")
+id = "Attack"
+icon = ExtResource("1_dedip")
+description = null
+property_id = 0
+stackable = true
+extinction = false
+has_grade_limit = false
+metadata/_custom_type_script = ExtResource("1_hup37")

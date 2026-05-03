@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=8 format=3 uid="uid://c3d2v7ifwhobf"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_lnm3o"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_hw235"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_p7m3o"]
+[ext_resource type="AudioStream" uid="uid://c26s1rny6sth2" path="res://resources/fxs/audio/sfx/combat/encounter.wav" id="4_p7m3o"]
+[ext_resource type="Resource" uid="uid://d01pqc1i7nfo0" path="res://resources/fxs/visual/vfx/explosion.tres" id="5_8k7bo"]
+
+[sub_resource type="Resource" id="Resource_el2nh"]
+script = ExtResource("1_lnm3o")
+amount = 0.0
+ratios = Dictionary[int, float]({
+3: 0.2,
+5: 0.4
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_r3nyn"]
+script = ExtResource("1_lnm3o")
+amount = 40.0
+ratios = Dictionary[int, float]({
+5: 0.2
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "IMPALE"
+script = ExtResource("3_p7m3o")
+attack_attribute = 2
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 30
+})
+icon = ExtResource("2_hw235")
+vfx = ExtResource("5_8k7bo")
+sfx = ExtResource("4_p7m3o")
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({
+1: 30,
+3: 0
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_lnm3o")]({})
+effects = Dictionary[int, ExtResource("1_lnm3o")]({
+0: SubResource("Resource_el2nh")
+})
+amount_effects = Dictionary[int, ExtResource("1_lnm3o")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_lnm3o")]({})
+target_effects = Dictionary[int, ExtResource("1_lnm3o")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_lnm3o")]({
+2: SubResource("Resource_r3nyn")
+})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

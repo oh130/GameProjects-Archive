@@ -1,0 +1,334 @@
+[gd_scene load_steps=19 format=3 uid="uid://b54rie8le8i3e"]
+
+[ext_resource type="Script" uid="uid://cf3nwvm8whlq0" path="res://scripts/autoloads/sub_info_layer.gd" id="1_8fnr3"]
+[ext_resource type="Resource" uid="uid://ms600r25vicx" path="res://resources/player_datas/default/counter.tres" id="2_4r4h5"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_f5y2y"]
+[ext_resource type="Texture2D" uid="uid://ljvsttqhudtx" path="res://resources/sprites/icons/stats/health.tres" id="2_wb245"]
+[ext_resource type="Texture2D" uid="uid://bvhool6lex8du" path="res://resources/sprites/icons/stats/max_energy.tres" id="3_eglbp"]
+[ext_resource type="Resource" uid="uid://cin6puxcrthbx" path="res://resources/player_datas/default/assist.tres" id="3_wb245"]
+[ext_resource type="Texture2D" uid="uid://0752wwv22k" path="res://resources/sprites/icons/stats/strength.tres" id="4_3n7ur"]
+[ext_resource type="Texture2D" uid="uid://ydog5ledkfy4" path="res://resources/sprites/icons/stats/intelligence.tres" id="5_uy0p4"]
+[ext_resource type="Texture2D" uid="uid://br5541fyh0w8q" path="res://resources/sprites/icons/stats/dexterity.tres" id="6_6hk45"]
+[ext_resource type="Texture2D" uid="uid://bql27ybwcfgel" path="res://resources/sprites/icons/stats/faith.tres" id="7_k68yj"]
+[ext_resource type="Texture2D" uid="uid://ru1xofca14iu" path="res://resources/sprites/icons/stats/crit.tres" id="8_4dfd2"]
+[ext_resource type="Texture2D" uid="uid://dge86k7b10mp0" path="res://resources/sprites/icons/stats/armor.tres" id="9_okktg"]
+[ext_resource type="Texture2D" uid="uid://tubkra2iexx" path="res://resources/sprites/icons/stats/dodge.tres" id="10_kdtqo"]
+[ext_resource type="Texture2D" uid="uid://t8ktudofgxlf" path="res://resources/sprites/icons/stats/armor_pen.tres" id="11_wk0xu"]
+[ext_resource type="Texture2D" uid="uid://1cjr8e6bepb8" path="res://resources/sprites/icons/statuses/exhaust.tres" id="14_t8ekk"]
+[ext_resource type="Texture2D" uid="uid://fottn28hgl5k" path="res://resources/sprites/icons/statuses/mark.tres" id="15_d1qbc"]
+[ext_resource type="Texture2D" uid="uid://dsbv505ns5hxh" path="res://resources/sprites/icons/statuses/wound.tres" id="16_qakqb"]
+[ext_resource type="Texture2D" uid="uid://bruh7x8rcufx7" path="res://resources/sprites/icons/statuses/fracture.tres" id="17_il1um"]
+
+[node name="SubInfoLayer" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_8fnr3")
+def_counter = ExtResource("2_4r4h5")
+def_assist = ExtResource("3_wb245")
+exist_state_icons = Dictionary[int, Texture2D]({
+0: ExtResource("3_eglbp"),
+1: ExtResource("16_qakqb"),
+2: ExtResource("14_t8ekk")
+})
+stance_icons = Dictionary[int, Texture2D]({
+0: ExtResource("4_3n7ur"),
+1: ExtResource("8_4dfd2"),
+2: ExtResource("10_kdtqo")
+})
+stat_icons = Dictionary[int, Texture2D]({
+0: ExtResource("2_wb245"),
+1: ExtResource("8_4dfd2"),
+2: ExtResource("2_wb245"),
+3: ExtResource("3_eglbp"),
+4: ExtResource("4_3n7ur"),
+5: ExtResource("5_uy0p4"),
+6: ExtResource("6_6hk45"),
+7: ExtResource("7_k68yj"),
+8: ExtResource("8_4dfd2"),
+9: ExtResource("8_4dfd2"),
+10: ExtResource("9_okktg"),
+11: ExtResource("10_kdtqo"),
+12: ExtResource("11_wk0xu"),
+13: ExtResource("11_wk0xu")
+})
+status_icons = Dictionary[int, Texture2D]({
+0: ExtResource("16_qakqb"),
+1: ExtResource("15_d1qbc"),
+2: ExtResource("17_il1um"),
+3: ExtResource("15_d1qbc"),
+4: ExtResource("16_qakqb"),
+5: ExtResource("14_t8ekk"),
+6: ExtResource("15_d1qbc"),
+7: ExtResource("14_t8ekk")
+})
+
+[node name="Indicators" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ItemTooltipBox" type="PanelContainer" parent="TopLayer"]
+unique_name_in_owner = true
+offset_left = 93.0
+offset_top = 2.0
+offset_right = 188.0
+offset_bottom = 77.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLayer/ItemTooltipBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/ItemTooltipBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ItemIDLabel" type="RichTextLabel" parent="TopLayer/ItemTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "[b]Name[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ItemDescLabel" type="RichTextLabel" parent="TopLayer/ItemTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "Description"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SkillTooltipBox" type="PanelContainer" parent="TopLayer"]
+unique_name_in_owner = true
+offset_left = 76.0
+offset_top = 90.0
+offset_right = 296.0
+offset_bottom = 252.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLayer/SkillTooltipBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/SkillTooltipBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="NameLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/bold_font_size = 17
+bbcode_enabled = true
+text = "[b]Skill 0[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="AttLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Nature"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="TargetLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Target"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 2
+
+[node name="InfoLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Energy 10"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SelfEffectLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Self"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="TargetEffectLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Target"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpecialEffectLabel" type="RichTextLabel" parent="TopLayer/SkillTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Target"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="StatusTooltipBox" type="PanelContainer" parent="TopLayer"]
+unique_name_in_owner = true
+offset_left = 409.0
+offset_top = 17.0
+offset_right = 483.0
+offset_bottom = 69.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLayer/StatusTooltipBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/StatusTooltipBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="StatusIDLabel" type="RichTextLabel" parent="TopLayer/StatusTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+text = "[b]Name[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="StatusDescLabel" type="RichTextLabel" parent="TopLayer/StatusTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Description"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EnhancementTooltipBox" type="PanelContainer" parent="TopLayer"]
+unique_name_in_owner = true
+offset_left = 362.0
+offset_top = 155.0
+offset_right = 436.0
+offset_bottom = 207.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLayer/EnhancementTooltipBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLayer/EnhancementTooltipBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="EnhancementIDLabel" type="RichTextLabel" parent="TopLayer/EnhancementTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+text = "[b]Name[/b]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EnhancementDescLabel" type="RichTextLabel" parent="TopLayer/EnhancementTooltipBox/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Description"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AbilityTooltipBox" type="PanelContainer" parent="TopLayer"]
+unique_name_in_owner = true
+offset_left = 355.0
+offset_top = 225.0
+offset_right = 429.0
+offset_bottom = 277.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TopLayer/AbilityTooltipBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="AbilityDescLabel" type="RichTextLabel" parent="TopLayer/AbilityTooltipBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_f5y2y")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Description"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

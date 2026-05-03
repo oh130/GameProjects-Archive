@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://j8cevjpcjjkt"]
+
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_v13pf"]
+[ext_resource type="Script" uid="uid://bnnc0jkxpnc4l" path="res://scripts/stage/stage_component/paint_call.gd" id="2_cjckj"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_vmloe"]
+
+[node name="PaintCall" type="Button"]
+custom_minimum_size = Vector2(80, 130)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1200.0
+offset_bottom = -590.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_v13pf")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("2_cjckj")
+
+[node name="Ink" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 17.0
+offset_top = 95.0
+offset_right = 63.0
+offset_bottom = 115.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Ink"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("1_v13pf")
+expand_mode = 1
+
+[node name="InkCost" type="Label" parent="Ink"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_vmloe")
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

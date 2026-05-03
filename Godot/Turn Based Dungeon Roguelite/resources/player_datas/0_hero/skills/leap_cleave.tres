@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=9 format=3 uid="uid://5ldbdajud7rg"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_0stnn"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_bdd6p"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_pf4vw"]
+[ext_resource type="AudioStream" uid="uid://buq2pujbur01j" path="res://resources/fxs/audio/sfx/combat/slash.wav" id="5_mt7ig"]
+[ext_resource type="Resource" uid="uid://b41nqnlx4c5ni" path="res://resources/fxs/visual/vfx/impact_minimal.tres" id="6_6vq2a"]
+
+[sub_resource type="Resource" id="Resource_pinl3"]
+script = ExtResource("1_0stnn")
+amount = 0.0
+ratios = Dictionary[int, float]({
+3: 0.4,
+5: 0.2
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_0stnn"]
+script = ExtResource("1_0stnn")
+amount = 0.0
+ratios = Dictionary[int, float]({
+3: 0.2
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_bdd6p"]
+script = ExtResource("1_0stnn")
+amount = 10.0
+ratios = Dictionary[int, float]({
+3: 0.1
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "LEAP_CLEAVE"
+script = ExtResource("3_pf4vw")
+attack_attribute = 1
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 0
+})
+icon = ExtResource("2_bdd6p")
+vfx = ExtResource("6_6vq2a")
+sfx = ExtResource("5_mt7ig")
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({
+1: 10
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_0stnn")]({})
+effects = Dictionary[int, ExtResource("1_0stnn")]({
+0: SubResource("Resource_pinl3"),
+1: SubResource("Resource_0stnn")
+})
+amount_effects = Dictionary[int, ExtResource("1_0stnn")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_0stnn")]({})
+target_effects = Dictionary[int, ExtResource("1_0stnn")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_0stnn")]({
+1: SubResource("Resource_bdd6p")
+})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

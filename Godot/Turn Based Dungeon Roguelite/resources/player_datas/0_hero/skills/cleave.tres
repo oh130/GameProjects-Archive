@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=7 format=3 uid="uid://c8ogn20f0575s"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_ou1e7"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_kvpn1"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_xne0k"]
+[ext_resource type="AudioStream" uid="uid://buq2pujbur01j" path="res://resources/fxs/audio/sfx/combat/slash.wav" id="5_xne0k"]
+[ext_resource type="Resource" uid="uid://b41nqnlx4c5ni" path="res://resources/fxs/visual/vfx/impact_minimal.tres" id="6_arlhp"]
+
+[sub_resource type="Resource" id="Resource_eh1a6"]
+script = ExtResource("1_ou1e7")
+amount = 0.0
+ratios = Dictionary[int, float]({
+3: 0.5,
+5: 0.3
+})
+metadata/_custom_type_script = ExtResource("1_ou1e7")
+
+[resource]
+resource_name = "CLEAVE"
+script = ExtResource("3_xne0k")
+attack_attribute = 1
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 0
+})
+icon = ExtResource("2_kvpn1")
+vfx = ExtResource("6_arlhp")
+sfx = ExtResource("5_xne0k")
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_ou1e7")]({})
+effects = Dictionary[int, ExtResource("1_ou1e7")]({
+0: SubResource("Resource_eh1a6")
+})
+amount_effects = Dictionary[int, ExtResource("1_ou1e7")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_ou1e7")]({})
+target_effects = Dictionary[int, ExtResource("1_ou1e7")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_ou1e7")]({})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

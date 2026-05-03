@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://dpuewviklsi3n"]
+
+[ext_resource type="Texture2D" uid="uid://ceciu751r1c5e" path="res://resources/items/sprites/consumables/herb.tres" id="1_2abrw"]
+[ext_resource type="Script" uid="uid://c65kvtad4o6j7" path="res://scripts/run/items/item.gd" id="1_w78mu"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="3_2abrw"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_w4exh"]
+
+[resource]
+resource_name = "BANDAGE"
+script = ExtResource("3_2abrw")
+area = 0
+passives = Array[ExtResource("3_w4exh")]([])
+icon = ExtResource("1_2abrw")
+metadata/_custom_type_script = ExtResource("1_w78mu")

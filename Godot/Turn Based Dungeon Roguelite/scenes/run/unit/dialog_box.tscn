@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr1wuhk6nogda"]
+
+[ext_resource type="Script" uid="uid://f6th4g1ulebu" path="res://scripts/run/dialog_box.gd" id="1_c7xr3"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_pe7it"]
+[ext_resource type="Texture2D" uid="uid://chj88b8tiltmc" path="res://resources/sprites/speech_bubble.png" id="2_xgw8m"]
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c7xr3")
+
+[node name="Bubble" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 130)
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 65.0
+texture = ExtResource("2_xgw8m")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Bubble"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -10.5
+offset_right = 60.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_pe7it")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "dialogue, dialogue. dialogue, dialogue.dialogue, dialogue.dialogue, dialogue. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+autowrap_mode = 1
+visible_characters = 33
+visible_ratio = 0.291
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 3.0
+one_shot = true

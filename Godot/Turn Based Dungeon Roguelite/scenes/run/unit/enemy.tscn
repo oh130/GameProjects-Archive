@@ -1,0 +1,318 @@
+[gd_scene load_steps=26 format=3 uid="uid://bfhqm5m8p8mp8"]
+
+[ext_resource type="Script" uid="uid://clpf0wagfqrma" path="res://scripts/run/unit/enemy/enemy.gd" id="1_25ri2"]
+[ext_resource type="Shader" uid="uid://c2lu38op3xow0" path="res://resources/shader/extend_alpha.gdshader" id="2_jws2r"]
+[ext_resource type="Texture2D" uid="uid://brehendptkall" path="res://resources/enemies/enemy_datas/common/enemy/remnant/remnant.png" id="3_ivwuc"]
+[ext_resource type="Texture2D" uid="uid://dhlgrc1vmvybo" path="res://resources/sprites/icons/others/enemy_friendly.tres" id="7_ivwuc"]
+[ext_resource type="PackedScene" uid="uid://8wc7hoxyi7q1" path="res://scenes/run/unit/extended_bar.tscn" id="7_jws2r"]
+[ext_resource type="Texture2D" uid="uid://b5c1wv41bjc17" path="res://resources/sprites/icons/others/player_aim.tres" id="7_mkspo"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="7_vnuld"]
+[ext_resource type="Texture2D" uid="uid://d21xqncd8jyqa" path="res://resources/sprites/icons/others/enemy_aim.tres" id="8_ivwuc"]
+[ext_resource type="PackedScene" uid="uid://dexxpolw65vw5" path="res://scenes/run/unit/buff_container.tscn" id="9_jws2r"]
+[ext_resource type="PackedScene" uid="uid://di2bpr21g6j4l" path="res://scenes/run/unit/status_container.tscn" id="9_wcrvj"]
+[ext_resource type="Texture2D" uid="uid://dge86k7b10mp0" path="res://resources/sprites/icons/stats/armor.tres" id="10_25ri2"]
+[ext_resource type="Shader" uid="uid://bfj6opj4blpda" path="res://resources/shader/dotted_line.gdshader" id="11_b0r33"]
+[ext_resource type="Texture2D" uid="uid://4uu8bcwebdpf" path="res://resources/sprites/icons/others/dotted_line.png" id="12_tgfqe"]
+
+[sub_resource type="Animation" id="Animation_cmkoa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hpa1o"]
+resource_name = "death"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b0r33"]
+_data = {
+&"RESET": SubResource("Animation_cmkoa"),
+&"death": SubResource("Animation_hpa1o")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jws2r"]
+resource_local_to_scene = true
+shader = ExtResource("2_jws2r")
+shader_parameter/brightness = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkspo"]
+shader = ExtResource("11_b0r33")
+
+[sub_resource type="Animation" id="Animation_g6dju"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_v3h3a"]
+resource_name = "targetable_anim"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 3.14159, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyi5e"]
+_data = {
+&"RESET": SubResource("Animation_g6dju"),
+&"targetable_anim": SubResource("Animation_v3h3a")
+}
+
+[sub_resource type="Animation" id="Animation_jws2r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/IntentController/IntentIcon:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_25ri2"]
+resource_name = "intent"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/IntentController/IntentIcon:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ivwuc"]
+_data = {
+&"RESET": SubResource("Animation_jws2r"),
+&"intent": SubResource("Animation_25ri2")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25ri2"]
+bg_color = Color(0, 0, 1, 1)
+
+[node name="Enemy" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_25ri2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_b0r33")
+}
+
+[node name="Sprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_jws2r")
+position = Vector2(0, -75)
+texture = ExtResource("3_ivwuc")
+
+[node name="UI" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+
+[node name="InputController" type="Control" parent="UI"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = -80.0
+offset_top = -150.0
+offset_right = 80.0
+
+[node name="FocusParticle" type="CPUParticles2D" parent="UI"]
+unique_name_in_owner = true
+amount = 250
+lifetime = 1.5
+lifetime_randomness = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(80, 1)
+gravity = Vector2(0, -100)
+
+[node name="TargetingLine" type="Line2D" parent="UI"]
+unique_name_in_owner = true
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_mkspo")
+points = PackedVector2Array(0, 0, 0, 0)
+width = 25.0
+texture = ExtResource("12_tgfqe")
+texture_mode = 1
+
+[node name="TargetableIcon" type="Sprite2D" parent="UI"]
+unique_name_in_owner = true
+position = Vector2(0, -146)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_mkspo")
+
+[node name="TargetableAnim" type="AnimationPlayer" parent="UI/TargetableIcon"]
+libraries = {
+&"": SubResource("AnimationLibrary_uyi5e")
+}
+autoplay = "targetable_anim"
+
+[node name="IntentController" type="Control" parent="UI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -336.0
+offset_right = 40.0
+offset_bottom = -256.0
+
+[node name="IntentIcon" type="TextureRect" parent="UI/IntentController"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(40, 40)
+texture = ExtResource("7_ivwuc")
+expand_mode = 1
+
+[node name="IntentAnim" type="AnimationPlayer" parent="UI/IntentController"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ivwuc")
+}
+autoplay = "intent"
+
+[node name="SpecialAbilityIcon" type="TextureRect" parent="UI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -110.0
+offset_right = -80.0
+offset_bottom = 30.0
+texture = ExtResource("8_ivwuc")
+expand_mode = 1
+
+[node name="EnergyBar" parent="UI" instance=ExtResource("7_jws2r")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -80.0
+offset_top = 15.0
+offset_right = 80.0
+offset_bottom = 30.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_25ri2")
+
+[node name="BuffContainer" parent="UI" instance=ExtResource("9_jws2r")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StatusContainer" parent="UI" instance=ExtResource("9_wcrvj")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -80.0
+offset_top = 30.0
+offset_right = 80.0
+offset_bottom = 85.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HealthBar" parent="UI" instance=ExtResource("7_jws2r")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 15.0
+
+[node name="ShieldLabel" type="Label" parent="UI/HealthBar"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.978125
+anchor_top = 0.2
+anchor_right = 0.978125
+anchor_bottom = 0.2
+offset_left = -13.5
+offset_top = -6.0
+offset_right = 16.5
+offset_bottom = 15.0
+size_flags_vertical = 1
+theme = ExtResource("7_vnuld")
+text = "311"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ShieldIcon" type="TextureRect" parent="UI/HealthBar/ShieldLabel"]
+show_behind_parent = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_25ri2")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,143 @@
+[gd_scene load_steps=14 format=3 uid="uid://b2sn8g3s2peos"]
+
+[ext_resource type="Script" path="res://script/primary_script/status_controller.gd" id="1_s2l72"]
+[ext_resource type="Texture2D" uid="uid://bqykwa8bmkmj6" path="res://images/anim_textures/player/orc.png" id="2_vkab3"]
+[ext_resource type="PackedScene" uid="uid://b0lecsvf51x33" path="res://scene/instances/status_effect_icon.tscn" id="3_v7sbx"]
+[ext_resource type="Texture2D" uid="uid://b80durdstdkos" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Water_water pool.png" id="4_y0mjj"]
+[ext_resource type="Texture2D" uid="uid://e4ujv7tlrkeu" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Swamp_house.png" id="5_2epdl"]
+[ext_resource type="Texture2D" uid="uid://co6ws763ggjne" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Grass_grass.png" id="6_ovfio"]
+[ext_resource type="Texture2D" uid="uid://cx4kd7jno5adf" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Grass_flowers yellow.png" id="7_yyrmo"]
+[ext_resource type="Texture2D" uid="uid://cwwkgyh3a402k" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Grass_flowers purple.png" id="8_75knu"]
+[ext_resource type="Texture2D" uid="uid://gxo88vlu57eh" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Grass_trees.png" id="9_cjwcv"]
+[ext_resource type="Texture2D" uid="uid://ym5vnj6yex14" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Snow_flat field.png" id="10_8i0rx"]
+[ext_resource type="Texture2D" uid="uid://l4pkdctfrio2" path="res://images/portraits/enemy/bear.png" id="11_o53pm"]
+[ext_resource type="Texture2D" uid="uid://bp50b0yfk22cq" path="res://sprite/tiles/Zechs-Hex-PointedTop-Tileset-v1/Hex-Point-Snow_rough field.png" id="12_1kv1o"]
+[ext_resource type="AnimationLibrary" uid="uid://bb0hytygvrwo" path="res://resources/unit_animation.res" id="12_a3vj1"]
+
+[node name="Unit" type="Node2D"]
+script = ExtResource("1_s2l72")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_vkab3")
+offset = Vector2(0, -9)
+hframes = 24
+frame = 1
+
+[node name="UnitUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="UnitUI"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 22.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Health" type="Label" parent="UnitUI/HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -5.5
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnergyBar" type="ProgressBar" parent="UnitUI"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 27.0
+offset_right = 60.0
+offset_bottom = 37.0
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Energy" type="Label" parent="UnitUI/EnergyBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.5
+offset_bottom = 6.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SEContainer" type="GridContainer" parent="UnitUI"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 0
+offset_left = -60.0
+offset_top = 37.0
+offset_right = 60.0
+offset_bottom = 97.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="Buff" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+
+[node name="Debuff" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_y0mjj")
+
+[node name="Targeted" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("5_2epdl")
+
+[node name="Exhausted" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_ovfio")
+
+[node name="Riposte" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_yyrmo")
+
+[node name="Assist" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("8_75knu")
+
+[node name="Guard" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("9_cjwcv")
+
+[node name="BeGuarded" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("10_8i0rx")
+
+[node name="Stealth" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("11_o53pm")
+
+[node name="Concentration" parent="UnitUI/SEContainer" instance=ExtResource("3_v7sbx")]
+visible = false
+layout_mode = 2
+texture = ExtResource("12_1kv1o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"unit_animation": ExtResource("12_a3vj1")
+}
+autoplay = "unit_animation/idle"

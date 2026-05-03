@@ -1,0 +1,162 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbey85lrgadhj"]
+
+[ext_resource type="Script" uid="uid://dv7hk6xjg356x" path="res://scripts/tavern/tavern.gd" id="1_5jmso"]
+[ext_resource type="AudioStream" uid="uid://wb0rxbhwu3ua" path="res://resources/fxs/audio/bgm/main.mp3" id="2_nnv1s"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_nnv1s"]
+[ext_resource type="Texture2D" uid="uid://ce680q8l0nw3q" path="res://resources/player_datas/0_hero/sprites/hero.png" id="6_ta2y0"]
+
+[node name="Tavern" type="Node" node_paths=PackedStringArray("roster_buttons", "delete_buttons")]
+script = ExtResource("1_5jmso")
+roster_buttons = [NodePath("VBoxContainer/HBoxContainer/VBoxContainer/Roster0"), NodePath("VBoxContainer/HBoxContainer/VBoxContainer2/Roster1"), NodePath("VBoxContainer/HBoxContainer/VBoxContainer3/Roster2")]
+delete_buttons = [NodePath("VBoxContainer/HBoxContainer/VBoxContainer/Delete0"), NodePath("VBoxContainer/HBoxContainer/VBoxContainer2/Delete1"), NodePath("VBoxContainer/HBoxContainer/VBoxContainer3/Delete2")]
+bgm = ExtResource("2_nnv1s")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_nnv1s")
+color = Color(0.00845815, 0.0169023, 0.0484081, 1)
+
+[node name="Entry" type="GridContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 16
+
+[node name="Info" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1280.0
+offset_right = -1280.0
+grow_horizontal = 0
+
+[node name="NameLabel" type="Label" parent="Info"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 990.0
+offset_top = 81.0
+offset_right = 1196.0
+offset_bottom = 102.0
+theme = ExtResource("3_nnv1s")
+text = "Name"
+horizontal_alignment = 2
+
+[node name="DescriptionLabel" type="Label" parent="Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+offset_left = 990.0
+offset_top = 106.0
+offset_right = 1196.0
+offset_bottom = 156.0
+theme = ExtResource("3_nnv1s")
+text = "Description"
+autowrap_mode = 3
+
+[node name="UnitPreview" type="TextureRect" parent="Info"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(640, 960)
+layout_mode = 1
+offset_left = 302.0
+offset_top = 156.0
+offset_right = 942.0
+offset_bottom = 1116.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_ta2y0")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -238.0
+offset_right = -60.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(250, 124)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Delete0" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "X"
+
+[node name="Roster0" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Delete1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "X"
+
+[node name="Roster1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Delete2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "X"
+
+[node name="Roster2" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 70)
+layout_mode = 2
+theme = ExtResource("3_nnv1s")
+text = "START"
+
+[node name="MakeParty" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -72.0
+offset_right = 226.0
+offset_bottom = -31.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "MAKE_PARTY"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="start_button_clicked"]

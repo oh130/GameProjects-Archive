@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://swm3gbb2t2w3"
+path="res://.godot/imported/holong_heal.wav-a3ed2d606c0d9bd3561d4dfe928153a9.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Plant/holong_heal.wav"
+dest_files=["res://.godot/imported/holong_heal.wav-a3ed2d606c0d9bd3561d4dfe928153a9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

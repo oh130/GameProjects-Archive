@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VFX" load_steps=3 format=3 uid="uid://q5vg42ggs4w4"]
+
+[ext_resource type="Script" uid="uid://cjufum14sbvdp" path="res://scripts/ui/vfx.gd" id="1_d6xdc"]
+[ext_resource type="Texture2D" uid="uid://bb5ur1avq4n1f" path="res://resources/fxs/visual/sprites/energy_charge.png" id="2_455wt"]
+
+[resource]
+script = ExtResource("1_d6xdc")
+texture = ExtResource("2_455wt")
+hframes = 9
+vframes = 7
+frame_count = 60
+metadata/_custom_type_script = "uid://cjufum14sbvdp"

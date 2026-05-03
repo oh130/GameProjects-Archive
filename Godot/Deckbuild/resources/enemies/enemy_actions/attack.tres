@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyAction" load_steps=2 format=3 uid="uid://ypxobtmekoti"]
+
+[ext_resource type="Script" path="res://scripts/enemy/enemy_action.gd" id="1_k3all"]
+
+[resource]
+script = ExtResource("1_k3all")
+action_id = 0
+associated_value = 5
+wait_tick = 4
+is_conditional = false
+metadata/_custom_type_script = ExtResource("1_k3all")

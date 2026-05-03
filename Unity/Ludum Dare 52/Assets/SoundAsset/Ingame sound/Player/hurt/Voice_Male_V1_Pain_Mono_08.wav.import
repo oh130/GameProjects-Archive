@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wmwvs2stsnpp"
+path="res://.godot/imported/Voice_Male_V1_Pain_Mono_08.wav-9ab82c5fa7b506d2faf90cb4ce613dfc.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Player/hurt/Voice_Male_V1_Pain_Mono_08.wav"
+dest_files=["res://.godot/imported/Voice_Male_V1_Pain_Mono_08.wav-9ab82c5fa7b506d2faf90cb4ce613dfc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

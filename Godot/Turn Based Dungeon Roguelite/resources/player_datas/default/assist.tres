@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=6 format=3 uid="uid://cin6puxcrthbx"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_o0q24"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="2_m417p"]
+[ext_resource type="AudioStream" uid="uid://bp1dgstn42lfk" path="res://resources/fxs/audio/sfx/combat/21_Debuff_01.wav" id="3_jc338"]
+[ext_resource type="Resource" uid="uid://c2mnqu3jbxhev" path="res://resources/fxs/visual/vfx/explosion2.tres" id="4_182q3"]
+
+[sub_resource type="Resource" id="Resource_o0q24"]
+script = ExtResource("1_o0q24")
+amount = 0.0
+ratios = Dictionary[int, float]({
+2: 0.2,
+3: 0.2,
+4: 0.2,
+5: 0.2
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+script = ExtResource("2_m417p")
+attack_attribute = 0
+stat_mods = Dictionary[int, int]({
+6: 0,
+7: 0,
+10: 0,
+11: 0
+})
+vfx = ExtResource("4_182q3")
+sfx = ExtResource("3_jc338")
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({
+1: 5
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_o0q24")]({})
+effects = Dictionary[int, ExtResource("1_o0q24")]({
+0: SubResource("Resource_o0q24")
+})
+amount_effects = Dictionary[int, ExtResource("1_o0q24")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_o0q24")]({})
+target_effects = Dictionary[int, ExtResource("1_o0q24")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_o0q24")]({})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

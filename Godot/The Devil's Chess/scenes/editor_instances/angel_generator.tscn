@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://djf4voal8wdtt"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_4rm1b"]
+[ext_resource type="Texture2D" uid="uid://cmf1dnj1d55yr" path="res://resources/sprites/enemies/1.png" id="2_sdiaw"]
+[ext_resource type="Script" uid="uid://ch6yyfmpjbw1a" path="res://scripts/level_editor/angel_generator.gd" id="3_54dnq"]
+
+[node name="AngelGenerator" type="Button"]
+custom_minimum_size = Vector2(66, 66)
+theme = ExtResource("1_4rm1b")
+icon = ExtResource("2_sdiaw")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_54dnq")

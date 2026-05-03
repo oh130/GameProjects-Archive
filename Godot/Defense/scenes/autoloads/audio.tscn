@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfmwxfu7mue0s"]
+
+[ext_resource type="Script" uid="uid://briwuvq84kl6n" path="res://scripts/autoloads/audio.gd" id="1_16qo4"]
+
+[node name="Audio" type="Node"]
+process_mode = 3
+script = ExtResource("1_16qo4")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = 10.0
+bus = &"BGM"
+
+[node name="SFXs" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX0" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX1" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX2" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX3" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"
+
+[node name="SFX4" type="AudioStreamPlayer" parent="SFXs"]
+bus = &"SFX"

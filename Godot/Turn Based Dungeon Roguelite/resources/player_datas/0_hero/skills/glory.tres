@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=7 format=3 uid="uid://3xhy6hhwk8li"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_8pa6r"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_y64rs"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_em1ao"]
+[ext_resource type="AudioStream" uid="uid://cs22ykummshbm" path="res://resources/fxs/audio/sfx/combat/18_Thunder_02.wav" id="5_t52eb"]
+[ext_resource type="Resource" uid="uid://c2mnqu3jbxhev" path="res://resources/fxs/visual/vfx/explosion2.tres" id="6_wpuwu"]
+
+[sub_resource type="Resource" id="Resource_3frqc"]
+script = ExtResource("1_8pa6r")
+amount = 0.0
+ratios = Dictionary[int, float]({
+6: 0.1,
+9: 0.1
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "GLORY"
+script = ExtResource("3_em1ao")
+attack_attribute = 0
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 0
+})
+icon = ExtResource("2_y64rs")
+vfx = ExtResource("6_wpuwu")
+sfx = ExtResource("5_t52eb")
+repeat_time = 1
+target = 2
+costs = Dictionary[int, int]({
+1: 10
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_8pa6r")]({})
+effects = Dictionary[int, ExtResource("1_8pa6r")]({
+4: SubResource("Resource_3frqc")
+})
+amount_effects = Dictionary[int, ExtResource("1_8pa6r")]({})
+special_effects = Array[int]([0])
+target_gain_statuses = Dictionary[int, ExtResource("1_8pa6r")]({})
+target_effects = Dictionary[int, ExtResource("1_8pa6r")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_8pa6r")]({})
+target_special_effects = Array[int]([0])
+metadata/_custom_type_script = "uid://bqauayub3315l"

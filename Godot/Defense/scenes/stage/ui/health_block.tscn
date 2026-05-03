@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ujr6fodet27"]
+
+[ext_resource type="Texture2D" uid="uid://drby5yeartkql" path="res://resources/sprites/white.png" id="1_cprer"]
+
+[node name="HealthBlock" type="TextureRect"]
+self_modulate = Color(0, 1, 0, 1)
+custom_minimum_size = Vector2(10, 10)
+mouse_filter = 2
+texture = ExtResource("1_cprer")
+expand_mode = 1

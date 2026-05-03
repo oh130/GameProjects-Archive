@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://j8crybdsdtws"
+path="res://.godot/imported/dead.ogg-1e9f6b44d154eafdab50fe64693c631b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Zombie/dead.ogg"
+dest_files=["res://.godot/imported/dead.ogg-1e9f6b44d154eafdab50fe64693c631b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

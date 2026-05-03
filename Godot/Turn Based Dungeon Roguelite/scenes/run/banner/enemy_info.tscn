@@ -1,0 +1,299 @@
+[gd_scene load_steps=14 format=3 uid="uid://c2o4rfo261xnj"]
+
+[ext_resource type="Script" uid="uid://cddt6f1mmrxre" path="res://scripts/run/unit/enemy/enemy_info.gd" id="1_sv2ej"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_35w6d"]
+[ext_resource type="Texture2D" uid="uid://bhoaj02cc2nux" path="res://resources/sprites/icons/attributes/blunt.tres" id="4_sm1gw"]
+[ext_resource type="Texture2D" uid="uid://dfqbsg5i17v17" path="res://resources/sprites/icons/attributes/weak.tres" id="5_sdx7e"]
+[ext_resource type="Texture2D" uid="uid://b3sks5g017dd" path="res://resources/sprites/icons/attributes/slash.tres" id="6_iw3cq"]
+[ext_resource type="Texture2D" uid="uid://b0lhq48mteoir" path="res://resources/sprites/icons/attributes/nature.tres" id="8_r5toa"]
+[ext_resource type="Texture2D" uid="uid://b72wko88bnr60" path="res://resources/sprites/icons/icon_atlas.png" id="9_uf6k5"]
+[ext_resource type="Texture2D" uid="uid://dpmaamqq6nitq" path="res://resources/sprites/icons/attributes/mystic.tres" id="10_ofvp4"]
+[ext_resource type="Texture2D" uid="uid://0752wwv22k" path="res://resources/sprites/icons/stats/strength.tres" id="11_iw3cq"]
+[ext_resource type="Texture2D" uid="uid://dge86k7b10mp0" path="res://resources/sprites/icons/stats/armor.tres" id="12_gxi6c"]
+[ext_resource type="Texture2D" uid="uid://t8ktudofgxlf" path="res://resources/sprites/icons/stats/armor_pen.tres" id="13_r5toa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52pin"]
+atlas = ExtResource("9_uf6k5")
+region = Rect2(720, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sur1v"]
+atlas = ExtResource("9_uf6k5")
+region = Rect2(1080, 0, 360, 360)
+
+[node name="EnemyInfo" type="ColorRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 160)
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0.151276, 0.151276, 0.151276, 1)
+script = ExtResource("1_sv2ej")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Stats" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("11_iw3cq")
+expand_mode = 1
+
+[node name="Power" type="Label" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_35w6d")
+theme_override_font_sizes/font_size = 12
+text = "444"
+vertical_alignment = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer6"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("12_gxi6c")
+expand_mode = 1
+
+[node name="Armor" type="Label" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_35w6d")
+theme_override_font_sizes/font_size = 12
+text = "444(44%)"
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Stats"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer9"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("13_r5toa")
+expand_mode = 1
+
+[node name="ArmorPen" type="Label" parent="VBoxContainer/HBoxContainer/Stats/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_35w6d")
+theme_override_font_sizes/font_size = 12
+text = "32345"
+vertical_alignment = 1
+
+[node name="Attributes" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes"]
+layout_mode = 2
+
+[node name="Vb" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_sm1gw")
+expand_mode = 1
+
+[node name="ImpactWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 50.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Impact" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vb2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_iw3cq")
+expand_mode = 1
+
+[node name="SlashWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb2/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Slash" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vb3" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb3"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_52pin")
+expand_mode = 1
+
+[node name="PierceWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb3/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Pierce" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer/Vb3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes"]
+layout_mode = 2
+
+[node name="Vb4" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb4"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_r5toa")
+expand_mode = 1
+
+[node name="NatureWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb4/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Nature" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb4"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vb5" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb5"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_sur1v")
+expand_mode = 1
+
+[node name="ArcaneWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb5/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Arcane" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb5"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vb6" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb6"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_ofvp4")
+expand_mode = 1
+
+[node name="MysticWeakIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb6/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 30.0
+texture = ExtResource("5_sdx7e")
+expand_mode = 1
+
+[node name="Mystic" type="Label" parent="VBoxContainer/HBoxContainer/Attributes/HBoxContainer2/Vb6"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "+444%"
+horizontal_alignment = 1
+vertical_alignment = 1

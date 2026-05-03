@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyGroup" load_steps=4 format=3 uid="uid://b4iuj66d8q3qk"]
+
+[ext_resource type="Script" uid="uid://jd10342strmo" path="res://scripts/run/unit/enemy/enemy_data.gd" id="1_wurte"]
+[ext_resource type="Resource" uid="uid://ddyg2rtirnotp" path="res://resources/enemies/enemy_datas/common/enemy/remnant/remnant.tres" id="2_1jl7r"]
+[ext_resource type="Script" uid="uid://cdebhp8hsa0vg" path="res://scripts/run/unit/enemy/enemy_group.gd" id="2_o3rm8"]
+
+[resource]
+resource_name = "ENEMY_GROUP0"
+script = ExtResource("2_o3rm8")
+appear_chapter = "FOREST"
+enemy_list = Array[ExtResource("1_wurte")]([ExtResource("2_1jl7r"), ExtResource("2_1jl7r")])
+metadata/_custom_type_script = "uid://cdebhp8hsa0vg"

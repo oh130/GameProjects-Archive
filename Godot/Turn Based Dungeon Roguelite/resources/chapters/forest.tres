@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Chapter" load_steps=5 format=3 uid="uid://puhn47dvrea7"]
+
+[ext_resource type="Texture2D" uid="uid://bddqa1ip1rxno" path="res://resources/sprites/backgrounds/forest.png" id="1_2rno3"]
+[ext_resource type="Script" uid="uid://4qb1547h4qxo" path="res://scripts/run/special_resources/chapter.gd" id="1_jsn44"]
+[ext_resource type="AudioStream" uid="uid://bap148xc0hr17" path="res://resources/fxs/audio/bgm/exploration.ogg" id="2_7dbrk"]
+[ext_resource type="AudioStream" uid="uid://6kdfmmf75ip8" path="res://resources/fxs/audio/bgm/combat.ogg" id="3_y2akp"]
+
+[resource]
+resource_name = "FOREST"
+script = ExtResource("1_jsn44")
+background = ExtResource("1_2rno3")
+bgm = ExtResource("2_7dbrk")
+combat_bgm = ExtResource("3_y2akp")
+elite_bgm = ExtResource("3_y2akp")
+boss_bgm = ExtResource("3_y2akp")
+metadata/_custom_type_script = "uid://4qb1547h4qxo"

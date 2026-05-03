@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="PoolRes" load_steps=54 format=3 uid="uid://bt4j2qt8hvmnq"]
+
+[ext_resource type="Script" uid="uid://cdebhp8hsa0vg" path="res://scripts/run/unit/enemy/enemy_group.gd" id="1_xh10y"]
+[ext_resource type="Script" uid="uid://4qb1547h4qxo" path="res://scripts/run/special_resources/chapter.gd" id="2_aoef1"]
+[ext_resource type="Resource" uid="uid://puhn47dvrea7" path="res://resources/chapters/forest.tres" id="3_y8rcb"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="4_5dltv"]
+[ext_resource type="Resource" uid="uid://cdw086ctldo32" path="res://resources/items/consumables/0_orb_of_memory.tres" id="5_i5deo"]
+[ext_resource type="Resource" uid="uid://x7kji2wo8nix" path="res://resources/items/consumables/10_slippery_oil.tres" id="6_tiywr"]
+[ext_resource type="Resource" uid="uid://k35p6uwojrnx" path="res://resources/items/consumables/11_charm_pouch.tres" id="7_3bepx"]
+[ext_resource type="Resource" uid="uid://cgmlevdlmpbjm" path="res://resources/items/consumables/12_explosive_powder.tres" id="8_whm54"]
+[ext_resource type="Resource" uid="uid://d1s47t8rqyh4w" path="res://resources/items/consumables/13_red_abrasive.tres" id="9_pwvci"]
+[ext_resource type="Resource" uid="uid://cr0qxvvqjosfl" path="res://resources/items/consumables/14_blue_abrasive.tres" id="10_wv158"]
+[ext_resource type="Resource" uid="uid://cmvy1v2x1yfu8" path="res://resources/items/consumables/15_glass_shield.tres" id="11_eb0kc"]
+[ext_resource type="Resource" uid="uid://6rac1ax7qlyh" path="res://resources/items/consumables/1_droplet_of_mastery.tres" id="12_tv27s"]
+[ext_resource type="Resource" uid="uid://dpuewviklsi3n" path="res://resources/items/consumables/2_bandage.tres" id="13_0by1x"]
+[ext_resource type="Resource" uid="uid://dhwo4hxrfmeys" path="res://resources/items/consumables/3_tea_leaves.tres" id="14_bcv7u"]
+[ext_resource type="Resource" uid="uid://cmktq544ymhs6" path="res://resources/items/consumables/4_herbal_root.tres" id="15_tbo8g"]
+[ext_resource type="Resource" uid="uid://dbfuisa4mul8i" path="res://resources/items/consumables/5_liquid_stone.tres" id="16_004xa"]
+[ext_resource type="Resource" uid="uid://c4imrjl021djd" path="res://resources/items/consumables/6_glowing_rune.tres" id="17_y4n8w"]
+[ext_resource type="Resource" uid="uid://c8hylvnm4qrj" path="res://resources/items/consumables/7_useful_feather.tres" id="18_qjv6v"]
+[ext_resource type="Resource" uid="uid://rlaf6ms7m2ch" path="res://resources/items/consumables/8_holy_water.tres" id="19_t0etd"]
+[ext_resource type="Resource" uid="uid://b6k5eeufkhji5" path="res://resources/items/consumables/9_sewing_kit.tres" id="20_1ao1x"]
+[ext_resource type="Script" uid="uid://bv8kapam5i7kt" path="res://scripts/run/encounter/encounter_data.gd" id="21_4jjk1"]
+[ext_resource type="Resource" uid="uid://dnob24uswegj" path="res://resources/encounters/encounter0.tres" id="22_uu4a3"]
+[ext_resource type="Resource" uid="uid://b4iuj66d8q3qk" path="res://resources/enemies/groups/enemy_groups/enemy_group0.tres" id="23_eegeb"]
+[ext_resource type="Script" uid="uid://dr63122wear36" path="res://scripts/run/unit/player/player_data.gd" id="24_1wllh"]
+[ext_resource type="Resource" uid="uid://bow4iqre4ajoj" path="res://resources/players/0_hero.tres" id="25_ami30"]
+[ext_resource type="Resource" uid="uid://fe1rpgb5h43a" path="res://resources/players/1_astrologist.tres" id="26_m31um"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="27_tpotf"]
+[ext_resource type="Resource" uid="uid://3f32swntxs37" path="res://resources/items/equipments/rare/0_dragonblood.tres" id="28_7qmao"]
+[ext_resource type="Resource" uid="uid://cexjh5gry5pd7" path="res://resources/items/equipments/rare/10_oxygen_respirator.tres" id="29_ym2yn"]
+[ext_resource type="Resource" uid="uid://dcuoi16ckixfi" path="res://resources/items/equipments/rare/11_unrestricted.tres" id="30_vg1x7"]
+[ext_resource type="Resource" uid="uid://knhtc2mv7kke" path="res://resources/items/equipments/rare/1_quicksilver_choker.tres" id="31_o60j7"]
+[ext_resource type="Resource" uid="uid://dyacsj506wh37" path="res://resources/items/equipments/rare/2_mark_of_ruin.tres" id="32_kjsht"]
+[ext_resource type="Resource" uid="uid://d3h10sonif6av" path="res://resources/items/equipments/rare/3_grimoire.tres" id="33_cnbau"]
+[ext_resource type="Resource" uid="uid://dylycpwif4fm2" path="res://resources/items/equipments/rare/4_heartseeker.tres" id="34_lhr8o"]
+[ext_resource type="Resource" uid="uid://b033ynp2oq5kp" path="res://resources/items/equipments/rare/5_merciless_judgment.tres" id="35_bfvum"]
+[ext_resource type="Resource" uid="uid://cq5qe0fs33hv8" path="res://resources/items/equipments/rare/6_executioners_revolver.tres" id="36_ircps"]
+[ext_resource type="Resource" uid="uid://bh022bylbbn4x" path="res://resources/items/equipments/rare/7_oak_longbow.tres" id="37_cqtc7"]
+[ext_resource type="Resource" uid="uid://clpi58sk03c7d" path="res://resources/items/equipments/rare/8_cleave_of_darkness.tres" id="38_qfgxd"]
+[ext_resource type="Resource" uid="uid://lld18nyxnmwp" path="res://resources/items/equipments/rare/9_benevolent_warmth.tres" id="39_6f34i"]
+[ext_resource type="Script" uid="uid://bvjy5pfgldn0f" path="res://scripts/run/special_resources/pool_res.gd" id="40_r3i3g"]
+[ext_resource type="Resource" uid="uid://ck5h4tfexj6nd" path="res://resources/items/equipments/uncommon/0_chain_belt.tres" id="41_jo7ck"]
+[ext_resource type="Resource" uid="uid://tyhilnic7dvp" path="res://resources/items/equipments/uncommon/10_acid_whetstone.tres" id="42_04c3d"]
+[ext_resource type="Resource" uid="uid://dwer14s0nt118" path="res://resources/items/equipments/uncommon/11_modern_polisher.tres" id="43_xvi5j"]
+[ext_resource type="Resource" uid="uid://hejpaacv5msr" path="res://resources/items/equipments/uncommon/12_jeweled_sash.tres" id="44_jxnq1"]
+[ext_resource type="Resource" uid="uid://b0v8eddn5xjiv" path="res://resources/items/equipments/uncommon/1_amulet_of_enlightenment.tres" id="45_6ovmm"]
+[ext_resource type="Resource" uid="uid://dn3bvdrlpm3dw" path="res://resources/items/equipments/uncommon/2_giants_gauntlet.tres" id="46_lk5y2"]
+[ext_resource type="Resource" uid="uid://20rumv4egob7" path="res://resources/items/equipments/uncommon/3_archmage_hat.tres" id="47_pd81m"]
+[ext_resource type="Resource" uid="uid://saxlr8qcsnpu" path="res://resources/items/equipments/uncommon/4_shadow_earring.tres" id="48_c6k04"]
+[ext_resource type="Resource" uid="uid://bvu0g0tb0toj" path="res://resources/items/equipments/uncommon/5_nameless_relic.tres" id="49_hoig1"]
+[ext_resource type="Resource" uid="uid://d0el7r0mvrfl" path="res://resources/items/equipments/uncommon/6_dazzling_ring.tres" id="50_uuwpw"]
+[ext_resource type="Resource" uid="uid://xyhx4cyunqqa" path="res://resources/items/equipments/uncommon/7_spiked_bracelet.tres" id="51_3ay01"]
+[ext_resource type="Resource" uid="uid://c605b4fe3iru8" path="res://resources/items/equipments/uncommon/8_iron_greaves.tres" id="52_q2cpq"]
+[ext_resource type="Resource" uid="uid://x8fattq5dj87" path="res://resources/items/equipments/uncommon/9_phantom_clock.tres" id="53_xpgep"]
+
+[resource]
+script = ExtResource("40_r3i3g")
+player_pool = Array[ExtResource("24_1wllh")]([ExtResource("25_ami30"), ExtResource("26_m31um")])
+uncommon_eq_pool = Array[ExtResource("27_tpotf")]([ExtResource("41_jo7ck"), ExtResource("42_04c3d"), ExtResource("43_xvi5j"), ExtResource("44_jxnq1"), ExtResource("45_6ovmm"), ExtResource("46_lk5y2"), ExtResource("47_pd81m"), ExtResource("48_c6k04"), ExtResource("49_hoig1"), ExtResource("50_uuwpw"), ExtResource("51_3ay01"), ExtResource("52_q2cpq"), ExtResource("53_xpgep")])
+rare_eq_pool = Array[ExtResource("27_tpotf")]([ExtResource("28_7qmao"), ExtResource("29_ym2yn"), ExtResource("30_vg1x7"), ExtResource("31_o60j7"), ExtResource("32_kjsht"), ExtResource("33_cnbau"), ExtResource("34_lhr8o"), ExtResource("35_bfvum"), ExtResource("36_ircps"), ExtResource("37_cqtc7"), ExtResource("38_qfgxd"), ExtResource("39_6f34i")])
+consumable_pool = Array[ExtResource("4_5dltv")]([ExtResource("5_i5deo"), ExtResource("6_tiywr"), ExtResource("7_3bepx"), ExtResource("8_whm54"), ExtResource("9_pwvci"), ExtResource("10_wv158"), ExtResource("11_eb0kc"), ExtResource("12_tv27s"), ExtResource("13_0by1x"), ExtResource("14_bcv7u"), ExtResource("15_tbo8g"), ExtResource("16_004xa"), ExtResource("17_y4n8w"), ExtResource("18_qjv6v"), ExtResource("19_t0etd"), ExtResource("20_1ao1x")])
+chapter_pool = Array[ExtResource("2_aoef1")]([ExtResource("3_y8rcb")])
+encounter_pool = Array[ExtResource("21_4jjk1")]([ExtResource("22_uu4a3")])
+enemy_group_pool = Array[ExtResource("1_xh10y")]([ExtResource("23_eegeb")])
+elite_group_pool = Array[ExtResource("1_xh10y")]([])
+boss_group_pool = Array[ExtResource("1_xh10y")]([])

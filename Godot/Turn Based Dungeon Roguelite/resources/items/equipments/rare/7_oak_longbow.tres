@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=10 format=3 uid="uid://bh022bylbbn4x"]
+
+[ext_resource type="Texture2D" uid="uid://be5e5gge802a8" path="res://resources/items/sprites/equipments/ring.tres" id="1_ngche"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="2_nift6"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_3pgsu"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="3_vfq45"]
+[ext_resource type="Script" uid="uid://15ooh8114era" path="res://scripts/run/combat/buff.gd" id="4_ak32o"]
+[ext_resource type="Script" uid="uid://cd55ces6c1oqx" path="res://scripts/run/special_resources/passives/buff_passive.gd" id="5_fhmjx"]
+
+[sub_resource type="Resource" id="Resource_dj2mx"]
+script = ExtResource("2_nift6")
+amount = 20.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_i4qex"]
+script = ExtResource("4_ak32o")
+temp_buff_end_timing = 21
+stat_buffs = Dictionary[int, ExtResource("2_nift6")]({
+3: SubResource("Resource_dj2mx")
+})
+metadata/_custom_type_script = "uid://15ooh8114era"
+
+[sub_resource type="Resource" id="Resource_1e2le"]
+script = ExtResource("5_fhmjx")
+buff = SubResource("Resource_i4qex")
+id = 0
+effect_timing = 17
+metadata/_custom_type_script = "uid://cd55ces6c1oqx"
+
+[resource]
+resource_name = "OAK_LONGBOW"
+script = ExtResource("3_vfq45")
+is_unique = false
+stats = Dictionary[int, ExtResource("2_nift6")]({})
+party_stats = Dictionary[int, int]({})
+passives = Array[ExtResource("3_3pgsu")]([SubResource("Resource_1e2le")])
+icon = ExtResource("1_ngche")
+metadata/_custom_type_script = "uid://cqlrpju4ijw7l"

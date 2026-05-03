@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b226v4n55gb8l"
+path="res://.godot/imported/nependes_attack.ogg-2175f1c3a4eea4feabc2bb0c59f99e2a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Plant/nependes_attack.ogg"
+dest_files=["res://.godot/imported/nependes_attack.ogg-2175f1c3a4eea4feabc2bb0c59f99e2a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

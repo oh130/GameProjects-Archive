@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://4ohxcvudixqq"
+path="res://.godot/imported/Z3-V2-Damaged-Free.mp3-9afbabfdd01bcc73db5daf5b54e53aa2.mp3str"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Zombie/hurt/Z3-V2-Damaged-Free.mp3"
+dest_files=["res://.godot/imported/Z3-V2-Damaged-Free.mp3-9afbabfdd01bcc73db5daf5b54e53aa2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

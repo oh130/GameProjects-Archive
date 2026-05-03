@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0uuy5r1iinoo"]
+
+[sub_resource type="GDScript" id="GDScript_i46xi"]
+script/source = "extends Node
+
+@export var atlas_texture: AtlasTexture
+@export var save_path: String = \"res://output_texture.png\"
+
+func _ready():
+	if atlas_texture:
+		save_atlas_texture_to_png(atlas_texture, save_path)
+	else:
+		print(\"AtlasTexture가 설정되지 않았습니다.\")
+
+func save_atlas_texture_to_png(atlas_texture: AtlasTexture, save_path: String) -> void:
+	var atlas = atlas_texture.atlas
+	var region = atlas_texture.region
+
+	if atlas == null:
+		print(\"AtlasTexture의 원본 텍스처를 찾을 수 없습니다.\")
+		return
+
+	var atlas_image = atlas.get_image()
+	if atlas_image == null:
+		print(\"원본 텍스처의 이미지 데이터를 가져올 수 없습니다.\")
+		return
+
+	var image = Image.create(region.size.x, region.size.y, false, Image.FORMAT_RGBA8)
+	if image == null:
+		print(\"이미지를 생성할 수 없습니다.\")
+		return
+
+	image.blit_rect(atlas_image, region, Vector2.ZERO)
+
+	var error = image.save_png(save_path)
+	if error == OK:
+		print(\"저장 완료:\", save_path)
+	else:
+		print(\"저장 실패:\", save_path)
+"
+
+[node name="SpriteGenerator" type="Node2D"]
+script = SubResource("GDScript_i46xi")
+save_path = "res://resources/sprites/icons/others/test.png"

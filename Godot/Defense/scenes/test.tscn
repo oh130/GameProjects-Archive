@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://nnqyc1xslffu"]
+
+[sub_resource type="GDScript" id="GDScript_vy7yo"]
+script/source = "extends Node2D
+
+@onready var button: Button = $Button
+
+
+
+
+func _on_button_mouse_entered() -> void:
+	print(111)
+"
+
+[node name="Node" type="Node2D"]
+script = SubResource("GDScript_vy7yo")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 100)
+offset_left = 177.0
+offset_top = 175.0
+offset_right = 185.0
+offset_bottom = 183.0
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]

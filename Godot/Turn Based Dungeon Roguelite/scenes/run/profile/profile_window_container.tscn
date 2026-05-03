@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0r5f7q8v73pd"]
+
+[ext_resource type="Script" uid="uid://8y8ksf1qqbq8" path="res://scripts/run/profile/profile_window_container.gd" id="1_pq726"]
+[ext_resource type="ButtonGroup" uid="uid://b0akn00e4g3cs" path="res://resources/ui/profile_button_group.tres" id="2_0txhn"]
+[ext_resource type="PackedScene" uid="uid://c3tfpyparxsfi" path="res://scenes/run/profile/profile_window.tscn" id="3_o1xn3"]
+
+[node name="ProfileWindowContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_pq726")
+
+[node name="Profiles" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ProfileWindow0" parent="Profiles" instance=ExtResource("3_o1xn3")]
+layout_mode = 1
+
+[node name="ProfileWindow1" parent="Profiles" instance=ExtResource("3_o1xn3")]
+visible = false
+layout_mode = 1
+
+[node name="ProfileWindow2" parent="Profiles" instance=ExtResource("3_o1xn3")]
+visible = false
+layout_mode = 1
+
+[node name="PlayerButtons" type="HBoxContainer" parent="Profiles"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -310.0
+offset_top = -50.0
+offset_right = 310.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Button0" type="Button" parent="Profiles/PlayerButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("2_0txhn")
+
+[node name="Button1" type="Button" parent="Profiles/PlayerButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+button_group = ExtResource("2_0txhn")
+
+[node name="Button2" type="Button" parent="Profiles/PlayerButtons"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+button_group = ExtResource("2_0txhn")
+
+[node name="HandleButton" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+offset_right = 60.0
+grow_vertical = 0
+toggle_mode = true
+text = "P"
+
+[connection signal="toggled" from="HandleButton" to="." method="_on_handle_button_toggled"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cs0f0wlyrb4hv"
+path="res://.godot/imported/Plain Paper UI.aseprite-6f5238f184a012d9661d2307521cf2d2.res"
+
+[deps]
+
+source_file="res://resources/sprites/level/Plain Paper UI.aseprite"
+dest_files=["res://.godot/imported/Plain Paper UI.aseprite-6f5238f184a012d9661d2307521cf2d2.res"]
+
+[params]
+

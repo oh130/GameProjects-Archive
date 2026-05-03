@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VFX" load_steps=3 format=3 uid="uid://y244a0dtkj67"]
+
+[ext_resource type="Script" uid="uid://cjufum14sbvdp" path="res://scripts/ui/vfx.gd" id="1_c5urs"]
+[ext_resource type="Texture2D" uid="uid://w441j7iejw3w" path="res://resources/fxs/visual/sprites/fire_ground.png" id="2_c5urs"]
+
+[resource]
+script = ExtResource("1_c5urs")
+texture = ExtResource("2_c5urs")
+hframes = 9
+vframes = 7
+frame_count = 60
+metadata/_custom_type_script = "uid://cjufum14sbvdp"

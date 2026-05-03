@@ -1,0 +1,208 @@
+[gd_scene load_steps=11 format=3 uid="uid://x37aekfq2g3e"]
+
+[ext_resource type="Script" uid="uid://mjjgrtrcvvsw" path="res://scripts/run/unit/player/player_info.gd" id="1_sb37x"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_t3ajc"]
+[ext_resource type="Texture2D" uid="uid://0752wwv22k" path="res://resources/sprites/icons/stats/strength.tres" id="4_iajci"]
+[ext_resource type="Texture2D" uid="uid://ydog5ledkfy4" path="res://resources/sprites/icons/stats/intelligence.tres" id="5_gsfn2"]
+[ext_resource type="Texture2D" uid="uid://br5541fyh0w8q" path="res://resources/sprites/icons/stats/dexterity.tres" id="6_rr3dp"]
+[ext_resource type="Texture2D" uid="uid://tubkra2iexx" path="res://resources/sprites/icons/stats/dodge.tres" id="7_dq3o7"]
+[ext_resource type="Texture2D" uid="uid://bql27ybwcfgel" path="res://resources/sprites/icons/stats/faith.tres" id="7_r54b2"]
+[ext_resource type="Texture2D" uid="uid://dge86k7b10mp0" path="res://resources/sprites/icons/stats/armor.tres" id="9_x14bd"]
+[ext_resource type="Texture2D" uid="uid://t8ktudofgxlf" path="res://resources/sprites/icons/stats/armor_pen.tres" id="10_a1la1"]
+[ext_resource type="Texture2D" uid="uid://ru1xofca14iu" path="res://resources/sprites/icons/stats/crit.tres" id="11_mwspr"]
+
+[node name="PlayerInfo" type="ColorRect"]
+custom_minimum_size = Vector2(240, 160)
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0.165656, 0.165656, 0.165656, 1)
+script = ExtResource("1_sb37x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -68.0
+offset_right = 86.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "STATS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Vbox1" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox1"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("4_iajci")
+expand_mode = 1
+
+[node name="Strength" type="Label" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "3333"
+vertical_alignment = 1
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox1"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer7"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("5_gsfn2")
+expand_mode = 1
+
+[node name="Intelligence" type="Label" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer7"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "4444"
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox1"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("6_rr3dp")
+expand_mode = 1
+
+[node name="Dexterity" type="Label" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "4444"
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox1"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer3"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("7_r54b2")
+expand_mode = 1
+
+[node name="Faith" type="Label" parent="VBoxContainer/HBoxContainer/Vbox1/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "4444"
+vertical_alignment = 1
+
+[node name="Vbox2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_constants/separation = -5
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer6"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("9_x14bd")
+expand_mode = 1
+
+[node name="Armor" type="Label" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "444(44%)"
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer5"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("7_dq3o7")
+expand_mode = 1
+
+[node name="Dodge" type="Label" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "444%"
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer4"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("11_mwspr")
+expand_mode = 1
+
+[node name="Crit" type="Label" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "125% | 300%"
+vertical_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/Vbox2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer9"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+texture = ExtResource("10_a1la1")
+expand_mode = 1
+
+[node name="ArmorPen" type="Label" parent="VBoxContainer/HBoxContainer/Vbox2/HBoxContainer9"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+theme = ExtResource("3_t3ajc")
+theme_override_font_sizes/font_size = 12
+text = "444 | 44%"
+vertical_alignment = 1

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ytc5pm6dl4h7"
+path="res://.godot/imported/Footsteps_Sand_Walk_15.wav-92d8035db2af310765e3316130ed57a6.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Player/Footsteps/Footsteps_Sand_Walk_15.wav"
+dest_files=["res://.godot/imported/Footsteps_Sand_Walk_15.wav-92d8035db2af310765e3316130ed57a6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

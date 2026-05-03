@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://3i8h7efb2nui"]
+
+[ext_resource type="Texture2D" uid="uid://wbffqr4e75bx" path="res://resources/sprites/statues/0.png" id="1_4ts2n"]
+[ext_resource type="Script" uid="uid://d1avj87afd843" path="res://scripts/play_scene/component/sacrifice.gd" id="1_fur2j"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_ogr4y"]
+
+[node name="Sacrifice" type="Button"]
+custom_minimum_size = Vector2(70, 70)
+icon = ExtResource("1_4ts2n")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_fur2j")
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_bottom = 27.0
+grow_horizontal = 0
+theme = ExtResource("3_ogr4y")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,363 @@
+[gd_scene load_steps=10 format=3 uid="uid://bbouxxqxtrclj"]
+
+[ext_resource type="PackedScene" uid="uid://otoc4ruprhb" path="res://scenes/primary_scenes/main_menu.tscn" id="1_8t1p3"]
+[ext_resource type="Script" uid="uid://f43a2icgqkjr" path="res://scripts/main/main.gd" id="1_qkelt"]
+[ext_resource type="PackedScene" uid="uid://vq85tk3nji08" path="res://scenes/primary_scenes/level_manager.tscn" id="2_x2kgu"]
+[ext_resource type="PackedScene" uid="uid://byywpiwenohtp" path="res://scenes/primary_scenes/table.tscn" id="3_gya8u"]
+[ext_resource type="Script" uid="uid://dgkv7xq1w44im" path="res://scripts/ui/fade.gd" id="4_i8dij"]
+[ext_resource type="AudioStream" uid="uid://wb0rxbhwu3ua" path="res://resources/audio/hope.mp3" id="5_0f1pd"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="5_caj8e"]
+[ext_resource type="Script" uid="uid://due8tqe5pyo54" path="res://scripts/main/settings.gd" id="5_x6rf1"]
+
+[sub_resource type="GDScript" id="GDScript_2gjwc"]
+script/source = "extends Label
+
+func _process(_delta) -> void:
+	text = (\"FPS \" + str(Engine.get_frames_per_second()))
+"
+
+[node name="Main" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_qkelt")
+
+[node name="MainMenu" parent="." instance=ExtResource("1_8t1p3")]
+
+[node name="Table" parent="." instance=ExtResource("3_gya8u")]
+process_mode = 1
+visible = false
+
+[node name="LevelManager" parent="." instance=ExtResource("2_x2kgu")]
+visible = false
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_0f1pd")
+volume_db = 10.0
+autoplay = true
+bus = &"BGM"
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="FPS" type="Label" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 30
+text = "1"
+script = SubResource("GDScript_2gjwc")
+
+[node name="Fade" type="ColorRect" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_caj8e")
+color = Color(0, 0, 0, 1)
+script = ExtResource("4_i8dij")
+
+[node name="Pause" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_caj8e")
+color = Color(0, 0.360784, 0, 1)
+
+[node name="Paused" type="Label" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -204.0
+offset_right = 114.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseMenu" type="VBoxContainer" parent="UI/Pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -42.0
+offset_right = 243.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_constants/separation = 15
+
+[node name="Resume" type="Button" parent="UI/Pause/PauseMenu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 43
+text = "Resume"
+
+[node name="Settings" type="Button" parent="UI/Pause/PauseMenu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 43
+text = "Settings"
+
+[node name="Exit" type="HBoxContainer" parent="UI/Pause/PauseMenu"]
+layout_mode = 2
+
+[node name="MainMenu" type="Button" parent="UI/Pause/PauseMenu/Exit"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 35
+text = "Main Menu"
+
+[node name="LevelManager" type="Button" parent="UI/Pause/PauseMenu/Exit"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 35
+text = "Level Manager"
+
+[node name="Desktop" type="Button" parent="UI/Pause/PauseMenu/Exit"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 35
+text = "Desktop"
+
+[node name="Settings" type="ColorRect" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("5_caj8e")
+color = Color(0, 0.360784, 0, 1)
+script = ExtResource("5_x6rf1")
+
+[node name="Settings" type="Label" parent="UI/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -204.0
+offset_right = 133.0
+offset_bottom = -122.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingMenu" type="VBoxContainer" parent="UI/Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -46.0
+offset_right = 250.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_constants/separation = 15
+
+[node name="HBox" type="HBoxContainer" parent="UI/Settings/SettingMenu"]
+layout_mode = 2
+
+[node name="Keys" type="VBoxContainer" parent="UI/Settings/SettingMenu/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="DisplayMode" type="Label" parent="UI/Settings/SettingMenu/HBox/Keys"]
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 38
+text = "Display Mode"
+
+[node name="BGM" type="Label" parent="UI/Settings/SettingMenu/HBox/Keys"]
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 38
+text = "BGM"
+
+[node name="SFX" type="Label" parent="UI/Settings/SettingMenu/HBox/Keys"]
+layout_mode = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 38
+text = "SFX"
+
+[node name="Values" type="VBoxContainer" parent="UI/Settings/SettingMenu/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+
+[node name="DisplayMode" type="OptionButton" parent="UI/Settings/SettingMenu/HBox/Values"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 30
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "FullScreen"
+popup/item_0/id = 0
+popup/item_1/text = "Borderless"
+popup/item_1/id = 1
+popup/item_2/text = "Window"
+popup/item_2/id = 2
+
+[node name="BGM" type="HSlider" parent="UI/Settings/SettingMenu/HBox/Values"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="SFX" type="HSlider" parent="UI/Settings/SettingMenu/HBox/Values"]
+layout_mode = 2
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="Margin" type="Control" parent="UI/Settings/SettingMenu"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="UI/Settings/SettingMenu"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 43
+text = "Back"
+
+[node name="Warning" type="ColorRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.360784, 0, 1)
+
+[node name="Text1" type="Label" parent="UI/Warning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -166.0
+offset_right = 152.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 100
+text = "Warning!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="UI/Warning"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -24.5
+offset_right = 437.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 50
+text = "If you Quit, you will lose your current state.
+Do you want to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Accept" type="Button" parent="UI/Warning"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = 126.0
+offset_right = -25.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 43
+text = "Accept"
+
+[node name="Cancel" type="Button" parent="UI/Warning"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = 126.0
+offset_right = 275.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_caj8e")
+theme_override_font_sizes/font_size = 43
+text = "Cancel"
+
+[connection signal="level_selected" from="LevelManager" to="Table" method="init_level"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Resume" to="." method="resume_game"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Settings" to="." method="open_setting"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Exit/MainMenu" to="." method="exit_to_main_menu"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Exit/LevelManager" to="." method="exit_to_level_manager"]
+[connection signal="pressed" from="UI/Pause/PauseMenu/Exit/Desktop" to="." method="exit_to_desktop"]
+[connection signal="item_selected" from="UI/Settings/SettingMenu/HBox/Values/DisplayMode" to="UI/Settings" method="_on_display_mode_item_selected"]
+[connection signal="value_changed" from="UI/Settings/SettingMenu/HBox/Values/BGM" to="UI/Settings" method="_on_bgm_value_changed"]
+[connection signal="value_changed" from="UI/Settings/SettingMenu/HBox/Values/SFX" to="UI/Settings" method="_on_sfx_value_changed"]
+[connection signal="pressed" from="UI/Settings/SettingMenu/Back" to="." method="close_setting"]
+[connection signal="pressed" from="UI/Warning/Accept" to="." method="accept_exit"]
+[connection signal="pressed" from="UI/Warning/Cancel" to="." method="exit_cancel"]

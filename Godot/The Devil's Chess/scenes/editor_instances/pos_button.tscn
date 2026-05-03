@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chgut7tq644o"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_pgnhl"]
+[ext_resource type="Script" uid="uid://dirhvd4havmrp" path="res://scripts/level_editor/pos_button.gd" id="2_7b5we"]
+
+[node name="PosButton" type="Button"]
+custom_minimum_size = Vector2(66, 66)
+mouse_filter = 1
+theme = ExtResource("1_pgnhl")
+text = "Pos"
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_7b5we")
+
+[connection signal="pressed" from="." to="." method="set_to_angel"]

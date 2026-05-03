@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnk2k47n3osrb"]
+
+[ext_resource type="Script" uid="uid://dwiyj47htvavs" path="res://scripts/run/encounter/encounter.gd" id="1_wopue"]
+[ext_resource type="Texture2D" uid="uid://ke5ypt6c0cr1" path="res://resources/sprites/icons/routes/shop.tres" id="2_gerf8"]
+
+[node name="Encounter" type="CanvasLayer"]
+script = ExtResource("1_wopue")
+
+[node name="EncounterStructure" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_gerf8")
+
+[node name="EncounterBox" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_right = 250.0
+offset_bottom = 217.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="EncounterBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="EncounterID" type="RichTextLabel" parent="EncounterBox/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Encounter ID"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Choices" type="VBoxContainer" parent="EncounterBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0vtis4wuwjla"
+path="res://.godot/imported/bgm_ver.day.mp3-19348d160512f359f49c5b879095003c.mp3str"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/BGM/bgm_ver.day.mp3"
+dest_files=["res://.godot/imported/bgm_ver.day.mp3-19348d160512f359f49c5b879095003c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj7q1yj3w05ki"
+path="res://.godot/imported/systoos_fire.ogg-c0fc2a841b19074443faf9ad43165599.oggvorbisstr"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Plant/systoos_fire.ogg"
+dest_files=["res://.godot/imported/systoos_fire.ogg-c0fc2a841b19074443faf9ad43165599.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

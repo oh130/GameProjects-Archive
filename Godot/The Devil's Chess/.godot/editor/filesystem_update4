@@ -1,0 +1,14 @@
+res://scenes/primary_scenes/table.tscn
+res://resources/shader/outline_shader.gdshader
+res://scenes/primary_scenes/main.tscn
+res://scenes/primary_scenes/level_manager.tscn
+res://scenes/instances/atk_area.tscn
+res://scenes/instances/sacrifice.tscn
+res://scenes/test.tscn
+res://scenes/instances/cell.tscn
+res://scenes/primary_scenes/level_editor.tscn
+res://scenes/instances/enemy.tscn
+res://scenes/instances/statue.tscn
+res://scenes/instances/halo.tscn
+res://scenes/component_scenes/devil.tscn
+res://scenes/component_scenes/exit.tscn

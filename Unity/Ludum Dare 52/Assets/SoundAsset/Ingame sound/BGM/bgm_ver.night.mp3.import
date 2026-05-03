@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p1s0kwqiph8r"
+path="res://.godot/imported/bgm_ver.night.mp3-3c6f321b601a38388c230493897c2cce.mp3str"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/BGM/bgm_ver.night.mp3"
+dest_files=["res://.godot/imported/bgm_ver.night.mp3-3c6f321b601a38388c230493897c2cce.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

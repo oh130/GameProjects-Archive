@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci6ryu1q7ku0n"]
+
+[ext_resource type="PackedScene" uid="uid://y68e8daxycr1" path="res://scenes/run/route/route_block.tscn" id="1_bs1n1"]
+[ext_resource type="Script" uid="uid://clxxttstu0r2h" path="res://scripts/run/route/route_choice.gd" id="1_hqfqw"]
+
+[node name="RouteChoice" type="CanvasLayer"]
+script = ExtResource("1_hqfqw")
+
+[node name="RouteContainer" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -160.0
+offset_right = 210.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="RouteBlock0" parent="RouteContainer" instance=ExtResource("1_bs1n1")]
+layout_mode = 2
+
+[node name="RouteBlock1" parent="RouteContainer" instance=ExtResource("1_bs1n1")]
+layout_mode = 2
+
+[node name="RouteBlock2" parent="RouteContainer" instance=ExtResource("1_bs1n1")]
+layout_mode = 2

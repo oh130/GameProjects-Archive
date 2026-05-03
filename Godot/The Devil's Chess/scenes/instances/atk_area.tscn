@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c587ld8p46r6e"]
+
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_4k83a"]
+
+[node name="AtkArea" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4k83a")

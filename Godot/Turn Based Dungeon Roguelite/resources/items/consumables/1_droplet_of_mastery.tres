@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=5 format=3 uid="uid://6rac1ax7qlyh"]
+
+[ext_resource type="Texture2D" uid="uid://ceciu751r1c5e" path="res://resources/items/sprites/consumables/herb.tres" id="1_mw2mq"]
+[ext_resource type="Script" uid="uid://c65kvtad4o6j7" path="res://scripts/run/items/item.gd" id="2_50m1r"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="3_p8u0j"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_v4ygn"]
+
+[resource]
+resource_name = "DROPLET_OF_MASTERY"
+script = ExtResource("3_p8u0j")
+area = 0
+passives = Array[ExtResource("3_v4ygn")]([])
+icon = ExtResource("1_mw2mq")
+metadata/_custom_type_script = ExtResource("2_50m1r")

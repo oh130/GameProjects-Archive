@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=6 format=3 uid="uid://ck5h4tfexj6nd"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_x282w"]
+[ext_resource type="Texture2D" uid="uid://be5e5gge802a8" path="res://resources/items/sprites/equipments/ring.tres" id="1_xgntc"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="2_k33v3"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_vap14"]
+
+[sub_resource type="Resource" id="Resource_vap14"]
+script = ExtResource("1_x282w")
+amount = 10.0
+ratios = Dictionary[int, float]({
+1: 0.1
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "CHAIN_BELT"
+script = ExtResource("2_k33v3")
+is_unique = false
+stats = Dictionary[int, ExtResource("1_x282w")]({
+1: SubResource("Resource_vap14")
+})
+party_stats = Dictionary[int, int]({})
+passives = Array[ExtResource("3_vap14")]([])
+icon = ExtResource("1_xgntc")
+metadata/_custom_type_script = "uid://cqlrpju4ijw7l"

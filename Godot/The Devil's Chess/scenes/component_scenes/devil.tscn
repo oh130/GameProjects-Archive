@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://clhall1jrecq8"]
+
+[ext_resource type="Texture2D" uid="uid://dm7pnqtbxpbiq" path="res://resources/sprites/sacrifices/04.png" id="1_8bl7j"]
+[ext_resource type="Shader" uid="uid://dtplrxc2nigqm" path="res://resources/shader/outline_shader.gdshader" id="1_d6oim"]
+[ext_resource type="Script" uid="uid://grcywa03nctx" path="res://scripts/play_scene/component/devil.gd" id="1_k63f2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlkjn"]
+shader = ExtResource("1_d6oim")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5p6p"]
+size = Vector2(21, 21)
+
+[node name="Devil" type="Sprite2D"]
+material = SubResource("ShaderMaterial_tlkjn")
+scale = Vector2(3, 3)
+texture = ExtResource("1_8bl7j")
+script = ExtResource("1_k63f2")
+coord = null
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_k5p6p")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

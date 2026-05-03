@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyquhnwn7emei"]
+
+[ext_resource type="Texture2D" uid="uid://drby5yeartkql" path="res://resources/sprites/white.png" id="1_0e4rm"]
+[ext_resource type="Script" uid="uid://cclty5h2w87ff" path="res://scripts/stage/stage_component/health_bar.gd" id="1_5livt"]
+
+[node name="HealthBar" type="TextureRect"]
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_right = 40.0
+offset_bottom = 20.0
+mouse_filter = 2
+texture = ExtResource("1_0e4rm")
+expand_mode = 1
+script = ExtResource("1_5livt")
+
+[node name="HealthBlocks" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -5.0
+offset_right = 35.0
+offset_bottom = 5.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 2

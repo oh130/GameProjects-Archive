@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkad8ns1iqld4"]
+
+[ext_resource type="Script" path="res://script/component_script/place/turn_list_portrait.gd" id="1_5qxvx"]
+
+[node name="TurnListPortrait" type="TextureRect"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5qxvx")

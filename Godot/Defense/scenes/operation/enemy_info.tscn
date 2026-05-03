@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpin4kfhoeiin"]
+
+[ext_resource type="Script" uid="uid://0jpd5ep7t1gs" path="res://scripts/operation/enemy_info.gd" id="1_slwqn"]
+
+[node name="EnemyInfo" type="TextureRect"]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+script = ExtResource("1_slwqn")

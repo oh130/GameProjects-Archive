@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://2uwyigacg1dh"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_hnyca"]
+[ext_resource type="Script" uid="uid://ba7ignu3pyn1q" path="res://scripts/run/indicator.gd" id="2_xgdpm"]
+[ext_resource type="FontFile" uid="uid://beh62hptpojyp" path="res://resources/ui/text/MaruBuri-Bold.ttf" id="3_xgdpm"]
+
+[node name="Indicator" type="VBoxContainer"]
+offset_left = -80.0
+offset_top = -142.0
+offset_right = 80.0
+offset_bottom = 142.0
+mouse_filter = 2
+theme = ExtResource("1_hnyca")
+theme_override_constants/separation = -15
+alignment = 1
+script = ExtResource("2_xgdpm")
+
+[node name="SpecificLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "Dodged"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="DmgLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "67"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="EnergyDmgLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="HealLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="GainEnergyLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.768627, 1, 0.607843, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="ShieldLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_xgdpm")
+theme_override_font_sizes/font_size = 30
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162

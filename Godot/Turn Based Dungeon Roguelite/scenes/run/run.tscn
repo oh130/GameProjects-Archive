@@ -1,0 +1,496 @@
+[gd_scene load_steps=25 format=3 uid="uid://byywpiwenohtp"]
+
+[ext_resource type="Script" uid="uid://6y12c2hxfbk4" path="res://scripts/run/run.gd" id="1_75u41"]
+[ext_resource type="Texture2D" uid="uid://bddqa1ip1rxno" path="res://resources/sprites/backgrounds/forest.png" id="2_u2bn2"]
+[ext_resource type="Shader" uid="uid://ct0bg3kchga68" path="res://resources/shader/border_shadow.gdshader" id="3_psst2"]
+[ext_resource type="PackedScene" uid="uid://udvaeupea4yh" path="res://scenes/run/shop/shop.tscn" id="3_x53nd"]
+[ext_resource type="Script" uid="uid://koq3kjuv1kyj" path="res://scripts/run/combat/combat.gd" id="3_ymu0v"]
+[ext_resource type="PackedScene" uid="uid://cnk2k47n3osrb" path="res://scenes/run/encounter/encounter.tscn" id="4_kdgoc"]
+[ext_resource type="PackedScene" uid="uid://bfp2jah5tcvre" path="res://scenes/run/reward/reward.tscn" id="4_yeia0"]
+[ext_resource type="Script" uid="uid://3yg5ufgmr75x" path="res://scripts/run/inventory.gd" id="5_g42ja"]
+[ext_resource type="PackedScene" uid="uid://dk5koyoew80la" path="res://scenes/ui/paused.tscn" id="5_he47j"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="5_iulmx"]
+[ext_resource type="Shader" uid="uid://bpntt20lo8nm" path="res://resources/shader/shadow_screen.gdshader" id="8_txvia"]
+[ext_resource type="PackedScene" uid="uid://ci6ryu1q7ku0n" path="res://scenes/run/route/route_choice.tscn" id="9_7yo0l"]
+[ext_resource type="Shader" uid="uid://bvc2rdko0qfoy" path="res://resources/shader/banner.gdshader" id="9_psst2"]
+[ext_resource type="Texture2D" uid="uid://cjdfa8jdedpmn" path="res://resources/sprites/icons/others/gold.tres" id="10_fo0ly"]
+[ext_resource type="PackedScene" uid="uid://c2o4rfo261xnj" path="res://scenes/run/banner/enemy_info.tscn" id="13_psst2"]
+[ext_resource type="Texture2D" uid="uid://1cjr8e6bepb8" path="res://resources/sprites/icons/statuses/exhaust.tres" id="15_ymu0v"]
+[ext_resource type="Script" uid="uid://b5h1ds5e6w3na" path="res://scripts/ui/debug_tool.gd" id="16_y3spc"]
+[ext_resource type="PackedScene" uid="uid://x37aekfq2g3e" path="res://scenes/run/banner/player_info.tscn" id="16_ymu0v"]
+[ext_resource type="PackedScene" uid="uid://4mhsli1aef3q" path="res://scenes/run/enhancement/enhancement_select.tscn" id="17_u2bn2"]
+[ext_resource type="ButtonGroup" uid="uid://bhp2sy21aff5e" path="res://resources/ui/stance_button_group.tres" id="19_psst2"]
+[ext_resource type="PackedScene" uid="uid://b0r5f7q8v73pd" path="res://scenes/run/profile/profile_window_container.tscn" id="25_0bq42"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vqexm"]
+shader = ExtResource("3_psst2")
+shader_parameter/center = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.148
+shader_parameter/softness = 0.748
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymu0v"]
+shader = ExtResource("9_psst2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_psst2"]
+shader = ExtResource("8_txvia")
+shader_parameter/glass_tint = Color(0, 0, 0, 0.5)
+
+[node name="Run" type="Node"]
+script = ExtResource("1_75u41")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+z_index = -3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u2bn2")
+expand_mode = 1
+
+[node name="BorderShadow" type="TextureRect" parent="Background"]
+z_index = -3
+z_as_relative = false
+material = SubResource("ShaderMaterial_vqexm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u2bn2")
+expand_mode = 1
+
+[node name="EnemyContainer" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+offset = Vector2(640, 360)
+
+[node name="Combat" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_ymu0v")
+
+[node name="Shop" parent="." instance=ExtResource("3_x53nd")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Encounter" parent="." instance=ExtResource("4_kdgoc")]
+unique_name_in_owner = true
+visible = false
+
+[node name="RouteChoice" parent="." instance=ExtResource("9_7yo0l")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Reward" parent="." instance=ExtResource("4_yeia0")]
+unique_name_in_owner = true
+
+[node name="CommonUI" type="CanvasLayer" parent="."]
+
+[node name="BlackBanner" type="ColorRect" parent="CommonUI"]
+material = SubResource("ShaderMaterial_ymu0v")
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -244.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="Inventory" type="Panel" parent="CommonUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 300)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -150.0
+offset_right = 60.0
+offset_bottom = 150.0
+grow_vertical = 2
+script = ExtResource("5_g42ja")
+
+[node name="ConsumableContainer" type="FlowContainer" parent="CommonUI/Inventory"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 240)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_right = 30.0
+offset_bottom = 240.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CommonUI/Inventory"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 30.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="GoldIcon" type="TextureRect" parent="CommonUI/Inventory/VBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_fo0ly")
+expand_mode = 1
+
+[node name="GoldLabel" type="Label" parent="CommonUI/Inventory/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("5_iulmx")
+text = "32415"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerContainer" type="HBoxContainer" parent="CommonUI"]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -100.0
+offset_right = 240.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 240
+alignment = 1
+
+[node name="HighlightScreen" type="ColorRect" parent="CommonUI"]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_psst2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerInfo" parent="CommonUI" instance=ExtResource("16_ymu0v")]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -160.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="DifficultyLabel" type="Label" parent="CommonUI"]
+unique_name_in_owner = true
+offset_right = 19.0
+offset_bottom = 68.0
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CombatUI" type="Control" parent="CommonUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EnemyInfo" parent="CommonUI/CombatUI" instance=ExtResource("13_psst2")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_right = 0.0
+grow_horizontal = 0
+
+[node name="TurnLabel" type="Label" parent="CommonUI/CombatUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -590.0
+offset_right = -470.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 20
+text = "TURN 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActEntry" type="VBoxContainer" parent="CommonUI/CombatUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -130.0
+offset_bottom = 130.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="TurnPassButton" type="Button" parent="CommonUI/CombatUI/ActEntry"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+icon = ExtResource("15_ymu0v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="StanceButtons" type="HBoxContainer" parent="CommonUI/CombatUI/ActEntry"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Common" type="Button" parent="CommonUI/CombatUI/ActEntry/StanceButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("19_psst2")
+icon = ExtResource("15_ymu0v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Counter" type="Button" parent="CommonUI/CombatUI/ActEntry/StanceButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("19_psst2")
+icon = ExtResource("15_ymu0v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Assist" type="Button" parent="CommonUI/CombatUI/ActEntry/StanceButtons"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("19_psst2")
+icon = ExtResource("15_ymu0v")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SkillEntry" type="GridContainer" parent="CommonUI/CombatUI/ActEntry"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="SkillNameUI" type="Label" parent="CommonUI/CombatUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.5
+offset_top = 28.0
+offset_right = 112.5
+offset_bottom = 83.0
+grow_horizontal = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 40
+text = "Skill Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnBanner" type="ColorRect" parent="CommonUI/CombatUI"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -90.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CommonUI/CombatUI/TurnBanner"]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 50
+text = "PLAYER_TURN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnhancementSelect" parent="." instance=ExtResource("17_u2bn2")]
+unique_name_in_owner = true
+
+[node name="TopUI" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="DebugTool" type="ColorRect" parent="TopUI"]
+unique_name_in_owner = true
+visible = false
+z_index = 4
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_right = 640.0
+offset_bottom = 483.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("16_y3spc")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TopUI/DebugTool"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 483.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="TopUI/DebugTool/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="UncommonItems" type="GridContainer" parent="TopUI/DebugTool/ScrollContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+
+[node name="RareItems" type="GridContainer" parent="TopUI/DebugTool/ScrollContainer/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopUI/DebugTool"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 27.0
+offset_right = 197.0
+offset_bottom = 122.0
+
+[node name="GetCommonEqButton" type="Button" parent="TopUI/DebugTool/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Get Common Rand Eq"
+
+[node name="LevelUpButton" type="Button" parent="TopUI/DebugTool/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Focused player level up"
+
+[node name="TimeScaleButton" type="Button" parent="TopUI/DebugTool/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Handle Time Scale"
+
+[node name="ProfileWindowContainer" parent="TopUI" instance=ExtResource("25_0bq42")]
+unique_name_in_owner = true
+z_index = 3
+
+[node name="ChapterChoice" type="ColorRect" parent="TopUI"]
+unique_name_in_owner = true
+visible = false
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ChapterChoiceButtons" type="HBoxContainer" parent="TopUI/ChapterChoice"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 459.0
+offset_top = 312.0
+offset_right = 499.0
+offset_bottom = 352.0
+
+[node name="GameOverUI" type="ColorRect" parent="TopUI"]
+unique_name_in_owner = true
+visible = false
+z_index = 4
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="TopUI/GameOverUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 120.0
+offset_right = 169.0
+offset_bottom = 207.0
+grow_horizontal = 2
+theme = ExtResource("5_iulmx")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TopUI/GameOverUI"]
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -204.0
+offset_right = 100.0
+offset_bottom = -129.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+
+[node name="Paused" parent="." instance=ExtResource("5_he47j")]
+layer = 5
+visible = false
+
+[connection signal="pressed" from="TopUI/GameOverUI/Button" to="Paused" method="exit_to_main_menu"]

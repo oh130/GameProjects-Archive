@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://otoc4ruprhb"]
+
+[ext_resource type="Script" uid="uid://cqk75l0b3fofu" path="res://scripts/ui/main_menu.gd" id="1_2bjar"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="2_js7ad"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="2_pui6a"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_2bjar")
+
+[node name="Title" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -275.0
+offset_right = 250.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_pui6a")
+texture = ExtResource("2_js7ad")
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -42.0
+offset_right = 125.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_pui6a")
+theme_override_constants/separation = 15
+
+[node name="Start" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("2_pui6a")
+theme_override_font_sizes/font_size = 43
+text = "Start"
+
+[node name="Settings" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("2_pui6a")
+theme_override_font_sizes/font_size = 43
+text = "Settings"
+
+[node name="LevelEditor" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("2_pui6a")
+theme_override_font_sizes/font_size = 43
+text = "Level Editor"
+
+[node name="Credit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("2_pui6a")
+theme_override_font_sizes/font_size = 43
+text = "Credit"
+
+[node name="Exit" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+theme = ExtResource("2_pui6a")
+theme_override_font_sizes/font_size = 43
+text = "Exit"
+
+[connection signal="pressed" from="Menu/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/LevelEditor" to="." method="_on_level_editor_pressed"]
+[connection signal="pressed" from="Menu/Credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_exit_pressed"]

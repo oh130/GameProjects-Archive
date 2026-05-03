@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbyeftj5bihuu"
+path="res://.godot/imported/result_menu.wav-5ccdfb7bf1666474b923d2266cf0d602.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/result_menu.wav"
+dest_files=["res://.godot/imported/result_menu.wav-5ccdfb7bf1666474b923d2266cf0d602.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

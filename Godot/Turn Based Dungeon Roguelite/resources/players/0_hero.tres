@@ -1,0 +1,178 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=43 format=3 uid="uid://bow4iqre4ajoj"]
+
+[ext_resource type="Script" uid="uid://cnqkt2p0pahhb" path="res://scripts/run/enhancement/enhancement.gd" id="1_x7ovd"]
+[ext_resource type="Resource" uid="uid://4i7bd0a346qx" path="res://resources/player_datas/0_hero/enhancements/enhance_skill0.tres" id="2_e637h"]
+[ext_resource type="Resource" uid="uid://m6xe654315fu" path="res://resources/player_datas/0_hero/enhancements/enhance_skill1.tres" id="3_jdlhx"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="3_m264n"]
+[ext_resource type="Resource" uid="uid://cflqsm607b1b7" path="res://resources/player_datas/0_hero/enhancements/enhance_skill2.tres" id="4_5fs4b"]
+[ext_resource type="Texture2D" uid="uid://ce680q8l0nw3q" path="res://resources/player_datas/0_hero/sprites/hero.png" id="4_bdigk"]
+[ext_resource type="Resource" uid="uid://belrq5vg0kxg0" path="res://resources/player_datas/0_hero/enhancements/enhance_skill3.tres" id="5_ymbh4"]
+[ext_resource type="Resource" uid="uid://p4tlpnpgevlc" path="res://resources/player_datas/0_hero/enhancements/enhance_skill4.tres" id="6_ugvhi"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="7_akaa6"]
+[ext_resource type="Resource" uid="uid://cwsfq451hutf1" path="res://resources/player_datas/0_hero/enhancements/enhance_skill5.tres" id="7_e85ve"]
+[ext_resource type="Resource" uid="uid://c8ogn20f0575s" path="res://resources/player_datas/0_hero/skills/cleave.tres" id="8_8as24"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="8_bq1y4"]
+[ext_resource type="Resource" uid="uid://c3d2v7ifwhobf" path="res://resources/player_datas/0_hero/skills/impale.tres" id="9_akaa6"]
+[ext_resource type="Resource" uid="uid://5ldbdajud7rg" path="res://resources/player_datas/0_hero/skills/leap_cleave.tres" id="9_by0hk"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="9_flfrh"]
+[ext_resource type="Texture2D" uid="uid://desruqr8hd0qv" path="res://resources/player_datas/0_hero/sprites/hero_torso.tres" id="9_m264n"]
+[ext_resource type="Texture2D" uid="uid://cqqhel2m6xn58" path="res://resources/player_datas/0_hero/sprites/portrait.tres" id="10_m60wl"]
+[ext_resource type="Resource" uid="uid://c7dj6g2e2g0fd" path="res://resources/player_datas/0_hero/skills/thrust.tres" id="11_8as24"]
+[ext_resource type="Resource" uid="uid://b16pk5ofu6tvw" path="res://resources/player_datas/0_hero/skills/solar_cleave.tres" id="11_v3wql"]
+[ext_resource type="Script" uid="uid://dr63122wear36" path="res://scripts/run/unit/player/player_data.gd" id="12_e637h"]
+[ext_resource type="Script" uid="uid://hhwr35qwo1jw" path="res://scripts/run/unit/skill.gd" id="13_jdlhx"]
+[ext_resource type="Resource" uid="uid://bdbsfgcd0755s" path="res://resources/player_datas/0_hero/skills/shield_bash.tres" id="13_x7ovd"]
+[ext_resource type="Resource" uid="uid://i2m62cmfgddn" path="res://resources/player_datas/0_hero/skills/blade_wave.tres" id="14_lskv0"]
+[ext_resource type="Resource" uid="uid://ikxf4yu5supy" path="res://resources/player_datas/0_hero/skills/blade_cascade.tres" id="15_bq1y4"]
+[ext_resource type="Resource" uid="uid://wjqno61ek6sm" path="res://resources/player_datas/0_hero/skills/sunlight.tres" id="16_n4ybk"]
+[ext_resource type="Resource" uid="uid://c35dnfvgvxl53" path="res://resources/player_datas/0_hero/skills/eclipse.tres" id="17_aoy6a"]
+[ext_resource type="Resource" uid="uid://yf6wjjrpubdc" path="res://resources/player_datas/0_hero/skills/sun_ritual.tres" id="18_jj5lu"]
+[ext_resource type="Resource" uid="uid://3xhy6hhwk8li" path="res://resources/player_datas/0_hero/skills/glory.tres" id="19_e637h"]
+
+[sub_resource type="Resource" id="Resource_m264n"]
+script = ExtResource("9_flfrh")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_m60wl"]
+script = ExtResource("9_flfrh")
+amount = 120.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_b11wo"]
+script = ExtResource("9_flfrh")
+amount = 40.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_4y0rx"]
+script = ExtResource("9_flfrh")
+amount = 100.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_8as24"]
+script = ExtResource("9_flfrh")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_akaa6"]
+script = ExtResource("9_flfrh")
+amount = 80.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_r3ehn"]
+script = ExtResource("9_flfrh")
+amount = 80.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_v3wql"]
+script = ExtResource("9_flfrh")
+amount = 10.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_flfrh"]
+script = ExtResource("9_flfrh")
+amount = 125.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_8ecan"]
+script = ExtResource("9_flfrh")
+amount = 70.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_61aos"]
+script = ExtResource("9_flfrh")
+amount = 5.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_ksh7g"]
+script = ExtResource("9_flfrh")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_by0hk"]
+script = ExtResource("9_flfrh")
+amount = 0.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_x7ovd"]
+script = ExtResource("9_flfrh")
+amount = 50.0
+ratios = Dictionary[int, float]({})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "HERO"
+script = ExtResource("12_e637h")
+preview = ExtResource("4_bdigk")
+portrait = ExtResource("10_m60wl")
+counter_attribute = 1
+assist_attribute = 1
+enhancements = Array[ExtResource("1_x7ovd")]([ExtResource("2_e637h"), ExtResource("3_jdlhx"), ExtResource("4_5fs4b"), ExtResource("5_ymbh4"), ExtResource("6_ugvhi"), ExtResource("7_e85ve")])
+special_stats = Dictionary[int, int]({})
+selected_skills = Array[ExtResource("7_akaa6")]([])
+equipments = Dictionary[ExtResource("8_bq1y4"), int]({})
+cur_exp = 0
+cur_exp_for_up = 50
+enhancement_reroll_chance = 2
+sprite = ExtResource("9_m264n")
+stats = Dictionary[int, ExtResource("9_flfrh")]({
+0: SubResource("Resource_m264n"),
+1: SubResource("Resource_m60wl"),
+2: SubResource("Resource_b11wo"),
+3: SubResource("Resource_4y0rx"),
+4: SubResource("Resource_8as24"),
+5: SubResource("Resource_akaa6"),
+6: SubResource("Resource_r3ehn"),
+7: SubResource("Resource_v3wql"),
+8: SubResource("Resource_flfrh"),
+9: SubResource("Resource_8ecan"),
+10: SubResource("Resource_61aos"),
+11: SubResource("Resource_ksh7g"),
+12: SubResource("Resource_by0hk"),
+13: SubResource("Resource_x7ovd")
+})
+stat_up_per_level = Dictionary[int, float]({
+0: 1.0,
+1: 6.0,
+2: 1.0,
+3: 4.0,
+5: 3.0,
+6: 3.0,
+7: 0.5,
+9: 3.0,
+10: 0.4
+})
+skills = Array[ExtResource("13_jdlhx")]([ExtResource("8_8as24"), ExtResource("9_by0hk"), ExtResource("11_v3wql"), ExtResource("11_8as24"), ExtResource("9_akaa6"), ExtResource("13_x7ovd"), ExtResource("14_lskv0"), ExtResource("15_bq1y4"), ExtResource("16_n4ybk"), ExtResource("17_aoy6a"), ExtResource("18_jj5lu"), ExtResource("19_e637h")])
+passives = Array[ExtResource("3_m264n")]([])
+applied_stats = Dictionary[int, int]({
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0,
+6: 0,
+7: 0,
+8: 0,
+9: 0,
+10: 0,
+11: 0,
+12: 0
+})
+health = 0
+energy = 0
+shield = 0
+metadata/_custom_type_script = "uid://dr63122wear36"

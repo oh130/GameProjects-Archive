@@ -1,0 +1,48 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=7 format=3 uid="uid://ikxf4yu5supy"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_soevu"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_t1mbl"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_2gjls"]
+[ext_resource type="AudioStream" uid="uid://cs22ykummshbm" path="res://resources/fxs/audio/sfx/combat/18_Thunder_02.wav" id="5_dfrk3"]
+[ext_resource type="Resource" uid="uid://c2mnqu3jbxhev" path="res://resources/fxs/visual/vfx/explosion2.tres" id="6_bsakg"]
+
+[sub_resource type="Resource" id="Resource_wlfqm"]
+script = ExtResource("1_soevu")
+amount = 0.0
+ratios = Dictionary[int, float]({
+5: 0.01,
+6: 0.03
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[resource]
+resource_name = "BLADE_CASCADE"
+script = ExtResource("3_2gjls")
+attack_attribute = 5
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 40
+})
+icon = ExtResource("2_t1mbl")
+vfx = ExtResource("6_bsakg")
+sfx = ExtResource("5_dfrk3")
+repeat_time = 3
+target = 5
+costs = Dictionary[int, int]({
+1: 30
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_soevu")]({})
+effects = Dictionary[int, ExtResource("1_soevu")]({})
+amount_effects = Dictionary[int, ExtResource("1_soevu")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_soevu")]({})
+target_effects = Dictionary[int, ExtResource("1_soevu")]({
+3: SubResource("Resource_wlfqm")
+})
+target_amount_effects = Dictionary[int, ExtResource("1_soevu")]({})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

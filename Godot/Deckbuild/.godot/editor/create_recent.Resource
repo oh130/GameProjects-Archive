@@ -1,0 +1,6 @@
+Property
+AtlasTexture
+ElementData
+ItemData
+EnemyAction
+EnemyData

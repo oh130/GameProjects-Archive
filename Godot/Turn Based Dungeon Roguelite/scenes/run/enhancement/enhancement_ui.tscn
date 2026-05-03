@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccnaxvlmw3w5j"]
+
+[ext_resource type="Texture2D" uid="uid://ydog5ledkfy4" path="res://resources/sprites/icons/stats/intelligence.tres" id="1_ypl5p"]
+[ext_resource type="Script" uid="uid://cw3xrsjw268ar" path="res://scripts/run/enhancement/enhancement_ui.gd" id="2_hrug5"]
+
+[node name="EnhancementUI" type="TextureRect"]
+custom_minimum_size = Vector2(80, 80)
+texture = ExtResource("1_ypl5p")
+expand_mode = 1
+script = ExtResource("2_hrug5")

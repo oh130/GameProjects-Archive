@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2kdxvld3oqrc"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_7yltv"]
+[ext_resource type="Script" uid="uid://c043a5vrtt7t6" path="res://scripts/play_scene/component/cell.gd" id="1_g7ana"]
+
+[node name="Cell" type="Button"]
+custom_minimum_size = Vector2(66, 66)
+offset_right = 66.0
+offset_bottom = 66.0
+mouse_filter = 1
+theme = ExtResource("1_7yltv")
+text = "Mov"
+icon_alignment = 1
+script = ExtResource("1_g7ana")

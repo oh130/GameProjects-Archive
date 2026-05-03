@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bse5pfalhnndc"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_f1kar"]
+
+[node name="ChapterButton" type="Button"]
+custom_minimum_size = Vector2(60, 60)
+theme = ExtResource("1_f1kar")
+theme_override_font_sizes/font_size = 50
+text = "1"
+expand_icon = true

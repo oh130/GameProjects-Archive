@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ldlhet4vfbfk"]
+
+[ext_resource type="FontFile" uid="uid://beh62hptpojyp" path="res://resources/ui/text/MaruBuri-Bold.ttf" id="1_626q5"]
+[ext_resource type="FontFile" uid="uid://rwhd6ib5obg5" path="res://resources/ui/text/MaruBuri-Regular.ttf" id="1_qfwp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57n0s"]
+bg_color = Color(0.273873, 0.273873, 0.273873, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gytt"]
+bg_color = Color(1, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_qfwp4")
+default_font_size = 15
+ProgressBar/styles/background = SubResource("StyleBoxFlat_57n0s")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_6gytt")
+RichTextLabel/fonts/bold_font = ExtResource("1_626q5")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Enhancement" load_steps=5 format=3 uid="uid://4i7bd0a346qx"]
+
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="1_6intw"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="1_ukhxo"]
+[ext_resource type="Script" uid="uid://cnqkt2p0pahhb" path="res://scripts/run/enhancement/enhancement.gd" id="2_ukhxo"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="3_57ykq"]
+
+[resource]
+resource_name = "ENHANCE_SKILL0"
+script = ExtResource("2_ukhxo")
+icon = ExtResource("1_ukhxo")
+stats = Dictionary[int, ExtResource("3_57ykq")]({})
+passives = Array[ExtResource("1_6intw")]([])
+skill_idx = 0
+selected = false
+metadata/_custom_type_script = "uid://cnqkt2p0pahhb"

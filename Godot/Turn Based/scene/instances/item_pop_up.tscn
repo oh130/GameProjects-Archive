@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnt060aey1ss"]
+
+[ext_resource type="Script" path="res://script/component_script/place/item_pop_up.gd" id="1_kbr34"]
+
+[node name="ItemPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbr34")
+
+[node name="Continue" type="Button" parent="."]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 567.0
+offset_right = 739.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]

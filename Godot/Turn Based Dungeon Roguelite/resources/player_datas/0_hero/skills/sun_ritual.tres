@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=11 format=3 uid="uid://yf6wjjrpubdc"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_sdbi1"]
+[ext_resource type="Texture2D" uid="uid://dwnaf251egudp" path="res://resources/player_datas/0_hero/icons/skill0.tres" id="2_rjfia"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="3_t2u6b"]
+[ext_resource type="Script" uid="uid://15ooh8114era" path="res://scripts/run/combat/buff.gd" id="4_4cem4"]
+[ext_resource type="AudioStream" uid="uid://cs22ykummshbm" path="res://resources/fxs/audio/sfx/combat/18_Thunder_02.wav" id="5_8wm6v"]
+[ext_resource type="Resource" uid="uid://c2mnqu3jbxhev" path="res://resources/fxs/visual/vfx/explosion2.tres" id="6_wo33l"]
+
+[sub_resource type="Resource" id="Resource_br0hm"]
+script = ExtResource("1_sdbi1")
+amount = 0.0
+ratios = Dictionary[int, float]({
+1: 0.1,
+6: 0.1
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_7gead"]
+script = ExtResource("1_sdbi1")
+amount = 0.0
+ratios = Dictionary[int, float]({
+6: 0.5
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_p8osm"]
+script = ExtResource("1_sdbi1")
+amount = 0.0
+ratios = Dictionary[int, float]({
+6: 0.05
+})
+metadata/_custom_type_script = "uid://cfsrpn46s1kan"
+
+[sub_resource type="Resource" id="Resource_6ajw0"]
+script = ExtResource("4_4cem4")
+temp_buff_end_timing = 0
+stat_buffs = Dictionary[int, ExtResource("1_sdbi1")]({
+9: SubResource("Resource_7gead"),
+13: SubResource("Resource_p8osm")
+})
+metadata/_custom_type_script = "uid://15ooh8114era"
+
+[resource]
+resource_name = "SUN_RITUAL"
+script = ExtResource("3_t2u6b")
+attack_attribute = 0
+stat_mods = Dictionary[int, int]({
+7: 0,
+8: 0,
+11: 0,
+12: 0
+})
+icon = ExtResource("2_rjfia")
+vfx = ExtResource("6_wo33l")
+sfx = ExtResource("5_8wm6v")
+repeat_time = 1
+target = 0
+costs = Dictionary[int, int]({
+1: 20
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_buff = SubResource("Resource_6ajw0")
+self_gain_statuses = Dictionary[int, ExtResource("1_sdbi1")]({})
+effects = Dictionary[int, ExtResource("1_sdbi1")]({
+2: SubResource("Resource_br0hm")
+})
+amount_effects = Dictionary[int, ExtResource("1_sdbi1")]({})
+special_effects = Array[int]([0])
+target_gain_statuses = Dictionary[int, ExtResource("1_sdbi1")]({})
+target_effects = Dictionary[int, ExtResource("1_sdbi1")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_sdbi1")]({})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = "uid://bqauayub3315l"

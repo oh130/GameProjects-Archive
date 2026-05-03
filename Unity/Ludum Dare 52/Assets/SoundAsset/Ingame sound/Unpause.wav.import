@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmh33j5yo11vc"
+path="res://.godot/imported/Unpause.wav-765d3adef5c52974f3c78bf6721d3ef4.sample"
+
+[deps]
+
+source_file="res://Unity/Ludum Dare 52/Assets/SoundAsset/Ingame sound/Unpause.wav"
+dest_files=["res://.godot/imported/Unpause.wav-765d3adef5c52974f3c78bf6721d3ef4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

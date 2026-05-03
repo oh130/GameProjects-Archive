@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctrjn07ngf5vq"]
+
+[ext_resource type="Script" uid="uid://47nm1dbt4p0a" path="res://scripts/run/rewards.gd" id="1_eu4hp"]
+[ext_resource type="PackedScene" uid="uid://k01kjihaie86" path="res://scenes/run/elem_sample.tscn" id="3_26fki"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="4_hbp21"]
+
+[node name="Rewards" type="Control"]
+custom_minimum_size = Vector2(320, 520)
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -260.0
+offset_right = -25.0
+offset_bottom = 260.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_eu4hp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -246.0
+offset_right = 150.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="RewardLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_hbp21")
+theme_override_font_sizes/font_size = 100
+text = "Rewards"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="ElemSample0" parent="VBoxContainer/RewardContainer" instance=ExtResource("3_26fki")]
+layout_mode = 2
+state = 1
+
+[node name="ElemSample1" parent="VBoxContainer/RewardContainer" instance=ExtResource("3_26fki")]
+layout_mode = 2
+state = 1
+
+[node name="ElemSample2" parent="VBoxContainer/RewardContainer" instance=ExtResource("3_26fki")]
+layout_mode = 2
+state = 1
+
+[node name="ElemSample3" parent="VBoxContainer/RewardContainer" instance=ExtResource("3_26fki")]
+layout_mode = 2
+state = 1
+
+[node name="PassButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme = ExtResource("4_hbp21")
+theme_override_font_sizes/font_size = 50
+text = "Pass"
+
+[connection signal="pressed" from="VBoxContainer/PassButton" to="." method="pass_reward"]

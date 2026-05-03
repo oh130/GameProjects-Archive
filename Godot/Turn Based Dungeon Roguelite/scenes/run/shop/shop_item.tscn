@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7y1pkioh3jbt"]
+
+[ext_resource type="Script" uid="uid://dhpduo43r7jtr" path="res://scripts/run/shop/shop_item.gd" id="1_uj5qj"]
+[ext_resource type="PackedScene" uid="uid://cjwljf0ifwck0" path="res://scenes/run/item/item_ui.tscn" id="2_qsmbo"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_2y8ay"]
+[ext_resource type="Texture2D" uid="uid://rjwwsj5ujhhx" path="res://resources/sprites/icons/others/price.tres" id="3_qsmbo"]
+
+[node name="ShopItem" type="VBoxContainer"]
+custom_minimum_size = Vector2(60, 80)
+offset_right = 60.0
+offset_bottom = 80.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("1_uj5qj")
+
+[node name="ItemUI" parent="." instance=ExtResource("2_qsmbo")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = -10
+
+[node name="PriceIcon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_qsmbo")
+expand_mode = 1
+
+[node name="PriceLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_2y8ay")
+text = "33"
+horizontal_alignment = 1
+vertical_alignment = 1

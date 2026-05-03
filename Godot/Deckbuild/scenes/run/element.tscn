@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://l17sw3dmc6e5"]
+
+[ext_resource type="Script" uid="uid://3ua68euqw08i" path="res://scripts/elements/element.gd" id="2_p5vws"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="3_5cyk1"]
+
+[node name="Element" type="ColorRect"]
+z_index = 1
+custom_minimum_size = Vector2(120, 120)
+offset_right = 120.0
+offset_bottom = 120.0
+color = Color(0.813258, 0.813258, 0.813258, 1)
+script = ExtResource("2_p5vws")
+
+[node name="PropertyUI" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="GradeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_5cyk1")
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

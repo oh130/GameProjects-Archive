@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://crc0jp4juyr6v"]
+
+[ext_resource type="Texture2D" uid="uid://1cjr8e6bepb8" path="res://resources/sprites/icons/statuses/exhaust.tres" id="2_f4vwl"]
+
+[node name="TurnPass" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
+icon = ExtResource("2_f4vwl")
+icon_alignment = 1
+expand_icon = true

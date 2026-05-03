@@ -1,0 +1,444 @@
+[gd_scene load_steps=10 format=4 uid="uid://b2bdb5vu6160t"]
+
+[ext_resource type="Script" uid="uid://djakmo73s0h6n" path="res://scripts/stage/stage_component/stage.gd" id="1_rii5r"]
+[ext_resource type="TileSet" uid="uid://csjepvcmho4mx" path="res://resources/tileset/tileset.tres" id="2_mir4t"]
+[ext_resource type="Script" uid="uid://bdbnmgmgbqej1" path="res://scripts/stage/stage_component/focus.gd" id="4_adfor"]
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="4_q6u81"]
+[ext_resource type="Script" uid="uid://dlc7l248ivfnp" path="res://scripts/stage/stage_component/ground.gd" id="4_vpp0q"]
+[ext_resource type="Script" uid="uid://dklm5yhh828vs" path="res://scripts/stage/stage_component/turn_manager.gd" id="5_h6yro"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="9_6v85o"]
+[ext_resource type="PackedScene" uid="uid://j8cevjpcjjkt" path="res://scenes/stage/ui/paint_call.tscn" id="9_26euh"]
+[ext_resource type="PackedScene" uid="uid://dk5koyoew80la" path="res://scenes/stage/ui/stage_pause.tscn" id="11_gg7b5"]
+
+[node name="Stage" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_rii5r")
+
+[node name="Background" type="TileMapLayer" parent="."]
+z_index = -2
+tile_map_data = PackedByteArray("AAD7//z/AAAHAAUAAAD7//3/AAAHAAUAAAD7//7/AAAHAAUAAAD7////AAAHAAUAAAD7/wAAAAAHAAUAAAD7/wEAAAAHAAUAAAD7/wIAAAAHAAUAAAD7/wMAAAAHAAUAAAD7/wQAAAAHAAUAAAD8//z/AAAHAAUAAAD8//3/AAAHAAUAAAD8//7/AAAHAAUAAAD8////AAAHAAUAAAD8/wAAAAAHAAUAAAD8/wEAAAAHAAUAAAD8/wIAAAAHAAUAAAD8/wMAAAAHAAUAAAD8/wQAAAAHAAUAAAD9//z/AAAHAAUAAAD9//3/AAAHAAUAAAD9//7/AAAHAAUAAAD9////AAAHAAUAAAD9/wAAAAAHAAUAAAD9/wEAAAAHAAUAAAD9/wIAAAAHAAUAAAD9/wMAAAAHAAUAAAD9/wQAAAAHAAUAAAD+//z/AAAHAAUAAAD+//3/AAAHAAUAAAD+//7/AAAHAAUAAAD+////AAAHAAUAAAD+/wAAAAAHAAUAAAD+/wEAAAAHAAUAAAD+/wIAAAAHAAUAAAD+/wMAAAAHAAUAAAD+/wQAAAAHAAUAAAD///z/AAAHAAUAAAD///3/AAAHAAUAAAD///7/AAAHAAUAAAD/////AAAHAAUAAAD//wAAAAAHAAUAAAD//wEAAAAHAAUAAAD//wIAAAAHAAUAAAD//wMAAAAHAAUAAAD//wQAAAAHAAUAAAAAAPz/AAAHAAUAAAAAAP3/AAAHAAUAAAAAAP7/AAAHAAUAAAAAAP//AAAHAAUAAAAAAAAAAAAHAAUAAAAAAAEAAAAHAAUAAAAAAAIAAAAHAAUAAAAAAAMAAAAHAAUAAAAAAAQAAAAHAAUAAAABAPz/AAAHAAUAAAABAP3/AAAHAAUAAAABAP7/AAAHAAUAAAABAP//AAAHAAUAAAABAAAAAAAHAAUAAAABAAEAAAAHAAUAAAABAAIAAAAHAAUAAAABAAMAAAAHAAUAAAABAAQAAAAHAAUAAAACAPz/AAAHAAUAAAACAP3/AAAHAAUAAAACAP7/AAAHAAUAAAACAP//AAAHAAUAAAACAAAAAAAHAAUAAAACAAEAAAAHAAUAAAACAAIAAAAHAAUAAAACAAMAAAAHAAUAAAACAAQAAAAHAAUAAAADAPz/AAAHAAUAAAADAP3/AAAHAAUAAAADAP7/AAAHAAUAAAADAP//AAAHAAUAAAADAAAAAAAHAAUAAAADAAEAAAAHAAUAAAADAAIAAAAHAAUAAAADAAMAAAAHAAUAAAADAAQAAAAHAAUAAAD7//v/AAAHAAUAAAD7/wUAAAAHAAUAAAD8//v/AAAHAAUAAAD8/wUAAAAHAAUAAAD9//v/AAAHAAUAAAD9/wUAAAAHAAUAAAD+//v/AAAHAAUAAAD+/wUAAAAHAAUAAAD///v/AAAHAAUAAAD//wUAAAAHAAUAAAAAAPv/AAAHAAUAAAAAAAUAAAAHAAUAAAABAPv/AAAHAAUAAAABAAUAAAAHAAUAAAACAPv/AAAHAAUAAAACAAUAAAAHAAUAAAADAPv/AAAHAAUAAAADAAUAAAAHAAUAAAAEAPv/AAAHAAUAAAAEAPz/AAAHAAUAAAAEAP3/AAAHAAUAAAAEAP7/AAAHAAUAAAAEAP//AAAHAAUAAAAEAAAAAAAHAAUAAAAEAAEAAAAHAAUAAAAEAAIAAAAHAAUAAAAEAAMAAAAHAAUAAAAEAAQAAAAHAAUAAAAEAAUAAAAHAAUAAAAFAPv/AAAHAAUAAAAFAPz/AAAHAAUAAAAFAP3/AAAHAAUAAAAFAP7/AAAHAAUAAAAFAP//AAAHAAUAAAAFAAAAAAAHAAUAAAAFAAEAAAAHAAUAAAAFAAIAAAAHAAUAAAAFAAMAAAAHAAUAAAAFAAQAAAAHAAUAAAAFAAUAAAAHAAUAAAD4//j/AAAHAAUAAAD4//n/AAAHAAUAAAD4//r/AAAHAAUAAAD4//v/AAAHAAUAAAD4//z/AAAHAAUAAAD4//3/AAAHAAUAAAD4//7/AAAHAAUAAAD4////AAAHAAUAAAD4/wAAAAAHAAUAAAD4/wEAAAAHAAUAAAD4/wIAAAAHAAUAAAD4/wMAAAAHAAUAAAD4/wQAAAAHAAUAAAD4/wUAAAAHAAUAAAD4/wYAAAAHAAUAAAD4/wcAAAAHAAUAAAD4/wgAAAAHAAUAAAD5//j/AAAHAAUAAAD5//n/AAAHAAUAAAD5//r/AAAHAAUAAAD5//v/AAAHAAUAAAD5//z/AAAHAAUAAAD5//3/AAAHAAUAAAD5//7/AAAHAAUAAAD5////AAAHAAUAAAD5/wAAAAAHAAUAAAD5/wEAAAAHAAUAAAD5/wIAAAAHAAUAAAD5/wMAAAAHAAUAAAD5/wQAAAAHAAUAAAD5/wUAAAAHAAUAAAD5/wYAAAAHAAUAAAD5/wcAAAAHAAUAAAD5/wgAAAAHAAUAAAD6//j/AAAHAAUAAAD6//n/AAAHAAUAAAD6//r/AAAHAAUAAAD6//v/AAAHAAUAAAD6//z/AAAHAAUAAAD6//3/AAAHAAUAAAD6//7/AAAHAAUAAAD6////AAAHAAUAAAD6/wAAAAAHAAUAAAD6/wEAAAAHAAUAAAD6/wIAAAAHAAUAAAD6/wMAAAAHAAUAAAD6/wQAAAAHAAUAAAD6/wUAAAAHAAUAAAD6/wYAAAAHAAUAAAD6/wcAAAAHAAUAAAD6/wgAAAAHAAUAAAD7//j/AAAHAAUAAAD7//n/AAAHAAUAAAD7//r/AAAHAAUAAAD7/wYAAAAHAAUAAAD7/wcAAAAHAAUAAAD7/wgAAAAHAAUAAAD8//j/AAAHAAUAAAD8//n/AAAHAAUAAAD8//r/AAAHAAUAAAD8/wYAAAAHAAUAAAD8/wcAAAAHAAUAAAD8/wgAAAAHAAUAAAD9//j/AAAHAAUAAAD9//n/AAAHAAUAAAD9//r/AAAHAAUAAAD9/wYAAAAHAAUAAAD9/wcAAAAHAAUAAAD9/wgAAAAHAAUAAAD+//j/AAAHAAUAAAD+//n/AAAHAAUAAAD+//r/AAAHAAUAAAD+/wYAAAAHAAUAAAD+/wcAAAAHAAUAAAD+/wgAAAAHAAUAAAD///j/AAAHAAUAAAD///n/AAAHAAUAAAD///r/AAAHAAUAAAD//wYAAAAHAAUAAAD//wcAAAAHAAUAAAD//wgAAAAHAAUAAAAAAPj/AAAHAAUAAAAAAPn/AAAHAAUAAAAAAPr/AAAHAAUAAAAAAAYAAAAHAAUAAAAAAAcAAAAHAAUAAAAAAAgAAAAHAAUAAAABAPj/AAAHAAUAAAABAPn/AAAHAAUAAAABAPr/AAAHAAUAAAABAAYAAAAHAAUAAAABAAcAAAAHAAUAAAABAAgAAAAHAAUAAAACAPj/AAAHAAUAAAACAPn/AAAHAAUAAAACAPr/AAAHAAUAAAACAAYAAAAHAAUAAAACAAcAAAAHAAUAAAACAAgAAAAHAAUAAAADAPj/AAAHAAUAAAADAPn/AAAHAAUAAAADAPr/AAAHAAUAAAADAAYAAAAHAAUAAAADAAcAAAAHAAUAAAADAAgAAAAHAAUAAAAEAPj/AAAHAAUAAAAEAPn/AAAHAAUAAAAEAPr/AAAHAAUAAAAEAAYAAAAHAAUAAAAEAAcAAAAHAAUAAAAEAAgAAAAHAAUAAAAFAPj/AAAHAAUAAAAFAPn/AAAHAAUAAAAFAPr/AAAHAAUAAAAFAAYAAAAHAAUAAAAFAAcAAAAHAAUAAAAFAAgAAAAHAAUAAAAGAPj/AAAHAAUAAAAGAPn/AAAHAAUAAAAGAPr/AAAHAAUAAAAGAPv/AAAHAAUAAAAGAPz/AAAHAAUAAAAGAP3/AAAHAAUAAAAGAP7/AAAHAAUAAAAGAP//AAAHAAUAAAAGAAAAAAAHAAUAAAAGAAEAAAAHAAUAAAAGAAIAAAAHAAUAAAAGAAMAAAAHAAUAAAAGAAQAAAAHAAUAAAAGAAUAAAAHAAUAAAAGAAYAAAAHAAUAAAAGAAcAAAAHAAUAAAAGAAgAAAAHAAUAAAAHAPj/AAAHAAUAAAAHAPn/AAAHAAUAAAAHAPr/AAAHAAUAAAAHAPv/AAAHAAUAAAAHAPz/AAAHAAUAAAAHAP3/AAAHAAUAAAAHAP7/AAAHAAUAAAAHAP//AAAHAAUAAAAHAAAAAAAHAAUAAAAHAAEAAAAHAAUAAAAHAAIAAAAHAAUAAAAHAAMAAAAHAAUAAAAHAAQAAAAHAAUAAAAHAAUAAAAHAAUAAAAHAAYAAAAHAAUAAAAHAAcAAAAHAAUAAAAHAAgAAAAHAAUAAAAIAPj/AAAHAAUAAAAIAPn/AAAHAAUAAAAIAPr/AAAHAAUAAAAIAPv/AAAHAAUAAAAIAPz/AAAHAAUAAAAIAP3/AAAHAAUAAAAIAP7/AAAHAAUAAAAIAP//AAAHAAUAAAAIAAAAAAAHAAUAAAAIAAEAAAAHAAUAAAAIAAIAAAAHAAUAAAAIAAMAAAAHAAUAAAAIAAQAAAAHAAUAAAAIAAUAAAAHAAUAAAAIAAYAAAAHAAUAAAAIAAcAAAAHAAUAAAAIAAgAAAAHAAUAAAD3//f/AAAHAAUAAAD3//j/AAAHAAUAAAD3//n/AAAHAAUAAAD3//r/AAAHAAUAAAD3//v/AAAHAAUAAAD3//z/AAAHAAUAAAD3//3/AAAHAAUAAAD3//7/AAAHAAUAAAD3////AAAHAAUAAAD3/wAAAAAHAAUAAAD3/wEAAAAHAAUAAAD3/wIAAAAHAAUAAAD3/wMAAAAHAAUAAAD3/wQAAAAHAAUAAAD3/wUAAAAHAAUAAAD3/wYAAAAHAAUAAAD3/wcAAAAHAAUAAAD3/wgAAAAHAAUAAAD3/wkAAAAHAAUAAAD4//f/AAAHAAUAAAD4/wkAAAAHAAUAAAD5//f/AAAHAAUAAAD5/wkAAAAHAAUAAAD6//f/AAAHAAUAAAD6/wkAAAAHAAUAAAD7//f/AAAHAAUAAAD7/wkAAAAHAAUAAAD8//f/AAAHAAUAAAD8/wkAAAAHAAUAAAD9//f/AAAHAAUAAAD9/wkAAAAHAAUAAAD+//f/AAAHAAUAAAD+/wkAAAAHAAUAAAD///f/AAAHAAUAAAD//wkAAAAHAAUAAAAAAPf/AAAHAAUAAAAAAAkAAAAHAAUAAAABAPf/AAAHAAUAAAABAAkAAAAHAAUAAAACAPf/AAAHAAUAAAACAAkAAAAHAAUAAAADAPf/AAAHAAUAAAADAAkAAAAHAAUAAAAEAPf/AAAHAAUAAAAEAAkAAAAHAAUAAAAFAPf/AAAHAAUAAAAFAAkAAAAHAAUAAAAGAPf/AAAHAAUAAAAGAAkAAAAHAAUAAAAHAPf/AAAHAAUAAAAHAAkAAAAHAAUAAAAIAPf/AAAHAAUAAAAIAAkAAAAHAAUAAAAJAPj/AAAHAAUAAAAJAPn/AAAHAAUAAAAJAPr/AAAHAAUAAAAJAPv/AAAHAAUAAAAJAPz/AAAHAAUAAAAJAP3/AAAHAAUAAAAJAP7/AAAHAAUAAAAJAP//AAAHAAUAAAAJAAAAAAAHAAUAAAAJAAEAAAAHAAUAAAAJAAIAAAAHAAUAAAAJAAMAAAAHAAUAAAAJAAQAAAAHAAUAAAAJAAUAAAAHAAUAAAAJAAYAAAAHAAUAAAAJAAcAAAAHAAUAAAAJAAgAAAAHAAUAAAAJAAkAAAAHAAUAAAAJAPf/AAAHAAUAAAA=")
+tile_set = ExtResource("2_mir4t")
+
+[node name="Ground" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = -1
+tile_set = ExtResource("2_mir4t")
+collision_enabled = false
+script = ExtResource("4_vpp0q")
+upgrade_cost = Array[int]([100])
+
+[node name="Focus" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_mir4t")
+script = ExtResource("4_adfor")
+
+[node name="ActorReach" type="TileMapLayer" parent="Focus"]
+unique_name_in_owner = true
+z_index = -1
+tile_set = ExtResource("2_mir4t")
+collision_enabled = false
+
+[node name="TurnManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_h6yro")
+
+[node name="Components" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Units" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Structures" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Weapons" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Enemies" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Projectiles" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="Effects" type="Node2D" parent="Components"]
+unique_name_in_owner = true
+y_sort_enabled = true
+
+[node name="HealthBars" type="Control" parent="Components"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(32, 16)
+process_callback = 0
+
+[node name="GameTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="GameTimeUI" type="Label" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -243.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme = ExtResource("4_q6u81")
+text = "00 : 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StateText" type="Label" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 961.0
+offset_top = 93.0
+offset_right = -29.0
+offset_bottom = -524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_q6u81")
+text = "BASIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnButton" type="Button" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 31.0
+offset_top = 196.0
+offset_right = 207.0
+offset_bottom = 256.0
+theme = ExtResource("4_q6u81")
+text = "Turn End"
+
+[node name="UpgradeButton" type="Button" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 136.0
+offset_top = 455.0
+offset_right = 256.0
+offset_bottom = 515.0
+theme = ExtResource("4_q6u81")
+text = "Base"
+
+[node name="PaintCall" parent="GUI" instance=ExtResource("9_26euh")]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 31.0
+offset_top = -155.0
+offset_right = 111.0
+offset_bottom = -25.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[node name="CallTable" type="HBoxContainer" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = -155.0
+offset_right = 532.0
+offset_bottom = -25.0
+grow_vertical = 0
+
+[node name="SelectedInfo" type="Control" parent="GUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SelectedPortrait" type="TextureRect" parent="GUI/SelectedInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -141.0
+offset_top = -185.0
+offset_right = -41.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_6v85o")
+expand_mode = 1
+
+[node name="SelectedID" type="Label" parent="GUI/SelectedInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -153.0
+offset_top = -83.0
+offset_right = -41.0
+offset_bottom = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "unit id"
+vertical_alignment = 1
+
+[node name="MoveButton" type="Button" parent="GUI/SelectedInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -390.0
+offset_top = -185.0
+offset_right = -282.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "Mov"
+
+[node name="AttackButton" type="Button" parent="GUI/SelectedInfo"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -282.0
+offset_top = -185.0
+offset_right = -174.0
+offset_bottom = -85.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "Atk"
+
+[node name="EliminateButton" type="Button" parent="GUI/SelectedInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -255.0
+offset_right = -43.0
+offset_bottom = -201.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "X"
+
+[node name="SpawnEnemyInfo" type="HBoxContainer" parent="GUI"]
+unique_name_in_owner = true
+offset_left = 31.0
+offset_top = 93.0
+offset_right = 431.0
+offset_bottom = 146.0
+mouse_filter = 2
+
+[node name="CurrentTileInfo" type="Label" parent="GUI"]
+unique_name_in_owner = true
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -335.0
+offset_right = 55.0
+offset_bottom = -287.0
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InkIcon" type="ColorRect" parent="GUI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -265.0
+offset_right = 111.0
+offset_bottom = -185.0
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[node name="InkText" type="Label" parent="GUI/InkIcon"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_q6u81")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StageProgressUI" type="ProgressBar" parent="GUI"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 45)
+offset_left = 31.0
+offset_top = 20.0
+offset_right = 431.0
+offset_bottom = 65.0
+mouse_filter = 2
+theme = ExtResource("4_q6u81")
+show_percentage = false
+
+[node name="StageClear" type="ColorRect" parent="GUI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_q6u81")
+color = Color(0, 0, 0, 0.384314)
+
+[node name="Clear" type="Label" parent="GUI/StageClear"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -226.0
+offset_right = 250.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_q6u81")
+theme_override_font_sizes/font_size = 80
+text = "Stage Clear!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Continue" type="Button" parent="GUI/StageClear"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -335.0
+offset_right = 150.0
+offset_bottom = -265.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "Continue..."
+
+[node name="StageFail" type="ColorRect" parent="GUI"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("4_q6u81")
+color = Color(0, 0, 0, 0.384314)
+
+[node name="Fail" type="Label" parent="GUI/StageFail"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -226.0
+offset_right = 250.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_q6u81")
+theme_override_font_sizes/font_size = 80
+text = "Failed..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="GUI/StageFail"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -349.0
+offset_right = 150.0
+offset_bottom = -279.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "Restart?"
+
+[node name="Exit" type="Button" parent="GUI/StageFail"]
+custom_minimum_size = Vector2(300, 70)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -255.0
+offset_right = 150.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_q6u81")
+text = "Exit"
+
+[node name="StagePause" parent="." instance=ExtResource("11_gg7b5")]
+visible = false
+
+[connection signal="stage_start" from="." to="Ground" method="stage_started"]
+[connection signal="stage_start" from="." to="TurnManager" method="turn_start"]
+[connection signal="pressed" from="GUI/TurnButton" to="TurnManager" method="turn_end"]
+[connection signal="pressed" from="GUI/UpgradeButton" to="Ground" method="upgrade_button_clicked"]
+[connection signal="pressed" from="GUI/SelectedInfo/MoveButton" to="Ground" method="move_button_clicked"]
+[connection signal="pressed" from="GUI/SelectedInfo/AttackButton" to="Ground" method="attack_button_clicked"]
+[connection signal="pressed" from="GUI/SelectedInfo/EliminateButton" to="Ground" method="eliminate_button_clicked"]
+[connection signal="pressed" from="GUI/StageClear/Continue" to="StagePause" method="exit_to_map"]
+[connection signal="pressed" from="GUI/StageFail/Restart" to="." method="restart_stage"]
+[connection signal="pressed" from="GUI/StageFail/Exit" to="StagePause" method="exit_to_map"]

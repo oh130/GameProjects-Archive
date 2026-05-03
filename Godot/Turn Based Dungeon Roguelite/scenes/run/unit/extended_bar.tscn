@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://8wc7hoxyi7q1"]
+
+[ext_resource type="Theme" uid="uid://ldlhet4vfbfk" path="res://resources/ui/theme.tres" id="1_g14oc"]
+[ext_resource type="Script" uid="uid://oriybgreehhe" path="res://scripts/run/unit/extended_bar.gd" id="2_4wux3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4wux3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuima"]
+bg_color = Color(0.189417, 0.720504, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yuima"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3j51"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="ExtendedBar" type="ProgressBar"]
+custom_minimum_size = Vector2(160, 15)
+offset_right = 120.0
+offset_bottom = 10.0
+theme = ExtResource("1_g14oc")
+theme_override_styles/background = SubResource("StyleBoxEmpty_4wux3")
+step = 1.0
+value = 100.0
+show_percentage = false
+script = ExtResource("2_4wux3")
+
+[node name="SubBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g14oc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_yuima")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Shield" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g14oc")
+theme_override_styles/background = SubResource("StyleBoxEmpty_yuima")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q3j51")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -11.0
+offset_right = 14.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme = ExtResource("1_g14oc")
+text = "1 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1

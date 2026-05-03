@@ -1,0 +1,4 @@
+repository "Vamsurlike@EldenRing@cloud"
+  path "/"
+    br "/main"
+    co "/main"

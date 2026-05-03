@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=4 format=3 uid="uid://dbfuisa4mul8i"]
+
+[ext_resource type="Texture2D" uid="uid://ceciu751r1c5e" path="res://resources/items/sprites/consumables/herb.tres" id="1_suknd"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="2_4avn5"]
+[ext_resource type="Script" uid="uid://b751jxkimb5xv" path="res://scripts/run/items/consumable.gd" id="2_10em8"]
+
+[resource]
+resource_name = "LIQUID_STONE"
+script = ExtResource("2_10em8")
+area = 0
+passives = Array[ExtResource("2_4avn5")]([])
+icon = ExtResource("1_suknd")
+metadata/_custom_type_script = "uid://c65kvtad4o6j7"

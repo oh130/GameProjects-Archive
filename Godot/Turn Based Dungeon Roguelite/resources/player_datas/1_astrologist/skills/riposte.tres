@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="PlayerSkill" load_steps=4 format=3 uid="uid://dpvnidelfdd4p"]
+
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_y1wli"]
+[ext_resource type="Script" uid="uid://bqauayub3315l" path="res://scripts/run/unit/player/player_skill.gd" id="2_c8h0f"]
+
+[sub_resource type="Resource" id="Resource_y1wli"]
+script = ExtResource("1_y1wli")
+amount = 10
+ratios = Dictionary[int, float]({
+4: 0.5
+})
+metadata/_custom_type_script = ExtResource("1_y1wli")
+
+[resource]
+resource_name = "RIPOSTE"
+script = ExtResource("2_c8h0f")
+attack_attribute = 0
+stat_mods = Dictionary[int, int]({
+6: 0,
+7: 0,
+10: 0,
+11: 0
+})
+enhanced = false
+repeat_time = 1
+target = 4
+costs = Dictionary[int, int]({
+1: 10
+})
+self_conditions = Dictionary[int, int]({})
+target_conditions = Dictionary[int, int]({})
+self_gain_statuses = Dictionary[int, ExtResource("1_y1wli")]({})
+effects = Dictionary[int, ExtResource("1_y1wli")]({
+0: SubResource("Resource_y1wli")
+})
+amount_effects = Dictionary[int, ExtResource("1_y1wli")]({})
+special_effects = Array[int]([])
+target_gain_statuses = Dictionary[int, ExtResource("1_y1wli")]({})
+target_effects = Dictionary[int, ExtResource("1_y1wli")]({})
+target_amount_effects = Dictionary[int, ExtResource("1_y1wli")]({})
+target_special_effects = Array[int]([])
+metadata/_custom_type_script = ExtResource("2_c8h0f")

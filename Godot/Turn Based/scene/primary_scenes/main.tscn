@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://wt45pl3mt38y"]
+
+[ext_resource type="Script" path="res://script/primary_script/main.gd" id="1_po7e1"]
+[ext_resource type="PackedScene" uid="uid://bue4fjd2fingb" path="res://scene/primary_scenes/tavern.tscn" id="2_cewp8"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_po7e1")
+tavern_scene = ExtResource("2_cewp8")
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 244.0
+offset_right = 829.0
+offset_bottom = 506.0
+theme_override_font_sizes/font_size = 100
+text = "Start"
+
+[node name="Setting" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="MainMenu/Start" to="." method="on_start_pressed"]

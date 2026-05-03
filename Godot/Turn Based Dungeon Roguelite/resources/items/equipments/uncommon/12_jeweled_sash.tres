@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=5 format=3 uid="uid://hejpaacv5msr"]
+
+[ext_resource type="Texture2D" uid="uid://be5e5gge802a8" path="res://resources/items/sprites/equipments/ring.tres" id="1_8bt8v"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="2_hxd82"]
+[ext_resource type="Script" uid="uid://ckcaefko5qi5l" path="res://scripts/run/special_resources/passives/passive.gd" id="2_v8f35"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="3_j1vp7"]
+
+[resource]
+resource_name = "JEWELED_SASH"
+script = ExtResource("3_j1vp7")
+is_unique = false
+stats = Dictionary[int, ExtResource("2_hxd82")]({})
+party_stats = Dictionary[int, int]({})
+passives = Array[ExtResource("2_v8f35")]([])
+icon = ExtResource("1_8bt8v")
+metadata/_custom_type_script = "uid://cqlrpju4ijw7l"

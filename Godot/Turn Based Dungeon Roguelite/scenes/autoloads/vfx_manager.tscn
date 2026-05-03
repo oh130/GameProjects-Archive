@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdebhjhfbjtw4"]
+
+[ext_resource type="Script" uid="uid://d3j3qq3lfoh2p" path="res://scripts/autoloads/vfx_manager.gd" id="1_txl1o"]
+
+[node name="VfxManager" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_txl1o")

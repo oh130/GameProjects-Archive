@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Equipment" load_steps=4 format=3 uid="uid://cb87v0n0i022n"]
+
+[ext_resource type="Texture2D" uid="uid://bv4eggub4gse7" path="res://resources/items/sprites/equipments/necklace.tres" id="1_dgves"]
+[ext_resource type="Script" uid="uid://cfsrpn46s1kan" path="res://scripts/run/combat/amount.gd" id="1_rb04s"]
+[ext_resource type="Script" uid="uid://cqlrpju4ijw7l" path="res://scripts/run/items/equipment.gd" id="2_dgves"]
+
+[resource]
+script = ExtResource("2_dgves")
+is_unique = false
+equipment_stats = Dictionary[int, float]({})
+passives = Dictionary[int, ExtResource("1_rb04s")]({})
+icon = ExtResource("1_dgves")
+metadata/_custom_type_script = "uid://cqlrpju4ijw7l"

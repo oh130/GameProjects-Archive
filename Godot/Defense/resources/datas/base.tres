@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ArmamentData" load_steps=3 format=3 uid="uid://cnjag3iwkgka3"]
+
+[ext_resource type="Script" uid="uid://bl3cy6lqm456w" path="res://scripts/datas/armaments/armament_data.gd" id="1_7sd2m"]
+[ext_resource type="Texture2D" uid="uid://bqwpeg5qpkm61" path="res://icon.svg" id="2_wnq5k"]
+
+[resource]
+script = ExtResource("1_7sd2m")
+ink_cost = 0
+tier = 0
+reach = 0
+damage = 0
+armor_penetration = false
+id = "Base"
+sprite = ExtResource("2_wnq5k")
+unlock_stage = 0
+shop_cost = 0

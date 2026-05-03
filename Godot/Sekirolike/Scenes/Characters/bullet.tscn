@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://bisbxb48dtc2m"]
+
+[ext_resource type="Texture2D" uid="uid://n1iax55i8nfw" path="res://Assets/Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-White.png" id="1_brecq"]
+
+[sub_resource type="GDScript" id="GDScript_myavi"]
+script/source = "extends Area2D
+
+@export var speed : float
+var player : CharacterBody2D
+var direction : Vector2 = Vector2.ZERO
+
+func _ready():
+	player = get_parent().find_child(\"Player\")
+
+func _physics_process(delta):
+	position += direction * speed * delta
+	
+func _on_screen_exited():
+	queue_free()
+
+func _on_body_entered(body):
+	if body == player:
+		GlobalData.emit_signal(\"player_hit\")
+	queue_free()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gqd1l"]
+radius = 4.0
+height = 8.0
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 16
+collision_mask = 37
+script = SubResource("GDScript_myavi")
+speed = 100.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_brecq")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_gqd1l")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-1.5, 1)
+scale = Vector2(0.65, 0.5)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

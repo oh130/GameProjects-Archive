@@ -1,0 +1,464 @@
+[gd_scene load_steps=9 format=3 uid="uid://xsfcjhisc2hy"]
+
+[ext_resource type="Script" path="res://script/primary_script/place.gd" id="1_jccm1"]
+[ext_resource type="PackedScene" uid="uid://bwinm2j4jqxi0" path="res://scene/component_scenes/player_group.tscn" id="2_60hk1"]
+[ext_resource type="PackedScene" uid="uid://5cudsngq5ol" path="res://scene/component_scenes/enemy_group.tscn" id="3_s3o01"]
+[ext_resource type="Script" path="res://script/primary_script/combat_manager.gd" id="5_hsyei"]
+[ext_resource type="ButtonGroup" uid="uid://qyrtq1kxv8n6" path="res://resources/skill_button_group.tres" id="6_44ujo"]
+[ext_resource type="PackedScene" uid="uid://dnt060aey1ss" path="res://scene/instances/item_pop_up.tscn" id="6_ixomu"]
+[ext_resource type="Texture2D" uid="uid://pkba0pbm1bn5" path="res://icon.svg" id="7_ugwom"]
+[ext_resource type="PackedScene" uid="uid://g4dhdvh25kil" path="res://scene/component_scenes/turn_list.tscn" id="8_rae7h"]
+
+[node name="Place" type="Node2D"]
+script = ExtResource("1_jccm1")
+
+[node name="PlayerGroup" parent="." instance=ExtResource("2_60hk1")]
+position = Vector2(502, 325)
+
+[node name="EnemyGroup" parent="." instance=ExtResource("3_s3o01")]
+position = Vector2(892, 325)
+
+[node name="PlayerMotionPos" type="Node" parent="."]
+
+[node name="Pos0" type="Node2D" parent="PlayerMotionPos"]
+position = Vector2(565, 360)
+
+[node name="Pos1" type="Node2D" parent="PlayerMotionPos"]
+position = Vector2(421, 408)
+
+[node name="Pos2" type="Node2D" parent="PlayerMotionPos"]
+position = Vector2(285, 360)
+
+[node name="Pos3" type="Node2D" parent="PlayerMotionPos"]
+position = Vector2(141, 408)
+
+[node name="EnemyMotionPos" type="Node" parent="."]
+
+[node name="Pos0" type="Node2D" parent="EnemyMotionPos"]
+position = Vector2(857, 360)
+
+[node name="Pos1" type="Node2D" parent="EnemyMotionPos"]
+position = Vector2(717, 408)
+
+[node name="Pos2" type="Node2D" parent="EnemyMotionPos"]
+position = Vector2(1137, 360)
+
+[node name="Pos3" type="Node2D" parent="EnemyMotionPos"]
+position = Vector2(997, 408)
+
+[node name="CombatManager" type="Node" parent="."]
+script = ExtResource("5_hsyei")
+item_pop_up = ExtResource("6_ixomu")
+
+[node name="CombatUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkillUI" type="Control" parent="CombatUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Skills" type="HBoxContainer" parent="CombatUI/SkillUI"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 554.0
+offset_right = 832.0
+offset_bottom = 624.0
+
+[node name="Skill0" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Skill1" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Skill2" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Skill3" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Skill4" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Skill5" type="Button" parent="CombatUI/SkillUI/Skills"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Skill"
+
+[node name="Move" type="Button" parent="CombatUI/SkillUI"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 0
+offset_left = 844.0
+offset_top = 553.0
+offset_right = 914.0
+offset_bottom = 623.0
+toggle_mode = true
+button_group = ExtResource("6_44ujo")
+text = "Move"
+
+[node name="PlayerInfoUI" type="Control" parent="CombatUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerPortrait" type="TextureRect" parent="CombatUI/PlayerInfoUI"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 558.0
+offset_right = 88.0
+offset_bottom = 608.0
+texture = ExtResource("7_ugwom")
+expand_mode = 1
+
+[node name="PlayerName" type="Label" parent="CombatUI/PlayerInfoUI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 619.0
+offset_right = 115.0
+offset_bottom = 661.0
+theme_override_font_sizes/font_size = 30
+text = "123"
+horizontal_alignment = 1
+
+[node name="PlayerStatTexts" type="GridContainer" parent="CombatUI/PlayerInfoUI"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 558.0
+offset_right = 260.0
+offset_bottom = 650.0
+theme_override_constants/h_separation = 25
+columns = 4
+
+[node name="AD" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Armor" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicResist" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crit" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CritDmg" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dodge" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Accuracy" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vamp" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vigor" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveRes" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArmorPen" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArmorPenPer" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPen" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPenPer" type="Label" parent="CombatUI/PlayerInfoUI/PlayerStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerItemList" type="GridContainer" parent="CombatUI/PlayerInfoUI"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 660.0
+offset_right = 330.0
+offset_bottom = 711.0
+
+[node name="EnemyInfoUI" type="Control" parent="CombatUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemyPortrait" type="TextureRect" parent="CombatUI/EnemyInfoUI"]
+layout_mode = 0
+offset_left = 1196.0
+offset_top = 558.0
+offset_right = 1246.0
+offset_bottom = 608.0
+texture = ExtResource("7_ugwom")
+expand_mode = 1
+
+[node name="EnemyName" type="Label" parent="CombatUI/EnemyInfoUI"]
+layout_mode = 0
+offset_left = 1166.0
+offset_top = 621.0
+offset_right = 1273.0
+offset_bottom = 663.0
+theme_override_font_sizes/font_size = 30
+text = "123"
+horizontal_alignment = 1
+
+[node name="EnemyStatTexts" type="GridContainer" parent="CombatUI/EnemyInfoUI"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 553.0
+offset_right = 1163.0
+offset_bottom = 645.0
+theme_override_constants/h_separation = 25
+columns = 4
+
+[node name="AD" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AP" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Armor" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicResist" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crit" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CritDmg" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dodge" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Accuracy" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vamp" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vigor" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MoveRes" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArmorPen" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArmorPenPer" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPen" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicPenPer" type="Label" parent="CombatUI/EnemyInfoUI/EnemyStatTexts"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyItemList" type="GridContainer" parent="CombatUI/EnemyInfoUI"]
+layout_mode = 2
+offset_left = 944.0
+offset_top = 658.0
+offset_right = 1258.0
+offset_bottom = 706.0
+
+[node name="TurnUI" type="Control" parent="CombatUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TurnChecker" type="Label" parent="CombatUI/TurnUI"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 90.0
+offset_right = 85.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="CombatUI/TurnUI"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 19.0
+offset_right = 83.0
+offset_bottom = 79.0
+
+[node name="TurnList" parent="CombatUI/TurnUI" instance=ExtResource("8_rae7h")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 827.0
+offset_bottom = 74.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[connection signal="toggled" from="CombatUI/SkillUI/Move" to="CombatManager" method="on_move_button_toggled"]
