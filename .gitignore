@@ -1,0 +1,31 @@
+/[Lf]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+# MemoryCaptures
+/[Mm]emoryCaptures/
+
+# Asset ripper folder
+/[Aa]sset[Rr]ipper/
+
+# IDE files
+.vs/
+.gradle/
+ExportedObj/
+.consulo/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln
+*.csproj
+*.unityproj
+*.booproj
+
+# OS files
+.DS_Store
+Thumbs.db
