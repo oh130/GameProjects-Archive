@@ -1,4 +1,0 @@
-repository "Boss Rush@EldenRing@cloud"
-  path "/"
-    br "/main"
-    co "/main"

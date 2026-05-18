@@ -1,1 +1,0 @@
-class_name EnemyDamageable extends Damageable
